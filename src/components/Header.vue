@@ -1,8 +1,8 @@
 <template>
   <header class="font-old">
     <div class="container-header">
-      <h1>&lt; 2DC JS /&gt;</h1>
-      <ul>
+      <h1 class="h1-header">&lt; 2DC JS /&gt;</h1>
+      <ul class="ul-header">
         <li>CURRICULUM</li>
         <li>GITHUB</li>
         <li>COMMENT</li>
@@ -12,6 +12,7 @@
         <button>Login</button>
         <button>SignUp</button>
       </div>
+      <button class="menu-header"><i class="fa-solid fa-bars" style="color: #000000"></i></button>
     </div>
   </header>
 </template>
@@ -32,7 +33,7 @@ header {
 }
 
 .container-header {
-  width: calc(100% - 100px);
+  width: calc(100% - 50px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,17 +47,21 @@ header {
 
 .container-login button {
   padding: 6px 13px;
+  color: var(--vt-c-white-soft);
+  background-color: var(--vt-c-black-soft);
 }
 
 .container-login button:first-child {
   margin-right: 25px;
+  background-color: var(--header-bg-color);
+  color: var(--vt-c-black-soft);
 }
 
-h1 {
+.h1-header {
   font-size: 25px;
 }
 
-ul {
+.ul-header {
   width: 500px;
   display: flex;
   justify-content: space-around;
@@ -65,6 +70,26 @@ ul {
 li {
   padding: 6px 13px;
   border-radius: 8px;
-  background-color: var(--text-bg-color);
+  background-color: var(--header-bg-color);
+}
+
+.menu-header {
+  position: absolute;
+  right: calc(25px);
+}
+
+@media screen and (min-width: 1050px) {
+  .menu-header {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .ul-header {
+    flex-direction: column;
+  }
+  .ul-header,
+  .container-login {
+  }
 }
 </style>
