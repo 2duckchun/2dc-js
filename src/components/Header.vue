@@ -2,17 +2,17 @@
   <header class="font-old">
     <nav class="navbar">
       <h1 class="logo-header">&lt; 2DC JS /&gt;</h1>
-      <ul class="navbar-menu">
-        <li>CURRICULUM</li>
+      <ul ref="navBarMenu" class="navbar-menu">
+        <li>JS STUDY</li>
         <li>GITHUB</li>
         <li>COMMENT</li>
         <li>Not Use Yet</li>
       </ul>
-      <div class="login-container">
+      <div ref="loginMenu" class="login-container">
         <button>Login</button>
         <button>SignUp</button>
       </div>
-      <button class="navbar-togglebtn">
+      <button class="navbar-togglebtn" @click="onClickToggle">
         <i class="fa-solid fa-bars" style="color: #000000"></i>
       </button>
     </nav>
@@ -20,7 +20,15 @@
 </template>
 
 <script setup lang="ts">
-import router from '@/router'
+import { ref } from 'vue'
+
+const navBarMenu = ref<HTMLElement>()
+const loginMenu = ref<HTMLElement>()
+
+const onClickToggle = () => {
+  navBarMenu.value?.classList.toggle('active')
+  loginMenu.value?.classList.toggle('active')
+}
 </script>
 
 <style scoped>
@@ -40,6 +48,7 @@ import router from '@/router'
 .login-container {
   display: flex;
   justify-content: space-between;
+  transition: 0.5s;
 }
 
 .login-container button {
@@ -58,6 +67,7 @@ import router from '@/router'
   width: 500px;
   display: flex;
   justify-content: space-around;
+  transition: 0.5s;
 }
 
 .navbar-menu li {
@@ -77,12 +87,12 @@ import router from '@/router'
   }
 
   .navbar-menu {
-    height: 0px;
+    max-height: 0px;
     display: none;
   }
 
   .navbar-menu.active {
-    height: 100%;
+    max-height: fit-content;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -98,6 +108,7 @@ import router from '@/router'
 
   .login-container {
     display: none;
+    transition: 0.5s;
   }
 
   .login-container.active {
@@ -111,7 +122,7 @@ import router from '@/router'
     position: absolute;
     display: block;
     right: 25px;
-    top: 25px;
+    top: 20px;
   }
 }
 </style>
