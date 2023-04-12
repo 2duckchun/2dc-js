@@ -1,128 +1,62 @@
 <template>
-  <header class="font-old">
-    <nav class="navbar">
-      <h1 class="logo-header">&lt; 2DC JS /&gt;</h1>
-      <ul ref="navBarMenu" class="navbar-menu">
-        <li>JS STUDY</li>
-        <li>GITHUB</li>
-        <li>COMMENT</li>
-        <li>Not Use Yet</li>
+  <header class="font-old header">
+    <h1>2DC World</h1>
+    <div class="header-collapse">
+      <ul class="header-menu">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
       </ul>
-      <div ref="loginMenu" class="login-container">
+      <div class="header-user">
         <button>Login</button>
         <button>SignUp</button>
       </div>
-      <button class="navbar-togglebtn" @click="onClickToggle">
-        <i class="fa-solid fa-bars" style="color: #000000"></i>
-      </button>
-    </nav>
+    </div>
   </header>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const navBarMenu = ref<HTMLElement>()
-const loginMenu = ref<HTMLElement>()
-
-const onClickToggle = () => {
-  navBarMenu.value?.classList.toggle('active')
-  loginMenu.value?.classList.toggle('active')
-}
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
-.navbar {
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 15px 24px;
-}
-
-.logo-header {
-  font-size: 25px;
-}
-
-.login-container {
-  display: flex;
-  justify-content: space-between;
-  transition: 0.5s;
-}
-
-.login-container button {
-  padding: 6px 13px;
-  color: var(--vt-c-white-soft);
-  background-color: var(--vt-c-black-soft);
-}
-
-.login-container button:first-child {
-  margin-right: 25px;
-  background-color: var(--header-bg-color);
-  color: var(--vt-c-black-soft);
-}
-
-.navbar-menu {
-  width: 500px;
+.header {
   display: flex;
   justify-content: space-around;
-  transition: 0.5s;
 }
 
-.navbar-menu li {
-  padding: 6px 13px;
-  border-radius: 8px;
-  background-color: var(--header-bg-color);
+.header-collapse {
+  display: flex;
 }
 
-.navbar-togglebtn {
-  display: none;
+.header-menu {
+  display: flex;
+  background-color: teal;
+}
+
+.header-user {
+  display: flex;
+  background-color: tomato;
 }
 
 @media screen and (max-width: 1050px) {
-  .navbar {
+  .header {
     flex-direction: column;
-    align-items: flex-start;
   }
-
-  .navbar-menu {
+  .header-collapse {
     max-height: 0px;
-    display: none;
-  }
-
-  .navbar-menu.active {
-    max-height: fit-content;
-    width: 100%;
+    overflow: hidden;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    transition: max-height 0.15s ease-out;
+  }
+  .header-collapse.active {
+    max-height: 500px;
+    overflow: hidden;
+    flex-direction: column;
+    transition: max-height 0.25s ease-in;
   }
 
-  .navbar-menu li {
-    width: 50%;
-    margin: 5px;
-    text-align: center;
-  }
-
-  .login-container {
-    display: none;
-    transition: 0.5s;
-  }
-
-  .login-container.active {
-    width: 100%;
-    margin-top: 15px;
-    justify-content: center;
-    display: flex;
-  }
-
-  .navbar-togglebtn {
-    position: absolute;
-    display: block;
-    right: 25px;
-    top: 20px;
+  .header-menu {
+    flex-direction: column;
   }
 }
 </style>
