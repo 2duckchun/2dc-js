@@ -21,15 +21,19 @@
 <style scoped>
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .header-collapse {
+  flex-grow: 1;
   display: flex;
+  justify-content: space-between;
 }
 
 .header-menu {
   display: flex;
+  flex-grow: 1;
+  justify-content: center;
   background-color: teal;
 }
 
