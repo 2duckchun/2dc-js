@@ -2,7 +2,7 @@
   <div class="header-container">
     <header class="font-old header">
       <h1 class="header-title">2DC</h1>
-      <div class="header-collapse">
+      <div ref="collapseContainer" class="header-collapse">
         <ul class="header-menu">
           <li>JS STUDY</li>
           <li>ALGO STUDY</li>
@@ -15,11 +15,22 @@
           <button>SignUp</button>
         </div>
       </div>
+      <button class="header-toggle" @click="toggleHeaderMenu">
+        <span class="ir_so">메뉴 토글</span>
+        <i class="fa-solid fa-bars fa-xl"></i>
+      </button>
     </header>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+const collapseContainer = ref<HTMLElement>()
+
+const toggleHeaderMenu = () => {
+  collapseContainer.value?.classList.toggle('active')
+}
+</script>
 
 <style scoped>
 /* layout */
@@ -29,7 +40,7 @@
 }
 .header {
   padding: 5px 1.5rem;
-  height: 60px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,6 +58,9 @@
 }
 .header-user {
   display: flex;
+}
+.header-toggle {
+  display: none;
 }
 
 /* style */
@@ -85,7 +99,6 @@
     height: auto;
     align-items: stretch;
   }
-
   .header {
     padding: 5px 0.5rem;
   }
@@ -93,6 +106,8 @@
     text-align: left;
   }
   .header-collapse {
+    margin: 0 auto;
+    width: 95%;
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -101,8 +116,17 @@
     max-height: 500px;
     transition: max-height 0.25s ease-in;
   }
+  .header-menu {
+    margin-top: 15px;
+  }
   .header-user {
     justify-content: center;
+  }
+  .header-toggle {
+    display: block;
+    position: absolute;
+    right: 2rem;
+    top: 1.2rem;
   }
 }
 
