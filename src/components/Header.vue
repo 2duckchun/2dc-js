@@ -29,6 +29,14 @@ const collapseContainer = ref<HTMLElement>()
 
 const toggleHeaderMenu = () => {
   collapseContainer.value?.classList.toggle('active')
+  const isActiveContainer = collapseContainer.value?.classList.contains('active')
+  if (isActiveContainer) {
+    collapseContainer.value?.setAttribute('aria-expanded', 'true')
+    collapseContainer.value?.setAttribute('aria-hidden', 'false')
+  } else {
+    collapseContainer.value?.setAttribute('aria-expanded', 'false')
+    collapseContainer.value?.setAttribute('aria-hidden', 'true')
+  }
 }
 </script>
 
