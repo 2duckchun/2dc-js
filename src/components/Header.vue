@@ -2,7 +2,7 @@
   <div class="header-container">
     <header class="font-old header">
       <h1 class="header-title">2DC</h1>
-      <div ref="collapseContainer" class="header-collapse">
+      <div ref="navMenu" class="header-collapse">
         <ul class="header-menu">
           <li>JS STUDY</li>
           <li>ALGO STUDY</li>
@@ -15,7 +15,7 @@
           <button>SignUp</button>
         </div>
       </div>
-      <button class="header-toggle" @click="toggleHeaderMenu">
+      <button class="header-toggle" @click="onClickToggle($event, navMenu)">
         <span class="ir_so">메뉴 토글</span>
         <i class="fa-solid fa-bars fa-xl"></i>
       </button>
@@ -25,18 +25,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-const collapseContainer = ref<HTMLElement>()
+import type { Ref } from 'vue'
+import { toggleHeaderMenu } from '@/util/headerUtils'
+const navMenu: Ref<HTMLElement | null> = ref(null)
 
-const toggleHeaderMenu = () => {
-  collapseContainer.value?.classList.toggle('active')
-  const isActiveContainer = collapseContainer.value?.classList.contains('active')
-  if (isActiveContainer) {
-    collapseContainer.value?.setAttribute('aria-expanded', 'true')
-    collapseContainer.value?.setAttribute('aria-hidden', 'false')
-  } else {
-    collapseContainer.value?.setAttribute('aria-expanded', 'false')
-    collapseContainer.value?.setAttribute('aria-hidden', 'true')
-  }
+const onClickToggle = ($event: MouseEvent, navMenu: HTMLElement | null) => {
+  if (navMenu === null) return
+  toggleHeaderMenu(navMenu)
 }
 </script>
 
