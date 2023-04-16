@@ -38,7 +38,11 @@ const onClickToggle = ($event: MouseEvent, navMenu: HTMLElement | null) => {
 <style scoped>
 /* layout */
 .header-container {
+  z-index: 50;
+  width: 100%;
+  position: fixed;
   max-width: none;
+  background-color: white;
   box-shadow: 0 4px 4px -4px var(--black);
 }
 .header {

@@ -5,7 +5,7 @@ import Page from './views/Page.vue'
 
 <template>
   <Header></Header>
-  <Page> </Page>
+  <RouterView></RouterView>
 </template>
 
 <style scoped></style>

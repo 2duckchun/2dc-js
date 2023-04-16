@@ -7,7 +7,11 @@
 <script setup lang="ts"></script>
 
 <style scoped>
-/* @media screen and (min-width: 500px) {
+.page {
+  position: relative;
+}
+
+@media screen and (min-width: 500px) {
   .page {
     margin: 0 auto;
     max-width: 475px;
@@ -47,5 +51,5 @@
     margin: 0 auto;
     max-width: 1350px;
   }
-} */
+}
 </style>
