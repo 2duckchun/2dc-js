@@ -27,18 +27,18 @@ import MainFirst from '@/components/main/MainFirst.vue'
 .container-main-first {
   width: auto;
   height: 100vh;
-  background-color: teal;
+  background-color: var(--greyOpacity100);
 }
 
 .container-main-second {
   width: auto;
   height: 100vh;
-  background-color: wheat;
+  background-color: var(--greyOpacity300);
 }
 
 .container-main-third {
   width: auto;
   height: 100vh;
-  background-color: hotpink;
+  background-color: var(--greyOpacity500);
 }
 </style>

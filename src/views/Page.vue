@@ -8,27 +8,29 @@
 
 <style scoped>
 .page {
+  background-color: white;
+  height: inherit;
   position: relative;
 }
 
 @media screen and (min-width: 500px) {
   .page {
     margin: 0 auto;
-    max-width: 475px;
+    max-width: 450px;
   }
 }
 
 @media screen and (min-width: 600px) {
   .page {
     margin: 0 auto;
-    max-width: 575px;
+    max-width: 550px;
   }
 }
 
 @media screen and (min-width: 800px) {
   .page {
     margin: 0 auto;
-    max-width: 775px;
+    max-width: 750px;
   }
 }
 
