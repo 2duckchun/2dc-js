@@ -2,12 +2,12 @@
   <section>
     <div class="container-main-first">
       <Page>
-        <MainFirst />
+        <MainFirst @goToNextView="goToNextView" />
       </Page>
     </div>
-    <div class="container-main-second">
+    <div ref="secondMainView" class="container-main-second">
       <Page>
-        <div class="container main component"></div>
+        <MainSecond></MainSecond>
       </Page>
     </div>
     <div class="container-main-third">
@@ -19,8 +19,19 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import Page from './Page.vue'
 import MainFirst from '@/components/main/MainFirst.vue'
+import MainSecond from '@/components/main/MainSecond.vue'
+const secondMainView = ref()
+
+const goToNextView = () => {
+  const targetY = secondMainView.value.getBoundingClientRect().top + window.pageYOffset - 70
+  window.scrollTo({
+    top: targetY,
+    behavior: 'smooth'
+  })
+}
 </script>
 
 <style scoped>
@@ -32,13 +43,13 @@ import MainFirst from '@/components/main/MainFirst.vue'
 
 .container-main-second {
   width: auto;
-  height: 100vh;
+  height: calc(100vh - 70px);
   background-color: var(--greyOpacity300);
 }
 
 .container-main-third {
   width: auto;
-  height: 100vh;
+  height: calc(100vh - 70px);
   background-color: var(--greyOpacity500);
 }
 </style>

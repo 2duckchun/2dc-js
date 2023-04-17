@@ -9,13 +9,17 @@
       <p class="main-fisrt-paragraph">여기엔 어쩌구 문구가 들어갈테죠</p>
     </div>
   </div>
-  <div class="main-first-arrow">
+  <div class="main-first-arrow" @click="$emit('goToNextView')">
     <i class="fa-solid fa-caret-down fa-beat-fade fa-2xl"></i>
   </div>
 </template>
 
 <script setup lang="ts">
 import babyTurtle from '@/assets/baby-turtle.jpg'
+
+const emit = defineEmits<{
+  goToNextView: () => void
+}>()
 
 const imgStyle = {
   width: '50%',
