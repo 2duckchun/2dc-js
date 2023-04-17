@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import Page from './Page.vue'
+import Page from '../components/Page.vue'
 import MainFirst from '@/components/main/MainFirst.vue'
 import MainSecond from '@/components/main/MainSecond.vue'
 const secondMainView = ref()
@@ -44,12 +44,12 @@ const goToNextView = () => {
 .container-main-second {
   width: auto;
   height: calc(100vh - 70px);
-  background-color: var(--greyOpacity300);
+  background-color: var(--greyOpacity100);
 }
 
 .container-main-third {
   width: auto;
   height: calc(100vh - 70px);
-  background-color: var(--greyOpacity500);
+  background-color: var(--greyOpacity100);
 }
 </style>
