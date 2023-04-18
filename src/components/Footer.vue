@@ -13,6 +13,5 @@
   align-items: center;
   width: auto;
   height: 80px;
-  background-color: var(--greyOpacity100);
 }
 </style>
