@@ -1,10 +1,10 @@
 <template>
   <div class="header-container">
     <header class="font-old header">
-      <h1 class="header-title">2DC</h1>
+      <span @click="useRouter('/')" class="header-title logo">2DC</span>
       <div ref="navMenu" class="header-collapse">
         <ul class="header-menu">
-          <li>JS STUDY</li>
+          <li @click="useRouter('jsstudy')">JS STUDY</li>
           <li>ALGO STUDY</li>
           <li>REPO</li>
           <li>COMMENT</li>
@@ -15,7 +15,7 @@
           <button>SignUp</button>
         </div>
       </div>
-      <button class="header-toggle" @click="onClickToggle($event, navMenu)">
+      <button class="header-toggle" @click="onClickToggle(navMenu)">
         <span class="ir_so">메뉴 토글</span>
         <i class="fa-solid fa-bars fa-xl"></i>
       </button>
@@ -27,11 +27,17 @@
 import { ref } from 'vue'
 import type { Ref } from 'vue'
 import { toggleHeaderMenu } from '@/util/headerUtils'
+import router from '@/router'
+
 const navMenu: Ref<HTMLElement | null> = ref(null)
 
-const onClickToggle = ($event: MouseEvent, navMenu: HTMLElement | null) => {
+const onClickToggle = (navMenu: HTMLElement | null) => {
   if (navMenu === null) return
   toggleHeaderMenu(navMenu)
+}
+
+const useRouter = (component: string) => {
+  router.push({ path: component })
 }
 </script>
 
@@ -39,7 +45,7 @@ const onClickToggle = ($event: MouseEvent, navMenu: HTMLElement | null) => {
 /* layout */
 .header-container {
   z-index: 50;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   max-width: none;
   background-color: white;
@@ -68,6 +74,10 @@ const onClickToggle = ($event: MouseEvent, navMenu: HTMLElement | null) => {
 }
 .header-toggle {
   display: none;
+}
+
+.header-title {
+  cursor: pointer;
 }
 
 /* style */
