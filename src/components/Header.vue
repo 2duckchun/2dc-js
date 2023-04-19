@@ -120,6 +120,7 @@ const useRouter = (component: string) => {
     padding: 5px 0.5rem;
   }
   .header-title {
+    width: fit-content;
     text-align: left;
   }
   .header-collapse {
