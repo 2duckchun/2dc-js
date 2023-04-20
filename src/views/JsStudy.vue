@@ -2,11 +2,30 @@
   <Page>
     <div class="container-jsstudy">
       <section class="section-jsstudy">
-        <div class="card">제목, 그림, 클릭시 링크 어디로 보낼지 등등을 프롭스로 전달</div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <Card
+          moduleTitle="연습"
+          moduleImage="이미지.jpg"
+          moduleRoute="js0"
+          moduleIntro="안녕하세요 연습 컴포넌트 입니다."
+        ></Card>
+        <Card
+          moduleTitle="연습"
+          moduleImage="이미지.jpg"
+          moduleRoute="js0"
+          moduleIntro="안녕하세요 연습 컴포넌트 입니다."
+        ></Card>
+        <Card
+          moduleTitle="연습"
+          moduleImage="이미지.jpg"
+          moduleRoute="js0"
+          moduleIntro="안녕하세요 연습 컴포넌트 입니다."
+        ></Card>
+        <Card
+          moduleTitle="연습"
+          moduleImage="이미지.jpg"
+          moduleRoute="js0"
+          moduleIntro="안녕하세요 연습 컴포넌트 입니다."
+        ></Card>
       </section>
       <article class="reference-jsstudy"></article>
     </div>
@@ -15,6 +34,7 @@
 
 <script setup lang="ts">
 import Page from '@/components/Page.vue'
+import Card from '@/components/shared/Card.vue'
 </script>
 
 <style scoped>
@@ -32,12 +52,6 @@ import Page from '@/components/Page.vue'
 .reference-jsstudy {
   flex-basis: 25%;
   background-color: tomato;
-}
-.card {
-  margin: 15px;
-  width: auto;
-  height: 250px;
-  background-color: aquamarine;
 }
 
 @media screen and (max-width: 1050px) {
