@@ -1,0 +1,25 @@
+.header {
+  position: sticky;
+  max-width: 100%;
+  background-color: var(--header-bg);
+  transition: top 0.3s;
+  .header_content {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    .button_theme {
+      display: block;
+    }
+  }
+}
+
+.logo_text {
+  margin: 0;
+  width: 100px;
+  color: var(--primary);
+  font-size: 48px;
+  font-weight: 900;
+}
