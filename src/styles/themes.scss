@@ -1,0 +1,17 @@
+@use "./color.scss" as *;
+
+html[data-theme="light"] {
+  --header-bg: #{$header-bg-1};
+  --primary: #{$primary-1};
+  --color-text: #{$text-color-1};
+  --color-background: #{$bg-color-1};
+  --color-btn: #{$btn-color-1};
+}
+
+html[data-theme="dark"] {
+  --header-bg: #{$header-bg-2};
+  --primary: #{$primary-2};
+  --color-text: #{$text-color-2};
+  --color-background: #{$bg-color-2};
+  --color-btn: #{$btn-color-2};
+}
