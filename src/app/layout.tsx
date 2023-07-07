@@ -1,6 +1,9 @@
 import "normalize.css";
+import "./globals.scss";
 import style from "./layout.module.scss";
-import { m_PLUS_1 } from "@/styles/fonts";
+import { font_M_PLUS_1 } from "@/styles/fonts";
+import Header from "./(rootLayout)/Header";
+import useInitTheme from "./_serverHooks/getInitTheme";
 
 export const metadata = {
   title: "2DCJS",
@@ -12,11 +15,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const theme = useInitTheme();
+
   return (
-    <html lang="en">
-      <body className={m_PLUS_1.className}>
-        <p className={style.logo_text}>2DC</p>
-        {children}
+    <html lang="ko" data-theme={theme.value}>
+      <body className={`${font_M_PLUS_1.className}`}>
+        <Header />
+        <div className={style.page}>{children}</div>
       </body>
     </html>
   );
