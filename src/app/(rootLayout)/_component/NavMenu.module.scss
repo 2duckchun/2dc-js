@@ -1,0 +1,16 @@
+.nav_menu {
+  display: flex;
+  justify-content: space-evenly;
+  flex-basis: 75%;
+  list-style: none;
+  li {
+    color: var(--color-text);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  li:hover {
+    background-color: var(--color-hover);
+  }
+}
