@@ -1,7 +1,7 @@
 import "normalize.css";
 import "./globals.scss";
 import style from "./layout.module.scss";
-import { font_M_PLUS_1 } from "@/styles/fonts";
+import { font_M_PLUS_1 } from "@/fonts/fonts";
 import Header from "./(rootLayout)/Header";
 import useInitTheme from "./_serverHooks/getInitTheme";
 
@@ -20,8 +20,8 @@ export default function RootLayout({
   return (
     <html lang="ko" data-theme={theme.value}>
       <body className={`${font_M_PLUS_1.className}`}>
-        <Header />
-        <div className={style.page}>{children}</div>
+        <Header currentTheme={theme.value} />
+        <div className={`${style.page} page`}>{children}</div>
       </body>
     </html>
   );
