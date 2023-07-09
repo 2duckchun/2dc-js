@@ -1,7 +1,10 @@
 .nav_menu {
   display: flex;
-  justify-content: space-evenly;
-  flex-basis: 75%;
+  justify-content: space-around;
+
+  padding: 0;
+  flex-basis: 100%;
+  align-items: center;
   list-style: none;
   li {
     color: var(--color-text);
