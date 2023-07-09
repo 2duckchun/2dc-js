@@ -4,6 +4,7 @@ import style from "./layout.module.scss";
 import { font_M_PLUS_1 } from "@/fonts/fonts";
 import Header from "./(rootLayout)/Header";
 import useInitTheme from "./_serverHooks/getInitTheme";
+import Page from "./(rootLayout)/Page";
 
 export const metadata = {
   title: "2DCJS",
@@ -21,7 +22,7 @@ export default function RootLayout({
     <html lang="ko" data-theme={theme.value}>
       <body className={`${font_M_PLUS_1.className}`}>
         <Header currentTheme={theme.value} />
-        <div className={`${style.page} page`}>{children}</div>
+        <Page>{children}</Page>
       </body>
     </html>
   );
