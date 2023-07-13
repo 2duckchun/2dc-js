@@ -1,34 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 2DC 프로젝트
 
-## Getting Started
+## 목표
+- 자바스크립트를 효율적으로 배울 수 있는 커리큘럼을 구상합니다.
+  - 자바스크립트를 모르는 사람을 대상으로 합니다.
+  - 방향성은 **'추상적에서 구체적으로'** 입니다.
+  - 초기 단원에서는 프로그래밍 언어를 현실 차원에서 추상적으로 다루며, 배워나갈수록 기능에 대한 동작 원리를 구체적으로 다룹니다.
+- 위의 커리큘럼을 구상하기 위해 언어와 자료구조를 공부하면서 개인의 지식 수준을 높입니다.
 
-First, run the development server:
+![image](https://github.com/2duckchun/2dc-js/assets/92588154/38da7d3f-dd78-47d6-ad67-c755f6e79d28)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 개발 방향
+- 학습 중 눈의 피로도를 덜기 위한 다크모드 필수 개발.
+- 자바스크립트 -> 자료구조 순으로 개발하되, 템플릿이 정립되면 지속적으로 내용을 채워나가야함.
+- 로그인/회원가입 및 코멘트는 후순위 개발.
+- 백엔드는 firebase 사용 예정이며, 코멘트를 위한 기능만 추가할 예정. 가입은 Oauth github을 활용할 예정.
+  - 개발이 처음인 사람들이 개인 github을 만들면 학습 의욕이 증가할 수 있다고 판단됨.
