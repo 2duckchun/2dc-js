@@ -1,10 +1,10 @@
 import "normalize.css";
 import "./globals.scss";
 import style from "./layout.module.scss";
-import { font_M_PLUS_1 } from "@/fonts/fonts";
+import { font_M_PLUS_1, font_pretended } from "@/fonts/fonts";
 import Header from "./(rootLayout)/Header";
 import useInitTheme from "./_serverHooks/getInitTheme";
-import Page from "./(rootLayout)/Page";
+import Footer from "./(rootLayout)/Footer";
 
 export const metadata = {
   title: "2DCJS",
@@ -22,7 +22,10 @@ export default function RootLayout({
     <html lang="ko" data-theme={theme.value}>
       <body className={`${font_M_PLUS_1.className}`}>
         <Header currentTheme={theme.value} />
-        <Page>{children}</Page>
+        <main className={`${font_pretended.className} ${style.page}`}>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

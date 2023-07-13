@@ -1,24 +1,7 @@
-.header {
-  position: sticky;
-  max-width: 100%;
-  background-color: var(--header-bg);
-  transition: top 0.3s;
-  .header_content {
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-}
-
-.logo_text {
-  color: var(--primary);
-  font-size: 48px;
-  font-weight: 900;
-  margin: 0 auto;
-}
-
 .page {
-  min-height: 5000px;
+  min-height: 1000px;
   margin: 0 auto;
   max-width: 1280px;
-  background-color: white;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
