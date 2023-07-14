@@ -2,6 +2,7 @@
 
 html,
 body {
+  height: 100%;
   box-sizing: border-box;
   background-color: var(--color-background);
 }
@@ -13,22 +14,6 @@ body {
 button {
   all: unset;
 }
-
-@media screen and (max-width: 800px) {
-  .header_content,
-  .nav_collapse,
-  .nev_menu {
-    flex-direction: column;
-  }
-  .header_toggle {
-    display: block;
-    right: 15px;
-    top: 15px;
-  }
-  .nav_collapse {
-    overflow: hidden;
-  }
-  .nav_collapse.active {
-    overflow: visible;
-  }
+ul {
+  padding: 0px;
 }
