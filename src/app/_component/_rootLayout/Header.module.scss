@@ -1,0 +1,105 @@
+.header {
+  height: 60px;
+  position: sticky;
+  width: 100%; // width: 100vw에서 100%으로 전환
+  background-color: var(--header-bg);
+  z-index: 100;
+}
+
+.header_content {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.logo_text {
+  padding-left: 15px;
+  margin: 0;
+  text-align: left;
+  width: 120px;
+  color: var(--primary);
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.nav_collapse {
+  display: flex;
+  flex-basis: 100%;
+  background-color: var(--header-bg);
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.nav_user {
+  display: flex;
+  flex-basis: 40%;
+  justify-content: space-around;
+  button {
+    color: var(--color-text);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  button:hover {
+    background-color: var(--color-hover);
+  }
+}
+
+.nav_menu {
+  display: flex;
+  justify-content: space-evenly;
+  flex-basis: 100%;
+  align-items: center;
+  list-style: none;
+  li {
+    color: var(--color-text);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  li:hover {
+    background-color: var(--color-hover);
+  }
+}
+
+.header_toggle {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  .toggle_div1,
+  .toggle_div2,
+  .toggle_div3 {
+    width: 25px;
+    height: 5px;
+    background-color: var(--color-text);
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header_content,
+  .nav_collapse {
+    flex-direction: column;
+    height: auto;
+    align-items: stretch;
+  }
+  .nav_menu {
+    flex-direction: column;
+  }
+  .nav_collapse {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .nav_collapse.active {
+    max-height: 500px;
+    transition: max-height 0.2s ease-out;
+  }
+}
