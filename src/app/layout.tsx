@@ -2,9 +2,9 @@ import "normalize.css";
 import "./globals.scss";
 import style from "./layout.module.scss";
 import { font_M_PLUS_1, font_pretended } from "@/fonts/fonts";
-import Header from "./(rootLayout)/Header";
-import useInitTheme from "./_serverHooks/getInitTheme";
-import Footer from "./(rootLayout)/Footer";
+import Header from "./_component/_rootLayout/Header";
+import useInitTheme from "./_serverHooks/useInitTheme";
+import Footer from "./_component/_rootLayout/Footer";
 
 export const metadata = {
   title: "2DCJS",
