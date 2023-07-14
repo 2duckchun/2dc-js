@@ -1,5 +1,73 @@
-@import "@/styles/style.scss";
+.welcome_message {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  height: 70vh;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  font-size: 42px;
+  padding: 0px 15px;
+  span {
+    color: var(--primary);
+  }
+}
 
-.test_tomato {
-  color: $test-tomato;
+.welcome_card_container.no_show {
+  display: none;
+}
+
+.welcome_card_container {
+  font-size: 1.5rem;
+  display: flex;
+  border-radius: 10px;
+  padding: 20px 10px;
+  justify-content: space-between;
+  min-height: 400px;
+  background-color: var(--header-bg);
+  animation: 0.5s ease-in-out loadEffect1;
+}
+
+.welcome_card {
+  background-color: #f9fafb;
+  border-radius: 10px;
+  padding: 10px;
+  p {
+    padding: 5px;
+    color: #000;
+    word-break: break-word;
+  }
+  span {
+    color: #1b64da;
+    font-weight: 700;
+  }
+}
+
+.welcome_card_image {
+  border-radius: 5px;
+  overflow: hidden;
+  width: 350px;
+  height: 300px;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .parallax_javascript_image {
+    background-image: url("../../../public/javascript_640.jpg");
+    background-size: 640px 360px;
+  }
+  .welcome_message {
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    font-size: 20px;
+  }
+}
+
+@keyframes loadEffect1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
