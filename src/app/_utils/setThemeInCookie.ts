@@ -4,6 +4,6 @@ export default function setThemeInCookie(keyValue: string | undefined) {
     return "dark";
   }
   keyValue === "dark" ? (keyValue = "light") : (keyValue = "dark");
-  document.cookie = `theme=${keyValue}`;
+  document.cookie = `theme=${keyValue}; path=/`;
   return keyValue;
 }
