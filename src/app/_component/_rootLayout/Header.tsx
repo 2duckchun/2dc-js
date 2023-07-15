@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { font_pretended } from "@/fonts/fonts";
 import setThemeCookie from "@/app/_utils/setThemeInCookie";
-import style from "./Header.module.scss";
+import styles from "./Header.module.scss";
 import IconMoon from "#/icon-moon.svg";
 import IconSun from "#/icon-sun.svg";
 import cookieParser from "@/app/_utils/cookieParser";
 import NavMenu from "./NavMenu";
 import NavToggleButton from "./NavToggleButton";
 import useResponsiveHeader from "@/app/_clientHooks/useResponsiveHeader";
+import CustomLink from "../_common/CustomLink";
+import NavContainer from "./NavContainer";
+import UserAuthContainer from "./UserAuthContainer";
+import CustomButton from "../_common/CustomButton";
 
 export default function Header({ currentTheme }: { currentTheme: string }) {
   const [theme, setTheme] = useState(currentTheme);
@@ -24,7 +27,7 @@ export default function Header({ currentTheme }: { currentTheme: string }) {
     setIsCollapsed(!isCollapsed);
   };
 
-  const [navBarRef, collapseRef] = useResponsiveHeader(headerCollapingHandler);
+  const [headerRef] = useResponsiveHeader(headerCollapingHandler);
 
   const changeTheme = () => {
     const currentTheme = cookieParser("theme");
@@ -34,28 +37,21 @@ export default function Header({ currentTheme }: { currentTheme: string }) {
   };
 
   return (
-    <header className={style.header} ref={navBarRef}>
-      <div className={`${style.header_content} header_content`}>
-        <p className={style.logo_text}>2DC</p>
-        <nav
-          className={`${style.nav_collapse} ${font_pretended.className} ${
-            isCollapsed ? style.active : ""
-          }`}
-          ref={collapseRef}
-        >
+    <header className={styles.header} ref={headerRef}>
+      <div className={styles.header_content}>
+        <CustomLink href={{ pathname: "/" }}>
+          <p className={styles.logo_text}>2DC</p>
+        </CustomLink>
+        <NavContainer isCollapsed={isCollapsed}>
           <NavMenu />
-          <div className={`${style.nav_user}`}>
-            <button>로그인</button>
-            <button>회원가입</button>
-            <button
-              className={`${style.button_theme} ${style.come}`}
-              onClick={changeTheme}
-              key={theme}
-            >
-              <ThemeIcon />
-            </button>
-          </div>
-        </nav>
+          <UserAuthContainer />
+          <CustomButton
+            propStyle={styles.theme_toggle}
+            onClickHandler={changeTheme}
+          >
+            <ThemeIcon />
+          </CustomButton>
+        </NavContainer>
       </div>
       <NavToggleButton navToggleHandler={headerCollapingHandler} />
     </header>
