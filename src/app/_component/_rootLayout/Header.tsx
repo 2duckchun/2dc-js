@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import setThemeCookie from "@/app/_utils/setThemeInCookie";
+import setThemeCookie from "@/_utils/setThemeInCookie";
 import styles from "./Header.module.scss";
 import IconMoon from "#/icon-moon.svg";
 import IconSun from "#/icon-sun.svg";
-import cookieParser from "@/app/_utils/cookieParser";
+import cookieParser from "@/_utils/cookieParser";
 import NavMenu from "./NavMenu";
 import NavToggleButton from "./NavToggleButton";
-import useResponsiveHeader from "@/app/_clientHooks/useResponsiveHeader";
+import useResponsiveHeader from "@/_clientHooks/useResponsiveHeader";
 import CustomLink from "../_common/CustomLink";
 import NavContainer from "./NavContainer";
 import UserAuthContainer from "./UserAuthContainer";

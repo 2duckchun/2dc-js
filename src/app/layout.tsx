@@ -3,7 +3,7 @@ import "./globals.scss";
 import style from "./layout.module.scss";
 import { font_M_PLUS_1, font_pretended } from "@/fonts/fonts";
 import Header from "./_component/_rootLayout/Header";
-import useInitTheme from "./_serverHooks/useInitTheme";
+import useInitTheme from "../_serverHooks/useInitTheme";
 import Footer from "./_component/_rootLayout/Footer";
 
 export const metadata = {
