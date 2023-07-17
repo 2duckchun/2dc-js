@@ -1,0 +1,28 @@
+.curriculum_container {
+  padding: 20px 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.curriculum_card_container {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 70%;
+  min-height: 900px;
+  gap: 20px;
+}
+
+.curriculum_reference_container {
+  flex-basis: 30%;
+  background-color: goldenrod;
+  min-height: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  .curriculum_container {
+    flex-direction: column;
+  }
+  .curriculum_reference_container {
+    display: none;
+  }
+}
