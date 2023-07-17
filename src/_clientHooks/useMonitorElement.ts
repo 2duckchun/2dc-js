@@ -22,7 +22,7 @@ export default function useMonitorElement(callback: () => void) {
     observer.observe(monitoredElement.current);
 
     return () => observer.disconnect();
-  }, [callback, monitoredElement.current]);
+  }, [callback]);
 
   return monitoredElement;
 }
