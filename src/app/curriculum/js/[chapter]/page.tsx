@@ -1,8 +1,7 @@
-import { ReactElement } from "react";
-import Chapter0 from "./(lesson)/Chapter0";
-import Chapter1 from "./(lesson)/Chapter1";
+import Chapter0 from "./(chapter)/Chapter0";
+import Chapter1 from "./(chapter)/Chapter1";
 
-export default function JsChapter({ params }: { params: any }) {
+export default function JsChapterContainer({ params }: { params: any }) {
   let Chapter = Chapter0;
 
   switch (params.chapter) {
