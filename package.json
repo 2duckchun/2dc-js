@@ -16,12 +16,14 @@
     "eslint-config-next": "13.4.8",
     "next": "13.4.8",
     "normalize.css": "^8.0.1",
+    "prismjs": "^1.29.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.1.6"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.0.1",
+    "@types/prismjs": "^1.26.0",
     "sass": "^1.63.6"
   }
 }
