@@ -62,8 +62,8 @@ export default function Chap0Act1() {
         (구글 크롬 브라우저는 그 자체로 훌륭한 코드 에디터가 될 수 있습니다.)
       </p>
       <p>
-        이 파트에서 배우시는 것들은 하나하나 외울 필요가 없습니다. 단순히
-        "이런것들을 사용하는 군!"하고 넘어가셔도 좋습니다.
+        이 파트에서 배우시는 것들은 하나하나 외울 필요가 없습니다. 단순히 &#34;
+        이런것들을 사용하는 군! &#34; 하고 넘어가셔도 좋습니다.
       </p>
       <h3>구글 크롬 설치</h3>
       <p>
@@ -157,7 +157,8 @@ body.appendChild(myNickName)`}
           할당(저장)한다.
         </li>
         <li>
-          myNickName (h1 엘리먼트) 의 textContent를 "yourNickName"으로 할당한다.
+          myNickName (h1 엘리먼트) 의 textContent를 &#34;yourNickName &#34;으로
+          할당한다.
         </li>
         <li>body의 자식요소에 myNickName을 추가한다.</li>
       </ol>
@@ -196,9 +197,9 @@ body.appendChild(listContainer)
       <p>코드의 흐름을 한번 읽어보시기 바랍니다.</p>
       <p>여기서 새롭게 등장한 것은 myFavoriteFoodList와 for 키워드 입니다.</p>
       <p>
-        myFavoriteFoodList = ['something', 'something', 'something',
-        'something']는 배열이라고 합니다. <br></br>여러가지 데이터를 특정 순서로
-        정렬하는 역할을 합니다.
+        myFavoriteFoodList = [ &#39;something &#39;, &#39;something &#39;,
+        &#39;something &#39;, &#39;something &#39;]는 배열이라고 합니다.{" "}
+        <br></br>여러가지 데이터를 특정 순서로 정렬하는 역할을 합니다.
       </p>
       <p>
         for 키워드는 특정 조건이 참(true)이라면 코드를 반복하겠다는 의미입니다.
