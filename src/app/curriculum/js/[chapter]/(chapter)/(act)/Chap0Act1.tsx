@@ -1,4 +1,5 @@
-import Image from "next/image";
+import styles from "./Act.module.scss";
+import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
 import mosaic from "#/chap0/mosaic.png";
 import AboutBlank from "#/chap0/aboutblank.png";
 import DeveloperTool from "#/chap0/developertool.png";
@@ -7,12 +8,11 @@ import CodeBox from "@/app/_component/_curriculum/CodeBox";
 import SelfIntroduceDocument from "#/chap0/self-introduce.png";
 import YourNickName from "#/chap0/yourNickName.png";
 import Boom from "#/chap0/boom.png";
-import styles from "./Act.module.scss";
 
 export default function Chap0Act1() {
   return (
     <div className={styles.act_container}>
-      <h2>환영합니다!</h2>
+      <h1>환영합니다!</h1>
       <p>
         안녕하세요. 어떻게 하면 자바스크립트를 재미있고 효율적으로 배울 수
         있을지 고민하는 2DC입니다.
@@ -59,7 +59,13 @@ export default function Chap0Act1() {
         당시의 브라우저는 HTML과 CSS라는 기술만 표현할 수 있는, 단순한 형태의 웹
         페이지만 표현할 수 있었습니다.
       </p>
-      <Image src={mosaic} width={360} height={302} alt={"모자이크 브라우저"} />
+      <CustomImageWithCaption
+        imageSrc={mosaic}
+        width={360}
+        height={302}
+        alt={"모자이크 브라우저"}
+        caption="90년대 브라우저 화면입니다!"
+      />
       <p>굉장히 정적인 페이지입니다.</p>
       <p>이후 브라우저에 뭔가 움직임을 주고 싶어하는 분위기가 생기게 됩니다.</p>
       <p>당시, 가장 발 빠르게 움직인 회사는 넷스케이프라는 회사였습니다.</p>
@@ -120,7 +126,7 @@ export default function Chap0Act1() {
         우리가 사용하는 자바스크립트의 모양이 갖추어지게 되었습니다.
       </p>
 
-      <h2>브라우저와 함께 놀아보기</h2>
+      <h1>브라우저와 함께 놀아보기</h1>
       <p>우리는 자바스크립트로 뭘 할 수 있을까요?</p>
       <p>그것은 자바스크립트의 런타임 환경마다 다르다고 할 수 있습니다.</p>
       <p>런타임은 프로그래밍 언어가 구동되는 환경이라고 정의할 수 있는데요</p>
@@ -143,17 +149,18 @@ export default function Chap0Act1() {
         단순히 <b>&#34; 이런것들을 사용하는 군! &#34;</b> 하고 넘어가셔도
         좋습니다.
       </p>
-      <h3>구글 크롬 설치</h3>
+      <h2>구글 크롬 설치</h2>
       <p>
         구글 크롬을 설치하고 브라우저를 열어주세요. 여기까지는 잘 해내실거라
         믿습니다!
       </p>
       <h3>URL에 about:blank로 접속</h3>
-      <Image
-        src={AboutBlank}
+      <CustomImageWithCaption
+        imageSrc={AboutBlank}
         width={360}
         height={120}
-        alt={"구글 크롬 about:blank"}
+        alt={"구글 about:blank"}
+        caption="주소창에 about:blank를 입력해주세요!"
       />
       <p>
         about:blank는 브라우저가 아무것도 보여줄 게 없을 때 표시하는 빈
@@ -161,11 +168,12 @@ export default function Chap0Act1() {
       </p>
       <p>이 도화지에 우리의 자기소개 페이지를 그려보도록 하겠습니다.</p>
       <p>F12를 눌러 구글 크롬 개발자 도구를 열여볼까요?</p>
-      <Image
-        src={DeveloperTool}
+      <CustomImageWithCaption
+        imageSrc={DeveloperTool}
         width={360}
         height={196}
         alt={"구글 크롬 개발자 도구"}
+        caption="about:blank는 오염되지 않은 깨끗한 웹 환경입니다."
       />
       <p>이런 화면이 나오셨다면 성공입니다.</p>
       <p>
@@ -182,11 +190,12 @@ export default function Chap0Act1() {
       </p>
       <CodeBox code={"console.dir(document)"} />
       <p>그럼 아래와 같은 명세가 쫙 나열된 것을 보실 수 있습니다.</p>
-      <Image
-        src={DocumentObject}
+      <CustomImageWithCaption
+        imageSrc={DocumentObject}
         width={360}
         height={571}
         alt={"document 객체"}
+        caption="console.dir로 요소를 찝으면 객체 형태의 DOM API를 까볼 수 있습니다."
       />
       <p>
         문서가 객체라는 데이터 형식으로 쭈루룩 나열되어 있습니다. 아직 객체를
@@ -206,13 +215,13 @@ export default function Chap0Act1() {
       <p>그럼 간단한 자바스크립트 문법을 이용해서 DOM을 조작해볼까요?</p>
       <br></br>
       <p>우리가 DOM을 조작해서 만들어볼 간단한 결과물입니다.</p>
-      <Image
-        src={SelfIntroduceDocument}
+      <CustomImageWithCaption
+        imageSrc={SelfIntroduceDocument}
         width={360}
         height={571}
-        alt={"document 객체"}
+        alt={"자기소개 화면"}
+        caption="구글 크롬 콘솔만으로도 간단하게 화면을 구성할 수 있습니다. 연습용으로 사용하기 좋습니다."
       />
-
       <h2>자기소개 만들기</h2>
       <p>이제 자바스크립트를 이용하여 DOM을 컨트롤 해봅시다. 들어가보시죠!!</p>
       <p>
@@ -252,11 +261,12 @@ body.appendChild(myNickName)`}
 body.appendChild(hr)`}
       />
       <p>여기까지 코드를 입력하셨다면 아래와 같은 모습이 나와야 합니다.</p>
-      <Image
-        src={YourNickName}
+      <CustomImageWithCaption
+        imageSrc={YourNickName}
         width={360}
         height={155}
-        alt={"document 객체"}
+        alt={"h1 태그와 hr태그가 body에 추가된 사진"}
+        caption="h1태그와 ht태그가 body에 추가되었습니다."
       />
       <p>쭉 가보겠습니다.</p>
       <p>이번에는 내가 좋아하는 음식 목록을 나열해보겠습니다.</p>
@@ -327,13 +337,14 @@ body.insertBefore(image, body.firstChild)
         여기까지 오셨다면 짜잔~ 자바스크립트를 이용한 간단한 실습이
         완성되었습니다.
       </p>
-      <Image
-        src={SelfIntroduceDocument}
+      <CustomImageWithCaption
+        imageSrc={SelfIntroduceDocument}
         width={360}
         height={571}
-        alt={"document 객체"}
+        alt={"자기소개 화면"}
+        caption="만드느라 고생하셨습니다~!"
       />
-      <h2>한걸음 더</h2>
+      <h1>한걸음 더</h1>
       <h3>애니메이션 with DOM</h3>
       <p>
         여기서 멈추기는 아깝습니다. 약간의 어거지를 더 해서 몇가지 기능을
@@ -389,12 +400,18 @@ button.addEventListener('click', callbackFn)
 // 이런 형태의 함수를 콜백함수라고 부릅니다. (함수 내부에서 나중에 호출되는 함수)
 `}
       />
-      <Image src={Boom} width={360} height={608} alt={"document 객체"} />
+      <CustomImageWithCaption
+        imageSrc={Boom}
+        width={360}
+        height={608}
+        alt={"화면에 keyframe 추가"}
+        caption="style 태그를 head 태그에 강제로 주입해서 애니메이션을 추가해보았습니다."
+      />
       <p>
         위에 작성한 모든 코드들을 입력하면 아래와 같은 모양이 나올 것입니다.
       </p>
       <p>버튼을 누르면 이번 레슨이 종료됩니다!</p>
-      <h2>무엇을 배워야 할까요?</h2>
+      <h1>무엇을 배워야 할까요?</h1>
       <p>지금까지 자바스크립트를 이용해서 DOM을 조작해보았습니다.</p>
       <p>그리고 우리는 다양한 자바스크립트의 문법을 사용해보았습니다.</p>
       <ol>
@@ -415,8 +432,6 @@ button.addEventListener('click', callbackFn)
         <b> 문법의 특성과 동작원리에 대한 비밀을 공부해 볼 것입니다.</b>
       </p>
       <p>우리가 아는 만큼 더 많은 기회가 열릴 것이기 때문입니다!</p>
-      <h2>Reference</h2>
-      <p>https://developer.mozilla.org/ko/docs/Glossary/URL</p>
     </div>
   );
 }

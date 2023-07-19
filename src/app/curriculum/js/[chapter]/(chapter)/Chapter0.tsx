@@ -10,9 +10,8 @@ a = b`;
 export default function JSChapter0() {
   return (
     <section className={styles.chapter_section_container}>
-      <h1>Chapter0. 놀아보기</h1>
-      {/* <Chap0Act1 /> */}
-      <Chap0Act2 />
+      <Chap0Act1 />
+      {/* <Chap0Act2 /> */}
     </section>
   );
 }
