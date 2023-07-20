@@ -9,6 +9,65 @@ import SelfIntroduceDocument from "#/chap0/self-introduce.png";
 import YourNickName from "#/chap0/yourNickName.png";
 import Boom from "#/chap0/boom.png";
 
+const lessonCode = {
+  consoleDir: "console.dir(document)",
+  addingNickname: `const body = document.querySelector("body")
+  const myNickName = document.createElement('h1')
+  myNickName.textContent = "yourNickName"
+  body.appendChild(myNickName)`,
+  addingHrTag: `const hr = document.createElement('hr')
+  body.appendChild(hr)`,
+  addingFavoriteFoodList: `const myFavoriteFood = document.createElement('h2')
+  myFavoriteFood.textContent = "내가 좋아하는 음식 목록"
+  body.appendChild(myFavoriteFood)`,
+  iterateFoodList: `const myFavoriteFoodList = ['짜파게티', '굴비', '삼겹살', '고등어', '제로콜라']
+  const listContainer = document.createElement('ul')
+  for (let i = 0; i < myFavoriteFoodList.length; i++) {
+    const list = document.createElement('li')
+    list.textContent = myFavoriteFoodList[i]
+    listContainer.appendChild(list)
+  }
+  body.appendChild(listContainer)`,
+  addingImage: `const image = document.createElement('img')
+  image.src = "https://cdn.pixabay.com/photo/2017/04/04/14/24/turtle-2201433_1280.jpg"
+  image.width = "360"
+  image.height = "250"
+  image.alt = "새끼거북이"
+  body.insertBefore(image, body.firstChild)`,
+  addingStyleTagWithKeyFrame: `const style = document.createElement('style')
+
+  style.innerHTML = \`
+  @keyframes rotateAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .rotating-element {
+    animation: rotateAnimation 4s linear infinite;
+  }
+  \`
+  
+  document.head.appendChild(style)
+  
+  image.classList.add('rotating-element')`,
+  addingBoomButton: `const button = document.createElement('button')
+  button.textContent = "누르면 모든 것이 사라집니다."
+  body.appendChild(button)
+  
+  const callbackFn = () => {
+    body.replaceChildren()
+  } // 함수입니다.
+  
+  button.addEventListener('click', callbackFn) 
+  // 클릭을 하면 함수를 부릅니다. 
+  // 이런 형태의 함수를 콜백함수라고 부릅니다. (함수 내부에서 나중에 호출되는 함수)`
+}
+
+
 export default function Chap0Act1() {
   return (
     <div className={styles.act_container}>
@@ -188,7 +247,7 @@ export default function Chap0Act1() {
         document가 뭔지 확인해보기 위해 <b>콘솔 탭</b>을 열어 아래 코드를
         입력해봅시다.
       </p>
-      <CodeBox code={"console.dir(document)"} />
+      <CodeBox code={lessonCode.consoleDir} />
       <p>그럼 아래와 같은 명세가 쫙 나열된 것을 보실 수 있습니다.</p>
       <CustomImageWithCaption
         imageSrc={DocumentObject}
@@ -230,10 +289,7 @@ export default function Chap0Act1() {
         구글 콘솔에 아래의 코드를 입력해주세요.
       </p>
       <CodeBox
-        code={`const body = document.querySelector("body")
-const myNickName = document.createElement('h1')
-myNickName.textContent = "yourNickName"
-body.appendChild(myNickName)`}
+        code={lessonCode.addingNickname}
       />
       <p>yourNickName은 여러분의 닉네임으로 바꾸셔도 좋습니다.</p>
       <p>
@@ -257,8 +313,7 @@ body.appendChild(myNickName)`}
       </ol>
       <p>이제 닉네임 밑에 수평선을 그어봅시다.</p>
       <CodeBox
-        code={`const hr = document.createElement('hr')
-body.appendChild(hr)`}
+        code={lessonCode.addingHrTag}
       />
       <p>여기까지 코드를 입력하셨다면 아래와 같은 모습이 나와야 합니다.</p>
       <CustomImageWithCaption
@@ -272,21 +327,10 @@ body.appendChild(hr)`}
       <p>이번에는 내가 좋아하는 음식 목록을 나열해보겠습니다.</p>
       <p>아래 코드를 입력해보시기 바랍니다.</p>
       <CodeBox
-        code={`const myFavoriteFood = document.createElement('h2')
-myFavoriteFood.textContent = "내가 좋아하는 음식 목록"
-body.appendChild(myFavoriteFood)
-`}
+        code={lessonCode.addingFavoriteFoodList}
       />
       <CodeBox
-        code={`const myFavoriteFoodList = ['짜파게티', '굴비', '삼겹살', '고등어', '제로콜라']
-const listContainer = document.createElement('ul')
-for (let i = 0; i < myFavoriteFoodList.length; i++) {
-  const list = document.createElement('li')
-  list.textContent = myFavoriteFoodList[i]
-  listContainer.appendChild(list)
-}
-body.appendChild(listContainer)
-`}
+        code={lessonCode.iterateFoodList}
       />
       <p>코드의 흐름을 한번 읽어보시기 바랍니다.</p>
       <p>여기서 새롭게 등장한 것은 myFavoriteFoodList와 for 키워드 입니다.</p>
@@ -311,13 +355,7 @@ body.appendChild(listContainer)
       </ol>
       <p>이제 거북이 사진을 넣어볼까요?</p>
       <CodeBox
-        code={`const image = document.createElement('img')
-image.src = "https://cdn.pixabay.com/photo/2017/04/04/14/24/turtle-2201433_1280.jpg"
-image.width = "360"
-image.height = "250"
-image.alt = "새끼거북이"
-body.insertBefore(image, body.firstChild)
-`}
+        code={lessonCode.addingImage}
       />
       <p>다소 반복작업이 되고 있음이 느껴지시죠?</p>
       <p>
@@ -353,27 +391,7 @@ body.insertBefore(image, body.firstChild)
       <p>일단 거북이 사진이 뱅글뱅글 돌게 만들어 보겠습니다.</p>
       <p>위의 완성된 코드에 아래의 코드를 복사 + 붙여넣기 해주세요!</p>
       <CodeBox
-        code={`const style = document.createElement('style')
-
-style.innerHTML = \`
-@keyframes rotateAnimation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.rotating-element {
-  animation: rotateAnimation 4s linear infinite;
-}
-\`
-
-document.head.appendChild(style)
-
-image.classList.add('rotating-element')
-`}
+        code={lessonCode.addingStyleTagWithKeyFrame}
       />
       <p>그림이 뱅글뱅글 돌고 계신가요? 그렇다면 성공입니다!</p>
       <p>
@@ -387,18 +405,7 @@ image.classList.add('rotating-element')
         모든 것이 사라집니다.
       </p>
       <CodeBox
-        code={`const button = document.createElement('button')
-button.textContent = "누르면 모든 것이 사라집니다."
-body.appendChild(button)
-
-const callbackFn = () => {
-  body.replaceChildren()
-} // 함수입니다.
-
-button.addEventListener('click', callbackFn) 
-// 클릭을 하면 함수를 부릅니다. 
-// 이런 형태의 함수를 콜백함수라고 부릅니다. (함수 내부에서 나중에 호출되는 함수)
-`}
+        code={lessonCode.addingBoomButton}
       />
       <CustomImageWithCaption
         imageSrc={Boom}
