@@ -3,7 +3,7 @@ export default function CustomButton({
   onClickHandler,
   children,
 }: {
-  propStyle: string;
+  propStyle?: string;
   onClickHandler: () => void;
   children: React.ReactNode;
 }) {

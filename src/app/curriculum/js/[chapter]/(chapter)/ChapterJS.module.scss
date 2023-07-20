@@ -1,5 +1,14 @@
 .chapter_section_container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.custom_act_change_button {
+  display: block;
+  cursor: pointer;
+  p {
+    margin: 10px;
+    font-size: 25px;
+  }
 }
