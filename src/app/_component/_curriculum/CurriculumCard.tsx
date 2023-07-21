@@ -8,6 +8,7 @@ import CustomLink from "../_common/CustomLink";
 export default function CurriculumCard({
   imageFile,
   chapter,
+  firstLesson,
   subject,
   explain,
   curriculum,
@@ -28,7 +29,7 @@ export default function CurriculumCard({
         <div className={styles.card_button_container}>
           <CustomLink
             href={{
-              pathname: `/curriculum/${curriculum}/${chapter}`,
+              pathname: `/curriculum/${curriculum}/${chapter}/${firstLesson}`,
             }}
           >
             <button className={styles.card_button}>공부하러 가기!</button>

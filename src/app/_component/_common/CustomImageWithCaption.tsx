@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import styles from "./CustomImageWithCaption.module.scss";
 
 type CustomImageWithCaptionProps = {
   imageSrc: StaticImageData;
@@ -24,11 +25,12 @@ export default function CustomImageWithCaption({
       style={{
         margin: "20px 0px",
         width: width,
-        minHeight: height,
+        height: "auto",
         padding: paddingValue,
         backgroundColor: "#e5e8eb",
         borderRadius: borderRadiusValue,
       }}
+      className={styles.responsive_width}
     >
       <div
         style={{
@@ -38,6 +40,7 @@ export default function CustomImageWithCaption({
           position: "relative",
           border: "1px solid #000",
         }}
+        className={styles.responsive_height}
       >
         <Image
           style={{ width: "100%", height: "100%", objectFit: "cover" }}

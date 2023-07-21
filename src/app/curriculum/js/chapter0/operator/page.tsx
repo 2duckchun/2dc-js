@@ -1,7 +1,9 @@
+import styles from "@/styles/Chapter.module.scss";
 import weakType from "#/chap0/weaktype.png";
 import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import styles from "./Act.module.scss";
 import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
+import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
+import { chaptersInfo } from "../../JS_CHAPTER_INFO";
 
 const lessonCode = {
   assignment: `const $body = document.querySelector('body')`,
@@ -107,6 +109,12 @@ typeof function(){} // 'function'`,
 export default function Chap0Act2() {
   return (
     <div className={styles.act_container}>
+      <ActNavigator
+        curriculum='js'
+        highlightActNum={2}
+        chapterInfo={chaptersInfo.chapter0}
+      ></ActNavigator>
+
       <h1>연산자(Operator)</h1>
       <p>
         본격적인 여행을 떠나기 전에 필수적으로 알아야할 연산자라는 개념에 대해

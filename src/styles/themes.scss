@@ -10,6 +10,7 @@ html[data-theme="light"] {
   --card-bg: #{$header-bg-1};
   --color-button: #{$primary-2};
   --card-border: #{$header-bg-2};
+  --link-color: #{$link-color};
 }
 
 html[data-theme="dark"] {
@@ -22,4 +23,5 @@ html[data-theme="dark"] {
   --card-bg: #{$header-bg-2};
   --color-button: #{$primary-1};
   --card-border: #{$header-bg-1};
+  --link-color: #{$link-color};
 }

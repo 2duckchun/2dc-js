@@ -1,0 +1,15 @@
+.act_navigator_session {
+  margin-top: 25px;
+}
+.link_color {
+  display: block;
+  color: var(--link-color);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.link_hightlight {
+  font-weight: bold;
+}
+.link_color:hover {
+  text-decoration: underline;
+}

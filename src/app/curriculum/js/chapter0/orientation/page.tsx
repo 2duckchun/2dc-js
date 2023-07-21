@@ -1,4 +1,4 @@
-import styles from "./Act.module.scss";
+import styles from "@/styles/Chapter.module.scss";
 import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
 import mosaic from "#/chap0/mosaic.png";
 import AboutBlank from "#/chap0/aboutblank.png";
@@ -8,6 +8,8 @@ import CodeBox from "@/app/_component/_curriculum/CodeBox";
 import SelfIntroduceDocument from "#/chap0/self-introduce.png";
 import YourNickName from "#/chap0/yourNickName.png";
 import Boom from "#/chap0/boom.png";
+import { chaptersInfo } from "../../JS_CHAPTER_INFO";
+import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
 
 const lessonCode = {
   consoleDir: "console.dir(document)",
@@ -64,13 +66,18 @@ const lessonCode = {
   
   button.addEventListener('click', callbackFn) 
   // 클릭을 하면 함수를 부릅니다. 
-  // 이런 형태의 함수를 콜백함수라고 부릅니다. (함수 내부에서 나중에 호출되는 함수)`
-}
-
+  // 이런 형태의 함수를 콜백함수라고 부릅니다. (함수 내부에서 나중에 호출되는 함수)`,
+};
 
 export default function Chap0Act1() {
   return (
     <div className={styles.act_container}>
+      <ActNavigator
+        curriculum='js'
+        highlightActNum={1}
+        chapterInfo={chaptersInfo.chapter0}
+      ></ActNavigator>
+
       <h1>환영합니다!</h1>
       <p>
         안녕하세요. 어떻게 하면 자바스크립트를 재미있고 효율적으로 배울 수
@@ -123,7 +130,7 @@ export default function Chap0Act1() {
         width={360}
         height={302}
         alt={"모자이크 브라우저"}
-        caption="90년대 브라우저 화면입니다!"
+        caption='90년대 브라우저 화면입니다!'
       />
       <p>굉장히 정적인 페이지입니다.</p>
       <p>이후 브라우저에 뭔가 움직임을 주고 싶어하는 분위기가 생기게 됩니다.</p>
@@ -219,7 +226,7 @@ export default function Chap0Act1() {
         width={360}
         height={120}
         alt={"구글 about:blank"}
-        caption="주소창에 about:blank를 입력해주세요!"
+        caption='주소창에 about:blank를 입력해주세요!'
       />
       <p>
         about:blank는 브라우저가 아무것도 보여줄 게 없을 때 표시하는 빈
@@ -232,7 +239,7 @@ export default function Chap0Act1() {
         width={360}
         height={196}
         alt={"구글 크롬 개발자 도구"}
-        caption="about:blank는 오염되지 않은 깨끗한 웹 환경입니다."
+        caption='about:blank는 오염되지 않은 깨끗한 웹 환경입니다.'
       />
       <p>이런 화면이 나오셨다면 성공입니다.</p>
       <p>
@@ -254,7 +261,7 @@ export default function Chap0Act1() {
         width={360}
         height={571}
         alt={"document 객체"}
-        caption="console.dir로 요소를 찝으면 객체 형태의 DOM API를 까볼 수 있습니다."
+        caption='console.dir로 요소를 찝으면 객체 형태의 DOM API를 까볼 수 있습니다.'
       />
       <p>
         문서가 객체라는 데이터 형식으로 쭈루룩 나열되어 있습니다. 아직 객체를
@@ -279,7 +286,7 @@ export default function Chap0Act1() {
         width={360}
         height={571}
         alt={"자기소개 화면"}
-        caption="구글 크롬 콘솔만으로도 간단하게 화면을 구성할 수 있습니다. 연습용으로 사용하기 좋습니다."
+        caption='구글 크롬 콘솔만으로도 간단하게 화면을 구성할 수 있습니다. 연습용으로 사용하기 좋습니다.'
       />
       <h2>자기소개 만들기</h2>
       <p>이제 자바스크립트를 이용하여 DOM을 컨트롤 해봅시다. 들어가보시죠!!</p>
@@ -288,9 +295,7 @@ export default function Chap0Act1() {
         <br></br>
         구글 콘솔에 아래의 코드를 입력해주세요.
       </p>
-      <CodeBox
-        code={lessonCode.addingNickname}
-      />
+      <CodeBox code={lessonCode.addingNickname} />
       <p>yourNickName은 여러분의 닉네임으로 바꾸셔도 좋습니다.</p>
       <p>
         각 명령어에 대한 장황한 설명은 잠시 생략하겠습니다. 이 챕터에서는 일단
@@ -312,26 +317,20 @@ export default function Chap0Act1() {
         <li>body의 자식요소에 myNickName을 추가한다.</li>
       </ol>
       <p>이제 닉네임 밑에 수평선을 그어봅시다.</p>
-      <CodeBox
-        code={lessonCode.addingHrTag}
-      />
+      <CodeBox code={lessonCode.addingHrTag} />
       <p>여기까지 코드를 입력하셨다면 아래와 같은 모습이 나와야 합니다.</p>
       <CustomImageWithCaption
         imageSrc={YourNickName}
         width={360}
         height={155}
         alt={"h1 태그와 hr태그가 body에 추가된 사진"}
-        caption="h1태그와 ht태그가 body에 추가되었습니다."
+        caption='h1태그와 ht태그가 body에 추가되었습니다.'
       />
       <p>쭉 가보겠습니다.</p>
       <p>이번에는 내가 좋아하는 음식 목록을 나열해보겠습니다.</p>
       <p>아래 코드를 입력해보시기 바랍니다.</p>
-      <CodeBox
-        code={lessonCode.addingFavoriteFoodList}
-      />
-      <CodeBox
-        code={lessonCode.iterateFoodList}
-      />
+      <CodeBox code={lessonCode.addingFavoriteFoodList} />
+      <CodeBox code={lessonCode.iterateFoodList} />
       <p>코드의 흐름을 한번 읽어보시기 바랍니다.</p>
       <p>여기서 새롭게 등장한 것은 myFavoriteFoodList와 for 키워드 입니다.</p>
       <p>
@@ -354,9 +353,7 @@ export default function Chap0Act1() {
         <li>ul 엘리먼트를 body에 추가한다.</li>
       </ol>
       <p>이제 거북이 사진을 넣어볼까요?</p>
-      <CodeBox
-        code={lessonCode.addingImage}
-      />
+      <CodeBox code={lessonCode.addingImage} />
       <p>다소 반복작업이 되고 있음이 느껴지시죠?</p>
       <p>
         여기에서는 img 엘리먼트를 만들어 그림 주소, 그림 넓이, 그림 높이, 그림
@@ -380,7 +377,7 @@ export default function Chap0Act1() {
         width={360}
         height={571}
         alt={"자기소개 화면"}
-        caption="만드느라 고생하셨습니다~!"
+        caption='만드느라 고생하셨습니다~!'
       />
       <h1>한걸음 더</h1>
       <h3>애니메이션 with DOM</h3>
@@ -390,9 +387,7 @@ export default function Chap0Act1() {
       </p>
       <p>일단 거북이 사진이 뱅글뱅글 돌게 만들어 보겠습니다.</p>
       <p>위의 완성된 코드에 아래의 코드를 복사 + 붙여넣기 해주세요!</p>
-      <CodeBox
-        code={lessonCode.addingStyleTagWithKeyFrame}
-      />
+      <CodeBox code={lessonCode.addingStyleTagWithKeyFrame} />
       <p>그림이 뱅글뱅글 돌고 계신가요? 그렇다면 성공입니다!</p>
       <p>
         CSS라는 stylesheet를 이용해 더 효율적인 스타일링과 애니메이션 기능을
@@ -404,15 +399,13 @@ export default function Chap0Act1() {
         이제 모든 것을 없애는 버튼을 만들겠습니다. 버튼을 클릭하면 우리가 만든
         모든 것이 사라집니다.
       </p>
-      <CodeBox
-        code={lessonCode.addingBoomButton}
-      />
+      <CodeBox code={lessonCode.addingBoomButton} />
       <CustomImageWithCaption
         imageSrc={Boom}
         width={360}
         height={608}
         alt={"화면에 keyframe 추가"}
-        caption="style 태그를 head 태그에 강제로 주입해서 애니메이션을 추가해보았습니다."
+        caption='style 태그를 head 태그에 강제로 주입해서 애니메이션을 추가해보았습니다.'
       />
       <p>
         위에 작성한 모든 코드들을 입력하면 아래와 같은 모양이 나올 것입니다.

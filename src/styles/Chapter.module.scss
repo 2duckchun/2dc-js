@@ -1,4 +1,7 @@
 .act_container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 15px;
   word-wrap: break-word;
   h1 {
     margin: 3rem 0px 2rem;
@@ -38,5 +41,13 @@
     border-radius: 3px;
     background-color: #edeceb;
     color: #eb5757;
+  }
+
+  .link {
+    color: var(--link-color);
+  }
+
+  .link:hover {
+    text-decoration: underline;
   }
 }

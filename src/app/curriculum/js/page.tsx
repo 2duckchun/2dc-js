@@ -1,9 +1,9 @@
+import styles from "@/styles/CurriculumPage.module.scss";
 import transfiguration from "#/masterpieces/the_transfiguration.jpg";
 import girlWhoReading from "#/masterpieces/la_liseuse.jpg";
 import napoleon from "#/masterpieces/napoleon.jpg";
 import wanderer from "#/masterpieces/wanderer.jpg";
 import girtWithPearl from "#/masterpieces/girl_with_pearl.jpg";
-import styles from "./JavaScriptPage.module.scss";
 import CURRICULUM from "./JS_CURRICULUM_LIST.json";
 import CurriculumCard from "@/app/_component/_curriculum/CurriculumCard";
 import getMasterPiece from "@/_utils/getMasterPiece";
@@ -28,6 +28,7 @@ export default function JavaScriptPage() {
             chapter={cardInfo.chapter}
             subject={cardInfo.subject}
             explain={cardInfo.explain}
+            firstLesson={cardInfo.first_lesson}
             curriculum={"js"}
           />
         ))}

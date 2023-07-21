@@ -15,7 +15,23 @@ export type CustomLinkProps = {
 export type CurriculumCartPropsType = {
   imageFile: StaticImageData;
   chapter: string;
+  firstLesson: string;
   subject: string;
   explain: string;
   curriculum: string;
+};
+
+export type ActInfo = {
+  name: string;
+  act: number;
+  banner: string;
+};
+
+export type ChapterInfo = {
+  chapterName: string;
+  actInfo: ActInfo[];
+};
+
+export type ChaptersInfo = {
+  [key: string]: ChapterInfo;
 };
