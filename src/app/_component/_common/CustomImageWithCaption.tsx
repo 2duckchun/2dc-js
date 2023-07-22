@@ -23,34 +23,20 @@ export default function CustomImageWithCaption({
   return (
     <div
       style={{
-        margin: "20px 0px",
         width: width,
-        height: "auto",
         padding: paddingValue,
-        backgroundColor: "#e5e8eb",
         borderRadius: borderRadiusValue,
       }}
-      className={styles.responsive_width}
+      className={styles.image_caption_container}
     >
-      <div
-        style={{
-          margin: "0px auto",
-          width: "100%",
-          height: "100%",
-          position: "relative",
-          border: "1px solid #000",
-        }}
-        className={styles.responsive_height}
-      >
+      <div className={styles.image_box}>
         <Image
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
           src={imageSrc}
           alt={alt}
         />
       </div>
-      <p style={{ margin: "5px auto 5px", textAlign: "center", color: "#000" }}>
-        {caption}
-      </p>
+      <p className={styles.caption}>{caption}</p>
     </div>
   );
 }
