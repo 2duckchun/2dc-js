@@ -69,11 +69,11 @@ const lessonCode = {
   // 이런 형태의 함수를 콜백함수라고 부릅니다. (함수 내부에서 나중에 호출되는 함수)`,
 };
 
-export default function Chap0Act1() {
+export default function LessonPage() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum='js'
+        curriculum="js"
         highlightActNum={1}
         chapterInfo={chaptersInfo.chapter0}
       ></ActNavigator>
@@ -130,7 +130,7 @@ export default function Chap0Act1() {
         width={360}
         height={302}
         alt={"모자이크 브라우저"}
-        caption='90년대 브라우저 화면입니다!'
+        caption="90년대 브라우저 화면입니다!"
       />
       <p>굉장히 정적인 페이지입니다.</p>
       <p>이후 브라우저에 뭔가 움직임을 주고 싶어하는 분위기가 생기게 됩니다.</p>
@@ -226,7 +226,7 @@ export default function Chap0Act1() {
         width={360}
         height={120}
         alt={"구글 about:blank"}
-        caption='주소창에 about:blank를 입력해주세요!'
+        caption="주소창에 about:blank를 입력해주세요!"
       />
       <p>
         about:blank는 브라우저가 아무것도 보여줄 게 없을 때 표시하는 빈
@@ -239,7 +239,7 @@ export default function Chap0Act1() {
         width={360}
         height={196}
         alt={"구글 크롬 개발자 도구"}
-        caption='about:blank는 오염되지 않은 깨끗한 웹 환경입니다.'
+        caption="about:blank는 오염되지 않은 깨끗한 웹 환경입니다."
       />
       <p>이런 화면이 나오셨다면 성공입니다.</p>
       <p>
@@ -261,7 +261,7 @@ export default function Chap0Act1() {
         width={360}
         height={571}
         alt={"document 객체"}
-        caption='console.dir로 요소를 찝으면 객체 형태의 DOM API를 까볼 수 있습니다.'
+        caption="console.dir로 요소를 찝으면 객체 형태의 DOM API를 까볼 수 있습니다."
       />
       <p>
         문서가 객체라는 데이터 형식으로 쭈루룩 나열되어 있습니다. 아직 객체를
@@ -286,7 +286,7 @@ export default function Chap0Act1() {
         width={360}
         height={571}
         alt={"자기소개 화면"}
-        caption='구글 크롬 콘솔만으로도 간단하게 화면을 구성할 수 있습니다. 연습용으로 사용하기 좋습니다.'
+        caption="구글 크롬 콘솔만으로도 간단하게 화면을 구성할 수 있습니다. 연습용으로 사용하기 좋습니다."
       />
       <h2>자기소개 만들기</h2>
       <p>이제 자바스크립트를 이용하여 DOM을 컨트롤 해봅시다. 들어가보시죠!!</p>
@@ -324,7 +324,7 @@ export default function Chap0Act1() {
         width={360}
         height={155}
         alt={"h1 태그와 hr태그가 body에 추가된 사진"}
-        caption='h1태그와 ht태그가 body에 추가되었습니다.'
+        caption="h1태그와 ht태그가 body에 추가되었습니다."
       />
       <p>쭉 가보겠습니다.</p>
       <p>이번에는 내가 좋아하는 음식 목록을 나열해보겠습니다.</p>
@@ -377,7 +377,7 @@ export default function Chap0Act1() {
         width={360}
         height={571}
         alt={"자기소개 화면"}
-        caption='만드느라 고생하셨습니다~!'
+        caption="만드느라 고생하셨습니다~!"
       />
       <h1>한걸음 더</h1>
       <h3>애니메이션 with DOM</h3>
@@ -405,7 +405,7 @@ export default function Chap0Act1() {
         width={360}
         height={608}
         alt={"화면에 keyframe 추가"}
-        caption='style 태그를 head 태그에 강제로 주입해서 애니메이션을 추가해보았습니다.'
+        caption="style 태그를 head 태그에 강제로 주입해서 애니메이션을 추가해보았습니다."
       />
       <p>
         위에 작성한 모든 코드들을 입력하면 아래와 같은 모양이 나올 것입니다.

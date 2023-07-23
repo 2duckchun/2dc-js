@@ -106,11 +106,11 @@ false && false // false`,
 typeof function(){} // 'function'`,
 };
 
-export default function Chap0Act2() {
+export default function LessonPage() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum='js'
+        curriculum="js"
         highlightActNum={2}
         chapterInfo={chaptersInfo.chapter0}
       ></ActNavigator>
