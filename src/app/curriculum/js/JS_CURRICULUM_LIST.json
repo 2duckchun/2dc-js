@@ -21,7 +21,7 @@
     "id": "00002",
     "art_index": 2,
     "chapter": "chapter2",
-    "first_lesson": "orientation",
+    "first_lesson": "function-fundamental",
     "subject": "함수(Functions)",
     "explain": "함수와 클로저를 정복해봅시다. 총 대신 화살표 함수 장전 퓨퓨퓨퓨!",
     "curriculum": "js"

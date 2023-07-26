@@ -36,4 +36,24 @@ export const chaptersInfo: ChaptersInfo = {
       },
     ],
   },
+  chapter2: {
+    chapterName: "chapter2",
+    actInfo: [
+      {
+        name: "function-fundamental",
+        act: 1,
+        banner: "Act1 : 함수의 기본",
+      },
+      {
+        name: "closure",
+        act: 2,
+        banner: "Act2 : 클로저(closure)",
+      },
+      {
+        name: "recursion",
+        act: 3,
+        banner: "Act3 : 재귀(recursion)",
+      },
+    ],
+  },
 };
