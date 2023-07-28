@@ -1,10 +1,12 @@
 import styles from "@/styles/Chapter.module.scss";
 import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import functionMachine from "#/chap2/functionmachine.png";
+import pngFunctionMachine from "#/chap2/functionmachine.png";
+import pngfunctionComponent from "#/chap2/functionComponent.png";
 import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
 import CodeBox from "@/app/_component/_curriculum/CodeBox";
 import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
 import CustomLink from "@/app/_component/_common/CustomLink";
+import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
 
 const lessonCode = {
   fx: `function f(x) {
@@ -54,6 +56,132 @@ const mmddyyyy = formatDate(today)`,
   console.log(\`\${formatDate(today)}에 Snow 님이 접속하셨습니다.\`) // 07-27-2023에 Snow 님이 접속하셨습니다.
   console.log(\`\${formatDate(today)}에 Robb 님이 접속하셨습니다.\`) // 07-27-2023에 Robb 님이 접속하셨습니다.
   console.log(\`\${formatDate(today)}에 Arya 님이 접속하셨습니다.\`) // 07-27-2023에 Arya 님이 접속하셨습니다.`,
+  functionComponent: `function sayHello(friend) {
+  return \`hello! \${friend}!\`
+}
+
+console.log(sayHello("zito")) // hello! zito!`,
+  exercise1: `1. 파라미터 2개를 가지는 함수를 선언문으로 작성해보세요!.
+2. 파라미터 1개를 가지는 함수를 표현식으로 작성해보세요!
+3. 파라미터 0개를 가지는 함수를 화살표 함수로 작성해보세요!`,
+  exercise2: `function questionOne(var1, var2) {} // 1번 (문제 선언문)
+const two = function(var1) {} // 2번 (문제 표현식)
+const three = () => {} // 3번 문제 (화살표 함수)`,
+  functionExecute: `function sayHello(friend) {
+  return \`hello! \${friend}!\`
+}
+
+const harry = sayHello("ron") // 'hello! ron!'
+const ron = sayHello // ƒ sayHello(friend)...`,
+  functionDefinition: `function sayHello(friend) {
+  return \`hello! \${friend}!\`
+}`,
+  functionExpression: `const sayHello = function(friend) {
+  return \`hello! \${friend}!\` 
+}`,
+  ArrowFunction: `const sayHello = (friend) => {
+  return \`hello! \${friend}!\` 
+}
+
+// 변수 : sayHello
+// 함수 : () => {}`,
+  sayHelloNoReturn: `const sayHello = (friend) => {
+  console.log(\`hello! \${friend}!\`) 
+}
+
+const helloLog = sayHello("2DC") // hello! 2DC! 라는 출력은 나옵니다.
+
+console.log(helloLog) // undefined`,
+  sayHelloNoReturn2: `const sayHello = (friend) => {
+  console.log(\`hello! \${friend}!\`) 
+  console.log(\`hello! \${friend}!\`)
+  return "done" 
+
+  console.log(\`hello! \${friend}!\`) // 실행되지 않음
+  console.log(\`hello! \${friend}!\`) // 실행되지 않음
+  console.log(\`hello! \${friend}!\`) // 실행되지 않음
+  console.log(\`hello! \${friend}!\`) // 실행되지 않음
+  console.log(\`hello! \${friend}!\`) // 실행되지 않음
+}
+
+const helloLog = sayHello("2DC") // return문 이전의 console.log 2개가 출력됩니다.
+
+console.log(helloLog) // "done"`,
+  exercise3_Question: `const 홀짝 = (num) => {
+  if (num % 2 === 0) return "짝수"
+  return "홀수"
+}
+
+const answer1 = 홀짝(191)
+const answer2 = 홀짝(250)
+const answer3 = 홀짝(168)`,
+  exercise3_answer: `const 홀짝 = (num) => {
+  if (num % 2 === 0) return "짝수"
+  return "홀수"
+}
+
+const answer1 = 홀짝(191) // 홀수
+const answer2 = 홀짝(250) // 짝수
+const answer3 = 홀짝(168) // 짝수
+
+// 왜 "홀수" 또는 "짝수"만 리턴될까요?`,
+  exercise4_Question: `const 비동기체험1 = () => {
+  // setTimeout은 비동기 함수라고 합니다. 구글에 검색해보셔요!
+  setTimeout(() => {
+    return
+  }, 1000)
+}
+
+const answer1 = 비동기체험1(123)
+const answer2 = 비동기체험1(456)
+const answer3 = 비동기체험1(789)
+`,
+  exercise4_Answer: `const 비동기체험1 = () => {
+  setTimeout(() => {
+    return
+  }, 1000)
+}
+
+const answer1 = 비동기체험1(123) // undefined
+const answer2 = 비동기체험1(456) // undefined
+const answer3 = 비동기체험1(789) // undefined
+// 왜 return이 있었는데도 변수에 undefined가 할당되었을까요?`,
+  exercise5_Question: `const 비동기체험2 = (num, callback) => {
+    setTimeout(() => {
+        if (num % 2 === 0) callback("짝수")
+        else callback("홀수")
+    }, 3000)
+    return "작업 끝!"
+}`,
+  exersice5_Question: `const 비동기체험2 = (num, callback) => {
+    setTimeout(() => {
+        if (num % 2 === 0) callback("짝수")
+        else callback("홀수")
+    }, 3000)
+    return "작업 끝!"
+}
+
+const answer = 비동기체험2(102, (message) => {
+    console.log(message)
+})
+
+// answer에는 무엇이 할당될까요?
+// 2초 뒤에는 무슨 일이 발생할까요? 
+`,
+  exersice5_Answer: `const 비동기체험2 = (num, callback) => {
+    setTimeout(() => {
+        if (num % 2 === 0) callback("짝수")
+        else callback("홀수")
+    }, 3000)
+    return "작업 끝!"
+}
+
+const answer = 비동기체험2(102, (message) => {
+    console.log(message)
+})
+
+// const answer에는 "작업 끝!" 이 할당되고
+// 2초 뒤에 "짝수"가 출력됩니다!`,
 };
 
 export default function Chap0Act1() {
@@ -88,7 +216,7 @@ export default function Chap0Act1() {
       <p>그럼 시작해봅시다!!</p>
       <br></br>
       <CustomImageWithCaption
-        imageSrc={functionMachine}
+        imageSrc={pngFunctionMachine}
         width={330}
         height={327}
         alt={"함수 머신"}
@@ -166,38 +294,208 @@ export default function Chap0Act1() {
       </p>
       <CodeBox code={lessonCode.readability} />
       <p>
+        console.log의 내부에 코드만 보고도 저 함수가 어떤 역할을 할 지 유추할 수
+        있겠지요?
+      </p>
+      <p>
         (이게 올바른 예제인지는 모르겠네요. 아무튼 결국에는 재사용성,
         유지보수성, 가독성 모든 요소를 잡았습니다.)
       </p>
-      <p></p>
-      <h2>함수 선언</h2>
-      <h3>함수 구성요소</h3>
+
+      <h2>함수의 구성요소</h2>
+      <p>함수의 장점에 대해 배웠으니, 이번에는 함수의 구성요소를 살펴볼까요?</p>
       <p>
-        함수를 선언하는 방법은 여러가지이지만, 함수를 구성하는 요소는
-        정해져있습니다.
+        친구에게 인사를 건네는 친절한 함수인 sayHello 함수를 만들어 보겠습니다.
       </p>
-      <h3>선언식</h3>
-      <h3>표현식</h3>
+      <CodeBox code={lessonCode.functionComponent} />
+      <p>이 함수를 구성하는 구성요소를 풀어헤쳐보면 아래 그림과 같습니다.</p>
+      <CustomImageWithCaption
+        imageSrc={pngfunctionComponent}
+        width={551}
+        height={474}
+        alt={"함수의 구성요소"}
+        caption={"함수의 구성요소입니다."}
+      />
+      <ol>
+        <li>함수이름 : 함수 식별자명</li>
+        <li>
+          파라미터 : 함수가 동작할 때 사용할 데이터를 메모리에 저장하는
+          변수(Variables)
+        </li>
+        <li>리턴문 : 함수가 실행되었을 때 반환할 값</li>
+        <li>
+          인수(아규먼트, Argument) : 함수를 호출했을 때 사용할 데이터. () 사이에
+          추가.
+        </li>
+      </ol>
+      <p>자바스크립트에서 함수는 기본적으로 객체 입니다.</p>
+      <p>다만 호출이라는 기능이 추가되어 있는 객체입니다.</p>
+      <p>
+        따라서 함수 객체도 다른 데이터와 마찬가지로 메모리를 점유하는 값이며,
+        메모리에 접근할 수 있는 <b>식별자명</b>을 가집니다. 식별자 명이 곧{" "}
+        <b>함수 이름</b>입니다.
+      </p>
+      <p>
+        <b>파라미터</b>는 함수가 호출될 때 사용할 변수를 명명하는 곳 입니다.
+      </p>
+      <p>
+        <b>인수</b>는 함수를 호출할 때 함수의 동작에 필요한 데이터를 제공하는
+        곳입니다.
+      </p>
+      <p>
+        말로만 하면 어려운데요. 함수를 선언할때는 파라미터, 실행할때는
+        아규먼트로 보시면 되겠습니다.
+      </p>
+      <p>
+        저는 이것을 <b>파선아실</b>로 배웠습니다. ㅎㅎ
+      </p>
+      <h2>함수 생성 방법</h2>
+      <p>이제 함수를 생성하는 방법에 대해 알아봅시다.</p>
+      <p>자바스크립트에서 함수는 다양한 방법으로 생성할 수 있습니다.</p>
+      <p>대표적인 방법은 세가지가 있습니다.</p>
+      <ol>
+        <li>
+          <b>함수 선언문</b>
+        </li>
+        <li>
+          <b>함수 표현식</b>
+        </li>
+        <li>
+          <b>화살표 함수</b>
+        </li>
+      </ol>
+      <p>하나씩 알아봅시다.</p>
+      <h3>함수 선언문</h3>
+      <CodeBox code={lessonCode.functionDefinition} />
+      <p>
+        함수 선언문으로 함수를 정의하는 방식입니다. 변수에 할당하지 않고 코드에
+        곧바로 함수를 선언하는 것을 보실 수 있습니다.
+      </p>
+      <h3>함수 표현식</h3>
+      <CodeBox code={lessonCode.functionExpression} />
+      <p>
+        함수 표현식으로 함수를 정의하는 방식입니다. 함수 자체를 특정 변수에
+        할당한다는 것이 함수 선언문과의 차이점이라고 할 수 있겠습니다.
+      </p>
       <h3>화살표 함수</h3>
-      <h2>함수 호출</h2>
-      <p>함수를 처음 공부할 때 함수의 호출이 너무 헷갈렸습니다.</p>
-      <p>return의 존재를 확실하게 깨우치지 못했기 때문입니다.</p>
-      <p>함수에서는 return이 제일 중요한 개념입니다.</p>
-      <p>어쩌구 저쩌구 문제...</p>
-      <h2>함수의 생명주기</h2>
-      <h2>실행 컨텍스트</h2>
+      <CodeBox code={lessonCode.ArrowFunction} />
       <p>
-        저번에 스코프에 대해 배웠다. 실행 컨텍스트는 아마 스코프의 상위
-        개념이다.
+        ES6부터 등장한 화살표 함수입니다. 위의 함수 선언문과 함수 표현식보다 더
+        간결한 것을 보실 수 있습니다.
       </p>
-      <p>컨텍스트의 뜻 = 문맥. 프로그래밍이 실행되는 단위?</p>
-      <p>함수는 그냥 실행되는게 아니라 컨텍스트에 의해 호출된다...</p>
-      <p>함수도 사라진다. 언제?</p>
+      <br></br>
+      <p>
+        셋 다 함수를 정의하는 측면에서는 같지만, <b>함수 호이스팅</b>이나{" "}
+        <b>this</b>의 유무 등 내부적인 동작 원리는 약간씩 다릅니다.
+      </p>
+      <p>
+        일단 키워드만 알아두시고 다음에 필요하실 때 개인적인 공부를 하셔도 좋을
+        것 같습니다.
+      </p>
+      <p>앎의 범주를 늘려나간 후에 모르는 것의 범주를 줄여봅시다.</p>
       <h2>연습</h2>
-      <p>함수 선언</p>
-      <p>함수 실행과 실행하지 않음</p>
-      <p>리턴값이 있고 없고</p>
-      <p>스코프 생각해보세요</p>
+      <ol>
+        <ExerciseCard
+          title={"아래 문제대로 함수를 선언해보세요!"}
+          QuestionCode={lessonCode.exercise1}
+          AnswerCode={lessonCode.exercise2}
+        />
+      </ol>
+      <p>의도적인 연습은 기능 숙달에 많은 도움이 됩니다!!</p>
+      <br></br>
+      <h2>함수 호출</h2>
+      <p>정의한 함수를 호출하는 방법도 알아야겠지요!</p>
+      <p>아래 코드를 볼까요?</p>
+      <CodeBox code={lessonCode.functionExecute} />
+      <p>해리는 제대로 인사를 했는데, 론은 인사를 하지 못했습니다.</p>
+      <p>
+        해리는 인사하는 기능을 제대로 <b>호출</b>한 데 반해, 론은 인사하는 함수
+        자체를 <b>할당</b>했기 때문입니다.
+      </p>
+      <br></br>
+      <p>
+        함수 바디의 로직을 실행시키려면 함수를 <b>호출</b>해야 합니다.
+      </p>
+      <p></p>
+      <p>함수는 함수명 뒤에 ()를 붙여서 호출하는데요.</p>
+      <p>
+        정의했던 함수의 <b>파라미터</b>에 <b>아규먼트</b>를 추가하는 방식으로
+        호출하면 됩니다.
+      </p>
+      <p>
+        sayHello의 <b>파라미터</b>는 인사할 친구(friend)였고, 해리가 함수를
+        호출할 때 사용했던 <b>인수</b>는 인사할 대상인 Ron 이었습니다.
+      </p>
+
+      <h2>리턴(Return)</h2>
+      <p>return문의 역할을 잘 아는 것도 중요합니다.</p>
+      <p>
+        함수 몸체에 return 문이 없다면, 함수 몸체의 로직을 모두 수행하고
+        undefined를 리턴합니다.
+      </p>
+      <p>sayHello 함수를 통해 리턴을 이해해봅시다.</p>
+      <CodeBox code={lessonCode.sayHelloNoReturn} />
+      <p>
+        위의 함수를 실행하면 console.log는 잘 나오는데 변수 helloLog에는
+        undefined가 할당되어 있는 것을 보실 수 있습니다.
+      </p>
+      <p>
+        함수 몸체에 return이 없다면 함수는 <b>undefined를 반환합니다.</b>
+      </p>
+      <br></br>
+      <p>
+        함수 몸체에 return이 있다면, return문에 있는 데이터를 변수에 할당하고
+        함수가 종료됩니다.
+      </p>
+      <p>함수가 종료되므로 return문 아래에 있는 코드들은 실행되지 않습니다.</p>
+      <CodeBox code={lessonCode.sayHelloNoReturn2} />
+      <h2>함수의 생명주기</h2>
+      <p>
+        함수의 생명주기는 함수가 호출되고 실행되며 소멸하는 과정을 나타냅니다.
+      </p>
+      <p>
+        함수를 호출하면 로직이 메모리로 불려와 실행됩니다. 이후 return문을 만나
+        값을 반환하거나, 내부 로직이 전부 실행되면 호출한 함수의 로직이
+        소멸합니다.
+      </p>
+      <p>
+        이런 이유로 동일한 함수를 여러번 호출했을때도 각 호출된 함수들은
+        독립적으로 작동합니다.
+      </p>
+      <h2>연습</h2>
+      <p>이번 연습 챕터에는 문제-해답 형식이 아닙니다.</p>
+      <p>제시된 문제를 보고 왜 이런 답이 나올지 찬찬히 생각해봅시다!</p>
+      <ol>
+        <ExerciseCard
+          QuestionCode={lessonCode.exercise3_Question}
+          AnswerCode={lessonCode.exercise3_answer}
+          title={"조건문과 return은 어떻게 동작하는 걸까요?"}
+        />
+        <ExerciseCard
+          QuestionCode={lessonCode.exercise4_Question}
+          AnswerCode={lessonCode.exercise4_Answer}
+          title={
+            "setTimeout은 첫번째 파라미터에는 함수를, 두번째 파라미터는 대기할 ms(밀리세컨드)를 인수로 받고, ms만큼 대기했다가 첫번째 파라미터로 받은 함수를 실행합니다. 함수의 반환값은 어떻게 나올지 생각해봅시다."
+          }
+        />
+        <ExerciseCard
+          QuestionCode={lessonCode.exersice5_Question}
+          AnswerCode={lessonCode.exersice5_Answer}
+          title={
+            "비동기체험2 함수 자체는 바로 값이 리턴되고, setTimeout 내 함수는 2초 뒤 실행될 것입니다."
+          }
+        />
+      </ol>
+      <p>
+        비동기 함수때문에 많이 당황하셨을 것 같습니다. 비동기는 챕터를 하나 더
+        빼서라도 말씀드려야 할 중요한 개념입니다.
+      </p>
+      <p>
+        자바스크립트와 비동기는 뗄레야 뗄 수 없는 관계이기 때문인데요. 이는
+        다음에 더 자세한 내용으로 설명을 드리겠습니다.
+      </p>
+      <p>일단은 맛보기로 공유해드렸습니다!</p>
+      <p>고생하셨습니다!</p>
     </div>
   );
 }
