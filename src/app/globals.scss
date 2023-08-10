@@ -2,15 +2,18 @@
 
 html,
 body {
-  height: 100%;
+  position: relative;
+  min-height: 100vh;
   box-sizing: border-box;
   background-color: var(--color-background);
 }
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
+
 button {
   all: unset;
 }
