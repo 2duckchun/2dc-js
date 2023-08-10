@@ -23,7 +23,7 @@
     "chapter": "chapter2",
     "first_lesson": "function-fundamental",
     "subject": "함수(Functions)",
-    "explain": "함수와 클로저를 정복해봅시다. 총 대신 화살표 함수 장전 퓨퓨퓨퓨!",
+    "explain": "함수와 클로저, 재귀함수를 공부해봅시다. 먼 여정의 시작입니다.",
     "curriculum": "js"
   },
   {
