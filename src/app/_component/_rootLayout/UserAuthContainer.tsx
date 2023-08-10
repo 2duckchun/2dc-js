@@ -7,8 +7,8 @@ export default function UserAuthContainer() {
   const router = useRouter();
   return (
     <div className={styles.nav_user}>
-      <button onClick={() => router.push("/login")}>로그인</button>
-      <button>회원가입</button>
+      <button onClick={() => router.push("/signin")}>SIGN IN</button>
+      <button onClick={() => router.push("/signup")}>SIGN UP</button>
     </div>
   );
 }
