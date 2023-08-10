@@ -13,10 +13,8 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-  auth,
 }: {
   children: React.ReactNode;
-  auth: React.ReactNode;
 }) {
   const theme = useInitTheme();
 
@@ -27,7 +25,6 @@ export default function RootLayout({
         <main className={`${font_pretended.className} ${style.page}`}>
           {children}
         </main>
-        {auth}
         <Footer />
       </body>
     </html>
