@@ -8,6 +8,7 @@ import CURRICULUM from "./JS_CURRICULUM_LIST.json";
 import CurriculumCard from "@/app/_component/_curriculum/CurriculumCard";
 import getMasterPiece from "@/_utils/getMasterPiece";
 import { StaticImageData } from "next/image";
+import CustomLink from "@/app/_component/_common/CustomLink";
 
 const masterPieceArr: StaticImageData[] = [
   transfiguration,
@@ -33,7 +34,46 @@ export default function JavaScriptPage() {
           />
         ))}
       </section>
-      <section className={styles.curriculum_reference_container}></section>
+      <section className={styles.curriculum_reference_container}>
+        <h2>Reference</h2>
+        <CustomLink
+          href={{ pathname: "https://ko.javascript.info/" }}
+          isBlank={true}
+        >
+          <p>모던 JavaScript 튜토리얼</p>
+        </CustomLink>
+        <CustomLink
+          href={{ pathname: "https://poiemaweb.com/" }}
+          isBlank={true}
+        >
+          <p>poiemaweb</p>
+        </CustomLink>
+        <CustomLink
+          href={{ pathname: "https://www.zerocho.com/" }}
+          isBlank={true}
+        >
+          <p>제로초님 블로그</p>
+        </CustomLink>
+        <CustomLink href={{ pathname: "https://www.c0d3.com/" }} isBlank={true}>
+          <p>C0D3</p>
+        </CustomLink>
+        <CustomLink
+          href={{
+            pathname: "https://developer.mozilla.org/ko/",
+          }}
+          isBlank={true}
+        >
+          <p>MDN Web Docs</p>
+        </CustomLink>
+        <CustomLink
+          href={{
+            pathname: "https://www.udemy.com/",
+          }}
+          isBlank={true}
+        >
+          <p>Udemy</p>
+        </CustomLink>
+      </section>
     </div>
   );
 }
