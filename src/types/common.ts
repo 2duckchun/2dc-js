@@ -9,6 +9,7 @@ export type CustomLinkProps = {
   };
   replace?: boolean;
   prefetch?: boolean;
+  isBlank?: boolean;
   children: React.ReactNode;
 };
 
