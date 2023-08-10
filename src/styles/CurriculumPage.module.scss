@@ -14,8 +14,13 @@
 
 .curriculum_reference_container {
   flex-basis: 30%;
-  background-color: goldenrod;
+  padding: 0px 15px;
+  border-radius: 5px;
+  background-color: var(--card-bg);
   min-height: 300px;
+  p {
+    color: var(--link-color);
+  }
 }
 
 @media screen and (max-width: 768px) {
