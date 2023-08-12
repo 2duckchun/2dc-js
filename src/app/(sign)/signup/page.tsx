@@ -1,43 +1,75 @@
+"use client";
+
+import CustomInputWithButton from "@/app/_component/_common/CustomInputWithButton";
 import styles from "./page.module.scss";
+import CustomInput from "@/app/_component/_common/CustomInput";
+import CustomButton from "@/app/_component/_common/CustomButton";
+import CustomLink from "@/app/_component/_common/CustomLink";
 
 export default function SignUp() {
+  const testHandler = () => {
+    console.log("test");
+  };
+
   return (
     <section className={styles.signup_section}>
       <div className={styles.signup_container}>
         <h1 className={styles.title}>SIGN UP</h1>
-        <div className={styles.input_container_with_button}>
-          <label htmlFor="id">아이디</label>
-          <div>
-            <input id="id" type="text" required />
-            <button>중복체크</button>
-          </div>
-        </div>
-        <div className={styles.input_container_with_button}>
-          <label htmlFor="nickname">닉네임</label>
-          <div>
-            <input id="nickname" type="text" required />
-            <button>중복체크</button>
-          </div>
-        </div>
-        <div className={styles.input_container}>
-          <label htmlFor="password">비밀번호</label>
-          <input id="password" type="password" required />
-        </div>
-        <div className={styles.input_container}>
-          <label htmlFor="password-confirm">비밀번호 확인</label>
-          <input id="password-confirm" type="password" required />
-        </div>
-        <div className={styles.input_container_with_button}>
-          <label htmlFor="email">이메일</label>
-          <div>
-            <input id="email" type="email" required />
-            <button>중복체크</button>
-          </div>
-        </div>
-        <div>
-          <button className={styles.signup_create_button}>계정생성</button>
-        </div>
-        <p>계정이 이미 있으신가요? signin</p>
+        <CustomInputWithButton
+          id="id"
+          labelText="아이디"
+          type="text"
+          name="id"
+          isRequired={true}
+          buttonText="Check"
+          placeholder="아이디를 입력해주세요."
+        />
+        <CustomInputWithButton
+          id="nickname"
+          labelText="닉네임"
+          type="text"
+          name="nickname"
+          isRequired={true}
+          buttonText="Check"
+          placeholder="닉네임을 입력해주세요."
+        />
+        <CustomInput
+          id="password"
+          labelText="비밀번호"
+          type="password"
+          name="password"
+          isRequired={true}
+          placeholder="비밀번호를 입력해주세요."
+        />
+        <CustomInput
+          id="password-confirm"
+          labelText="비밀번호 확인"
+          type="password"
+          name="passwordConfirm"
+          isRequired={true}
+          placeholder="비밀번호를 한번 더 입력해주세요."
+        />
+        <CustomInputWithButton
+          id="email"
+          labelText="이메일"
+          type="email"
+          name="email"
+          isRequired={true}
+          buttonText="Check"
+          placeholder="이메일을 입력해주세요."
+        />
+        <CustomButton
+          propStyle={styles.signup_create_button}
+          onClickHandler={testHandler}
+        >
+          계정 생성
+        </CustomButton>
+        <p className={styles.p_link_signin}>
+          계정이 이미 있으신가요?{" "}
+          <CustomLink href={{ pathname: "/signin" }}>
+            <span>signin</span>
+          </CustomLink>
+        </p>
       </div>
     </section>
   );
