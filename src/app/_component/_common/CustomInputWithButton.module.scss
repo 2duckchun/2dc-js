@@ -1,0 +1,43 @@
+.input_container_with_button {
+  width: 100%;
+  margin: 15px 0px;
+  label {
+    display: block;
+    margin-bottom: 7px;
+  }
+  div {
+    display: flex;
+    gap: 5px;
+    input {
+      flex-basis: 85%;
+      padding: 7px 10px;
+      outline: none;
+      border-radius: 5px;
+    }
+    button {
+      word-break: nowrap;
+      flex-basis: 15%;
+      display: block;
+      text-align: center;
+      color: #444444;
+      background: #f3f3f3;
+      border: 1px #dadada solid;
+      border-radius: 5px;
+      padding: 5px 5px;
+      font-weight: bold;
+      font-size: 12pt;
+      outline: none;
+    }
+
+    button:hover {
+      border: 1px #c6c6c6 solid;
+      box-shadow: 1px 1px 1px #eaeaea;
+      color: #333333;
+      background: #f7f7f7;
+    }
+
+    button:active {
+      box-shadow: inset 1px 1px 1px #dfdfdf;
+    }
+  }
+}
