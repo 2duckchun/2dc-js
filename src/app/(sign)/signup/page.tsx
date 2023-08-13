@@ -5,8 +5,24 @@ import styles from "./page.module.scss";
 import CustomInput from "@/app/_component/_common/CustomInput";
 import CustomButton from "@/app/_component/_common/CustomButton";
 import CustomLink from "@/app/_component/_common/CustomLink";
+import { useState } from "react";
 
 export default function SignUp() {
+  const [userInput, setUserInput] = useState({
+    id: "",
+    nickname: "",
+    password: "",
+    passwordConfirm: "",
+    email: "",
+  });
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUserInput({
+      ...userInput,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const testHandler = () => {
     console.log("test");
   };
@@ -23,6 +39,8 @@ export default function SignUp() {
           isRequired={true}
           buttonText="Check"
           placeholder="아이디를 입력해주세요."
+          value={userInput.id}
+          onChangeHandler={handleInput}
         />
         <CustomInputWithButton
           id="nickname"
@@ -32,6 +50,8 @@ export default function SignUp() {
           isRequired={true}
           buttonText="Check"
           placeholder="닉네임을 입력해주세요."
+          value={userInput.nickname}
+          onChangeHandler={handleInput}
         />
         <CustomInput
           id="password"
@@ -40,6 +60,8 @@ export default function SignUp() {
           name="password"
           isRequired={true}
           placeholder="비밀번호를 입력해주세요."
+          value={userInput.password}
+          onChangeHandler={handleInput}
         />
         <CustomInput
           id="password-confirm"
@@ -48,6 +70,8 @@ export default function SignUp() {
           name="passwordConfirm"
           isRequired={true}
           placeholder="비밀번호를 한번 더 입력해주세요."
+          value={userInput.passwordConfirm}
+          onChangeHandler={handleInput}
         />
         <CustomInputWithButton
           id="email"
@@ -57,6 +81,8 @@ export default function SignUp() {
           isRequired={true}
           buttonText="Check"
           placeholder="이메일을 입력해주세요."
+          value={userInput.email}
+          onChangeHandler={handleInput}
         />
         <CustomButton
           propStyle={styles.signup_create_button}
