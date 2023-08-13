@@ -3,13 +3,13 @@
   flex-basis: 40%;
   justify-content: space-around;
   button {
-    color: var(--color-text);
+    color: var(--text-color);
     padding: 10px 15px;
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
   }
   button:hover {
-    background-color: var(--color-hover);
+    background-color: var(--hover-color);
   }
 }

@@ -38,12 +38,12 @@
   border-radius: 5px;
   height: 35px;
   padding: 6px 20px 3px;
-  background-color: var(--color-button);
+  background-color: var(--card-btn-bg);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--color-text);
+  color: var(--text-color);
 }
 
 .next_card_image {
