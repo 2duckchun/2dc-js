@@ -8,6 +8,8 @@ type PropsType = {
   buttonText: string;
   placeholder: string;
   isRequired: boolean;
+  value: string;
+  onChangeHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function CustomInputWithButton({
@@ -18,6 +20,8 @@ export default function CustomInputWithButton({
   buttonText,
   placeholder,
   isRequired,
+  value,
+  onChangeHandler,
 }: PropsType) {
   return (
     <div className={styles.input_container_with_button}>
@@ -29,6 +33,8 @@ export default function CustomInputWithButton({
           name={name}
           required={isRequired}
           placeholder={placeholder}
+          value={value}
+          onChange={onChangeHandler}
         />
         <button>{buttonText}</button>
       </div>

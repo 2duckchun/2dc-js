@@ -7,6 +7,8 @@ type PropsType = {
   name: string;
   placeholder: string;
   isRequired: boolean;
+  value: string;
+  onChangeHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function CustomInput({
@@ -16,6 +18,8 @@ export default function CustomInput({
   name,
   placeholder,
   isRequired,
+  value,
+  onChangeHandler,
 }: PropsType) {
   return (
     <div className={styles.input_container}>
@@ -26,6 +30,8 @@ export default function CustomInput({
         name={name}
         required={isRequired}
         placeholder={placeholder}
+        value={value}
+        onChange={onChangeHandler}
       />
     </div>
   );

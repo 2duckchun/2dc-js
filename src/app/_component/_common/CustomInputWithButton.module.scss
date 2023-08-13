@@ -19,8 +19,7 @@
       flex-basis: 15%;
       display: block;
       text-align: center;
-      color: #444444;
-      background: #f3f3f3;
+      background-color: var(--btn-color);
       border: 1px #dadada solid;
       border-radius: 5px;
       padding: 5px 5px;
@@ -31,9 +30,8 @@
 
     button:hover {
       border: 1px #c6c6c6 solid;
-      box-shadow: 1px 1px 1px #eaeaea;
       color: #333333;
-      background: #f7f7f7;
+      cursor: pointer;
     }
 
     button:active {
