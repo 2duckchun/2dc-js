@@ -56,4 +56,24 @@ export const chaptersInfo: ChaptersInfo = {
       },
     ],
   },
+  chapter3: {
+    chapterName: "chapter3",
+    actInfo: [
+      {
+        name: "array-fundamental",
+        act: 1,
+        banner: "Act1 : 배열 기초",
+      },
+      {
+        name: "array-prototype",
+        act: 2,
+        banner: "Act2 : 프로토타입",
+      },
+      {
+        name: "array-high-order-functions",
+        act: 3,
+        banner: "Act3 : 배열 고차 함수",
+      },
+    ],
+  },
 };

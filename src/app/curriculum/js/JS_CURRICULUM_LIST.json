@@ -30,7 +30,7 @@
     "id": "00003",
     "art_index": 3,
     "chapter": "chapter3",
-    "first_lesson": "orientation",
+    "first_lesson": "array-fundamental",
     "subject": "배열(Arrays)",
     "explain": "정렬된 여러 개의 데이터는 어떻게 다뤄야 할까요? 프로토타입은 뭔가요? 배열의 세계를 유랑해봅시다.",
     "curriculum": "js"
