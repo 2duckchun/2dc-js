@@ -70,7 +70,7 @@ button.addEventListener('click', callbackFn)
 // 이런 형태의 함수를 콜백함수라고 부릅니다. (함수 내부에서 나중에 호출되는 함수)`,
 };
 
-export default function LessonPage() {
+export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator

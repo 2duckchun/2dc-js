@@ -120,7 +120,7 @@ for (let i = 0; i < floor; i++) {
 // 이해가 잘 가지 않으신다면 노트에다가 하나씩 그려보시는 것을 추천합니다!`,
 };
 
-export default function Chap0Act1() {
+export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator

@@ -172,7 +172,7 @@ console.log(result)
 `,
 };
 
-export default function LessonPage() {
+export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator

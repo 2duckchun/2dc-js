@@ -53,7 +53,7 @@ const PascalCase = "파스칼이라는 언어에서 유래된 컨벤션";
 `,
 };
 
-export default function LessonPage() {
+export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator

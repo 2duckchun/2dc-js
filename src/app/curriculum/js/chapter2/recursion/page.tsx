@@ -129,7 +129,7 @@ function LoopInRecursive(n) {
 }`,
 };
 
-export default function Chap0Act1() {
+export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator

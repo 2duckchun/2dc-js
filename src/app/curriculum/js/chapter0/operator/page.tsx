@@ -106,7 +106,7 @@ false && false // false`,
 typeof function(){} // 'function'`,
 };
 
-export default function LessonPage() {
+export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator

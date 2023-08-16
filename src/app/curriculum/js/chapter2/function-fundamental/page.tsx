@@ -184,7 +184,7 @@ const answer = 비동기체험2(102, (message) => {
 // 2초 뒤에 "짝수"가 출력됩니다!`,
 };
 
-export default function Chap0Act1() {
+export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
