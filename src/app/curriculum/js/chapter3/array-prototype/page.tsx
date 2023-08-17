@@ -1,6 +1,5 @@
 import styles from "@/styles/Chapter.module.scss";
 import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import recursiveCallStack from "#/chap2/recursiveCallStack.png";
 import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
 import CodeBox from "@/app/_component/_curriculum/CodeBox";
 import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
