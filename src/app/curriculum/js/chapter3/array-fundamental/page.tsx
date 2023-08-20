@@ -7,6 +7,8 @@ import primitive2 from "#/chap3/primitive-2.png";
 import primitive3 from "#/chap3/primitive-3.png";
 import primitive4 from "#/chap3/primitive-4.png";
 import primitive5 from "#/chap3/primitive-5.png";
+import reference1 from "#/chap3/reference-1.png";
+import reference2 from "#/chap3/reference-2.png";
 import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
 import CustomLink from "@/app/_component/_common/CustomLink";
 import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
@@ -24,7 +26,7 @@ a = 30
 b = a + b`,
   primitiveAndReference: `let a = 5
 let b = 5
-if (a === 5) {
+if (a === b) {
   console.log("a와 b가 일치합니다!") // 찍힐까요?
 }
 
@@ -33,13 +35,63 @@ let d = []
 if (c === d) {
   console.log("c와 d가 일치합니다!") // 찍힐까요?
 }`,
+  referenceArray1: `const product = []
+const cart = []`,
+  referenceArray2: `const product = []
+const cart = product
+
+if (cart === product) {
+  // cart === product가 참이므로 출력됩니다.
+  console.log("두 배열은 같은 배열입니다.")
+}`,
+  referenceArray3: `let product = []
+const cart = product
+console.log(product === cart) // true
+
+product = []
+console.log(product === cart) // false`,
+  primitiveTypes: `// 숫자형 (number)
+let age = 30
+
+// 문자형 (string)
+let message = "Hello, world!"
+
+// 불리언 (boolean)
+let isLogged = true
+
+// null
+let user = null
+
+// undefined
+let email
+console.log(email)
+
+// 심볼 (Symbol)
+const id = Symbol('id')
+let user = {
+  [id]: '12345'
+}`,
+  referenceTypes: `// 객체 (Object)
+let person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30
+}
+  
+// 배열 (Array)
+let colors = ['red', 'green', 'blue']
+  
+// 함수 (Function)
+function greet(name) {
+  return 'hello' + name
+}`,
 };
 
 export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum='js'
+        curriculum="js"
         highlightActNum={1}
         chapterInfo={chaptersInfo.chapter3}
       ></ActNavigator>
@@ -106,8 +158,8 @@ export default function Lecture() {
         imageSrc={primitive1}
         width={347}
         height={450}
-        alt='변수 a에 숫자 25가 할당'
-        caption='변수 a에 숫자형(원시타입) 데이터 25가 할당되었습니다.'
+        alt="변수 a에 숫자 25가 할당"
+        caption="변수 a에 숫자형(원시타입) 데이터 25가 할당되었습니다."
       />
       <p>
         숫자형 데이터 25는 메모리 특정 공간에 기록이 되고, 그 메모리 공간의
@@ -129,8 +181,8 @@ export default function Lecture() {
         imageSrc={primitive2}
         width={347}
         height={450}
-        alt='변수 B에 a가 할당'
-        caption='변수 b에 a가 할당되었지만, 25는 원시 타입이기 때문에 b는 a를 참조하지 않고 값만 복제해옵니다.'
+        alt="변수 B에 a가 할당"
+        caption="변수 b에 a가 할당되었지만, 25는 원시 타입이기 때문에 b는 a를 참조하지 않고 값만 복제해옵니다."
       />
       <br />
       <p>이제 변수 a에 다른 값을 재할당 해보겠습니다.</p>
@@ -151,8 +203,8 @@ export default function Lecture() {
         imageSrc={primitive3}
         width={347}
         height={450}
-        alt='변수 a에 30이 재할당'
-        caption='변수 a에 30을 재할당 했습니다. a는 30이 저장된 메모리 주소를 참조합니다.'
+        alt="변수 a에 30이 재할당"
+        caption="변수 a에 30을 재할당 했습니다. a는 30이 저장된 메모리 주소를 참조합니다."
       />
       <p>이제 변수 a는 30이 담긴 메모리의 주소를 참조합니다.</p>
       <p>
@@ -192,8 +244,8 @@ export default function Lecture() {
         imageSrc={primitive4}
         width={347}
         height={450}
-        alt='변수 b에 a와 b를 더함'
-        caption='a + b는 표현식입니다. 표현식은 곧 값을 나타내지요. 새로운 값은 메모리의 다른 부분에 저장됩니다.'
+        alt="변수 b에 a와 b를 더함"
+        caption="a + b는 표현식입니다. 표현식은 곧 값을 나타내지요. 새로운 값은 메모리의 다른 부분에 저장됩니다."
       />
       <p>
         25 + 30 이라는 표현식이 계산되어 메모리의 다른 부분에 새롭게 쓰여집니다.
@@ -226,25 +278,110 @@ export default function Lecture() {
         imageSrc={primitive5}
         width={643}
         height={355}
-        alt='실행 컨텍스트에 등록된 변수의 메모리 참조'
-        caption='실행 컨텍스트에 등록된 변수의 메모리 참조'
+        alt="실행 컨텍스트에 등록된 변수의 메모리 참조"
+        caption="실행 컨텍스트에 등록된 변수의 메모리 참조"
       />
       <p>위 그림은 원시 타입과 참조 타입을 이해하는데 필요합니다.</p>
       <p>이제 참조 타입에 대해서 학습해보도록 하겠습니다!</p>
       <h3>참조 타입</h3>
-      <p>참조 타입은 원시 타입과는 근본적인 구조가 약간 다릅니다.</p>
-      <p>글로 설명하기 전에 코드로 퀴즈를 하나 내보겠습니다.</p>
-      <p>아래의 console.log가 출력이 될까요? 되지 않을까요?</p>
+      <p>먼저 코드로 퀴즈를 하나 내보겠습니다.</p>
+      <p>두개의 console.log가 모두 출력될까요?</p>
       <CodeBox code={lessonCode.primitiveAndReference} />
-      {/* a와 b는 일치하다고 하고 c와 d는 일치하지 않는다고 할 것이다 참조 타입의
-      데이터는 메모리의 힙 이라는 부분에 별도로 생성됨 변수는 그 메모리 힙
-      부분에 선언된 참조 타입 데이터의 메모리 주소를 참조함 c와 d는 빈 배열임은
-      같지만, 힙에 선언된 각자 다른 배열임 그래서 c와 d는 다른 배열임 그림으로
-      보면 아래와 같음 순환배열 실행 컨텍스트 원시 타입과 참조 타입 종류 */}
-      <p>ㄹㄹ</p>
-      <h3>Exercise</h3>
-      <p>순환 참조 문제1</p>
-      <p>순환 참조 문제2</p>
+      <p>
+        <b>&ldquo;a와 b가 일치합니다!&ldquo;</b> 만 찍혀 나올 것입니다.
+      </p>
+      <p>
+        실제로 자바스크립트 식별자가 바라보는 관점에서 a와 b는 동일한 값을
+        가지고 있으므로 두 비교는 참입니다.
+      </p>
+      <p>
+        <b>그런데 c와 d는 무엇이 다를까요?</b> 둘다 [] 라는 값을 가지고 있는데
+        말입니다.
+      </p>
+      <br />
+      <p>
+        <b>[]</b>는 <b>배열(Array)</b>이라는 데이터 구조이고, 참조 타입의 데이터
+        입니다.
+      </p>
+      <p>이 참조 타입의 데이터들은 메모리 할당이 약간 특이하게 이뤄집니다.</p>
+      <p>아래 코드와 그림을 통해 설명을 이어가보도록 하겠습니다.</p>
+      <br />
+      <CodeBox code={lessonCode.referenceArray1} />
+      <br />
+      <p>배열은 여러가지 데이터를 담을 수 있는 역할을 합니다.</p>
+      <p>
+        데이터를 담을 수 있다는 것을 표현하고자 product와 cart을 배열로
+        만들었습니다.
+      </p>
+      <p>이 두 배열은 메모리상에 어떻게 할당이 되고 있었을까요?</p>
+      <p>아래 그림을 보시겠습니다.</p>
+      <CustomImageWithCaption
+        imageSrc={reference1}
+        width={840}
+        height={400}
+        alt="참조타입이 메모리에 저장되는 그림"
+        caption="참조 타입은 힙(heap)이라는 메모리의 가변적인 부분을 활용합니다."
+      />
+      <p>
+        참조타입은 값이 메모리 스택에 그대로 할당이 되었던 원시 타입과 달리,
+      </p>
+      <p>
+        heap이라는 메모리의 가변적인 영역에 데이터가 할당되고, 식별자는 heap의
+        메모리 주소를 참조하게 됩니다.
+      </p>
+      <p>
+        즉, 식별자에 할당된 값이 다르므로, 둘을 비교 연산하면 false가 나오게
+        되는 것 입니다. ( 위 예시의 0x2345와 0x3516이 다르듯이요!)
+      </p>
+      <br />
+      <p>그렇다면 아래와 같은 상황은 어떨까요?</p>
+      <CodeBox code={lessonCode.referenceArray2} />
+      <p>product 식별자에 배열이 할당되었고, cart는 product를 할당합니다.</p>
+      <p>
+        이 경우에는 product의 참조 주소값을 cart가 그대로 가져오므로, 두
+        식별자는 같은 배열을 참조하게 됩니다.
+      </p>
+      <CustomImageWithCaption
+        imageSrc={reference2}
+        width={840}
+        height={400}
+        alt="다른 식별자가 동일한 heap 주소를 참조하고 있는 그림"
+        caption="식별자 product와 cart는 동일한 heap 메모리 주소를 참조하게 됩니다."
+      />
+      <p>약간은 감이 잡히셨을거라고 믿습니다.</p>
+      <br />
+      <p>메모리의 관점에서 보면 아래 코드도 설명이 가능합니다.</p>
+      <CodeBox code={lessonCode.referenceArray3} />
+      <p>cart는 초기에 생성된 product의 배열을 참조하고 있을 것 입니다.</p>
+      <p>그래서 첫번째 console.log는 true가 출력이 됩니다.</p>
+      <p>
+        이 후 product에 <b>새로운 배열</b>을 할당했습니다.
+      </p>
+      <p>
+        즉, product는 heap 내부에 새롭게 생성된 배열의 주소를 참조하게 됩니다.
+      </p>
+      <p>
+        하지만 cart는 이전에 할당받은 배열의 주소를 그대로 참조하고 있기 때문에,
+        둘은 다른 배열이 됩니다.
+      </p>
+      <br />
+      <p>이것이 원시 타입과 참조 타입의 차이점 입니다.</p>
+      <p>
+        원시와 참조의 구분에서 제일 중요한 것은 식별자가 무엇을 참조하는지 이며,
+      </p>
+      <p>
+        식별자가 값을 그대로 참조하는지, heap에 선언된 메모리 주소를
+        참조하는지가 관건입니다.
+      </p>
+
+      <h3>원시 타입 데이터 종류</h3>
+      <CodeBox code={lessonCode.primitiveTypes} />
+      <p>원시 타입의 데이터 종류입니다.</p>
+
+      <h3>참조 타입 데이터 종류</h3>
+      <CodeBox code={lessonCode.referenceTypes} />
+      <p>원시 타입을 제외한 모든 타입이 참조 타입이라고 볼 수 있습니다.</p>
+
       <h2>배열의 구성요소</h2>
       <h3>엘리먼트</h3>
       <h3>인덱스</h3>
