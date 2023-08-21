@@ -1,16 +1,17 @@
 import styles from "@/styles/Chapter.module.scss";
 import { chaptersInfo } from "../../JS_CHAPTER_INFO";
+import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
 import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
 import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import globalcontext from "#/chap2/globalcontext.png";
-import localcontext1 from "#/chap2/localcontext1.png";
-import localcontext2 from "#/chap2/localcontext2.png";
-import callstackout1 from "#/chap2/callstackout1.png";
-import callstackout2 from "#/chap2/callstackout2.png";
-import emptycallstack from "#/chap2/emptycallstack.png";
-import CustomLink from "@/app/_component/_common/CustomLink";
 import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
+
+// images
+import globalContext from "#/images/lectures/js/chap2/global-context.png";
+import localContext1 from "#/images/lectures/js/chap2/local-context-1.png";
+import localContext2 from "#/images/lectures/js/chap2/local-context-2.png";
+import callStackOut1 from "#/images/lectures/js/chap2/callstack-out-1.png";
+import callStackOut2 from "#/images/lectures/js/chap2/callstack-out-2.png";
+import emptyCallStack from "#/images/lectures/js/chap2/callstack-empty.png";
 
 const lessonCode = {
   firstClassObject: `// 1. 변수에 할당 가능
@@ -429,7 +430,7 @@ export default function Lecture() {
       <p>한줄 한줄씩 읽어보면서 코드의 동작 원리를 이해해봅시다.</p>
       <br />
       <CustomImageWithCaption
-        imageSrc={globalcontext}
+        imageSrc={globalContext}
         width={837}
         height={563}
         alt="전역 컨텍스트"
@@ -461,7 +462,7 @@ export default function Lecture() {
       <p>이 후, 본격적으로 코드가 실행됩니다.</p>
       <br />
       <CustomImageWithCaption
-        imageSrc={localcontext1}
+        imageSrc={localContext1}
         width={837}
         height={563}
         alt="로컬 컨텍스트1"
@@ -491,7 +492,7 @@ export default function Lecture() {
       <p>콜스택의 최상단에 위치한 로컬 실행 컨텍스트의 코드가 실행 됩니다.</p>
       <br />
       <CustomImageWithCaption
-        imageSrc={localcontext2}
+        imageSrc={localContext2}
         width={837}
         height={563}
         alt="로컬 컨텍스트2"
@@ -529,7 +530,7 @@ export default function Lecture() {
       </p>
       <br />
       <CustomImageWithCaption
-        imageSrc={callstackout1}
+        imageSrc={callStackOut1}
         width={837}
         height={563}
         alt="콜스택에서 실행 컨텍스트가 제거됩니다."
@@ -547,7 +548,7 @@ export default function Lecture() {
       </p>
       <br />
       <CustomImageWithCaption
-        imageSrc={callstackout2}
+        imageSrc={callStackOut2}
         width={837}
         height={563}
         alt="콜스택에서 실행 컨텍스트가 제거됩니다."
@@ -563,7 +564,7 @@ export default function Lecture() {
       </p>
       <br />
       <CustomImageWithCaption
-        imageSrc={emptycallstack}
+        imageSrc={emptyCallStack}
         width={387}
         height={558}
         alt="콜스택에서 실행 컨텍스트가 제거됩니다."

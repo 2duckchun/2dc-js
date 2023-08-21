@@ -1,12 +1,14 @@
 import styles from "@/styles/Chapter.module.scss";
 import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import RAM from "#/chap1/ram640427.jpg";
-import VSC from "#/chap1/vsc.png";
-import nodeExecute from "#/chap1/node.png";
+import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
 import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
 import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
 import CustomLink from "@/app/_component/_common/CustomLink";
+
+// images
+import RAM from "#/images/lectures/js/chap1/ram.jpg";
+import VSC from "#/images/lectures/js/chap1/vsc.png";
+import nodeExecute from "#/images/lectures/js/chap1/node.png";
 
 const lessonCode = {
   onePlusOne: `1 + 2`,

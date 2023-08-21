@@ -1,16 +1,18 @@
 import styles from "@/styles/Chapter.module.scss";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import mosaic from "#/chap0/mosaic.png";
-import AboutBlank from "#/chap0/aboutblank.png";
-import DeveloperTool from "#/chap0/developertool.png";
-import DocumentObject from "#/chap0/dirdocument.png";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import SelfIntroduceDocument from "#/chap0/self-introduce.png";
-import YourNickName from "#/chap0/yourNickName.png";
-import Boom from "#/chap0/boom.png";
 import { chaptersInfo } from "../../JS_CHAPTER_INFO";
 import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
+import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
+import CodeBox from "@/app/_component/_curriculum/CodeBox";
 import CustomLink from "@/app/_component/_common/CustomLink";
+
+// images
+import mosaic from "#/images/lectures/js/chap0/mosaic.png";
+import AboutBlank from "#/images/lectures/js/chap0/about-blank.png";
+import DeveloperTool from "#/images/lectures/js/chap0/developer-tool.png";
+import DocumentObject from "#/images/lectures/js/chap0/document-object.png";
+import SelfIntroduceDocument from "#/images/lectures/js/chap0/self-introduce.png";
+import YourNickName from "#/images/lectures/js/chap0/your-nick-name.png";
+import Boom from "#/images/lectures/js/chap0/boom.png";
 
 const lessonCode = {
   consoleDir: "console.dir(document)",

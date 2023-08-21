@@ -1,9 +1,11 @@
 import styles from "@/styles/Chapter.module.scss";
-import weakType from "#/chap0/weaktype.png";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
 import { chaptersInfo } from "../../JS_CHAPTER_INFO";
+import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
+import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
+import CodeBox from "@/app/_component/_curriculum/CodeBox";
+
+// images
+import weakType from "#/images/lectures/js/chap0/weaktype.png";
 
 const lessonCode = {
   assignment: `const $body = document.querySelector('body')`,

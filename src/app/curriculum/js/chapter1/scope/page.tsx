@@ -1,11 +1,13 @@
 import styles from "@/styles/Chapter.module.scss";
 import { chaptersInfo } from "../../JS_CHAPTER_INFO";
+import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
 import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
 import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CustomLink from "@/app/_component/_common/CustomLink";
-import scopeChaining from "#/chap1/scopechain.png";
 import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
+
+// images
+import scopeChaining from "#/images/lectures/js/chap1/scopechain.png";
+
 const lessonCode = {
   blockScope: `let a = 10
 {
@@ -128,7 +130,7 @@ export default function Lecture() {
         highlightActNum={3}
         chapterInfo={chaptersInfo.chapter1}
       ></ActNavigator>
-      <h1>스코프</h1>
+      <h1>스코프(scope)</h1>
       <p>스코프까지 오신 여러분들을 환영합니다.</p>
       <p>스코프는 프로그래밍 언어에서 굉장히 중요한 개념입니다.</p>
       <p>

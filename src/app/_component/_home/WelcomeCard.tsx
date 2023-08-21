@@ -1,8 +1,10 @@
 import Image from "next/image";
 import styles from "./WelcomeCard.module.scss";
-import build from "#/build_640.jpg";
-import data_structure from "#/data_structure_640.jpg";
-import question_mark from "#/question_mark_640.jpg";
+
+// images
+import block from "#/images/home/block.jpg";
+import bubble from "#/images/home/bubble.jpg";
+import questionMark from "#/images/home/question-mark.jpg";
 
 export default function WelcomeCard({ isShowCard }: { isShowCard: boolean }) {
   return (
@@ -14,7 +16,7 @@ export default function WelcomeCard({ isShowCard }: { isShowCard: boolean }) {
       <div className={styles.welcome_card}>
         <div className={styles.welcome_card_image}>
           <Image
-            src={build}
+            src={block}
             className={styles.next_card_image}
             alt="기초 블록"
           />
@@ -31,8 +33,8 @@ export default function WelcomeCard({ isShowCard }: { isShowCard: boolean }) {
         <div className={styles.welcome_card_image}>
           <Image
             className={styles.next_card_image}
-            src={data_structure}
-            alt="기초 블록"
+            src={bubble}
+            alt="버블버블"
           />
         </div>
         <div>
@@ -47,8 +49,8 @@ export default function WelcomeCard({ isShowCard }: { isShowCard: boolean }) {
           {" "}
           <Image
             className={styles.next_card_image}
-            src={question_mark}
-            alt="기초 블록"
+            src={questionMark}
+            alt="물음표"
           />
         </div>
         <div>

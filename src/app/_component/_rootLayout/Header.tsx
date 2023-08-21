@@ -1,18 +1,21 @@
 "use client";
-
-import { useState } from "react";
-import setThemeCookie from "@/_utils/setThemeInCookie";
+// util or elemental
 import styles from "./Header.module.scss";
-import IconMoon from "#/icon-moon.svg";
-import IconSun from "#/icon-sun.svg";
-import cookieParser from "@/_utils/cookieParser";
+import { useState } from "react";
+import setThemeCookie from "@/utils/setThemeInCookie";
+import cookieParser from "@/utils/cookieParser";
+import useResponsiveHeader from "@/hooks/client/useResponsiveHeader";
+
+// components
 import NavMenu from "./NavMenu";
 import NavToggleButton from "./NavToggleButton";
-import useResponsiveHeader from "@/_clientHooks/useResponsiveHeader";
-import CustomLink from "../_common/CustomLink";
 import NavContainer from "./NavContainer";
 import UserAuthContainer from "./UserAuthContainer";
 import CustomButton from "../_common/CustomButton";
+import CustomLink from "../_common/CustomLink";
+
+// icons
+import { IconMoon, IconSun } from "#/images/svgs";
 
 export default function Header({ currentTheme }: { currentTheme: string }) {
   const [theme, setTheme] = useState(currentTheme);

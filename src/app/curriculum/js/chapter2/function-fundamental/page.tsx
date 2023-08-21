@@ -1,12 +1,13 @@
 import styles from "@/styles/Chapter.module.scss";
 import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import pngFunctionMachine from "#/chap2/functionmachine.png";
-import pngfunctionComponent from "#/chap2/functionComponent.png";
+import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
 import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
 import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CustomLink from "@/app/_component/_common/CustomLink";
 import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
+
+// images
+import pngFunctionMachine from "#/images/lectures/js/chap2/function-machine.png";
+import pngfunctionComponent from "#/images/lectures/js/chap2/function-component.png";
 
 const lessonCode = {
   fx: `function f(x) {

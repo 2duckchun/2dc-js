@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import girlWhoReading from "#/masterpieces/la_liseuse.jpg";
+import girlWhoReading from "#/images/masterpieces/la_liseuse.jpg";
 
 export default function getMasterPiece(
   artIndex: number,

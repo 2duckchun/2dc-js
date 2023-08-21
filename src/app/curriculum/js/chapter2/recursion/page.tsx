@@ -1,11 +1,12 @@
 import styles from "@/styles/Chapter.module.scss";
 import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import recursiveCallStack from "#/chap2/recursiveCallStack.png";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
 import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CustomLink from "@/app/_component/_common/CustomLink";
+import CodeBox from "@/app/_component/_curriculum/CodeBox";
+import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
 import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
+
+// images
+import recursiveCallStack from "#/images/lectures/js/chap2/recursive-callstack.png";
 
 const lessonCode = {
   sum1toN: `// 1부터 n까지의 모든 숫자를 더하는 재귀함수입니다.

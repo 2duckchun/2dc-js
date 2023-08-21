@@ -1,14 +1,16 @@
 import styles from "@/styles/CurriculumPage.module.scss";
-import transfiguration from "#/masterpieces/the_transfiguration.jpg";
-import girlWhoReading from "#/masterpieces/la_liseuse.jpg";
-import napoleon from "#/masterpieces/napoleon.jpg";
-import wanderer from "#/masterpieces/wanderer.jpg";
-import girtWithPearl from "#/masterpieces/girl_with_pearl.jpg";
-import CURRICULUM from "./JS_CURRICULUM_LIST.json";
-import CurriculumCard from "@/app/_component/_curriculum/CurriculumCard";
-import getMasterPiece from "@/_utils/getMasterPiece";
 import { StaticImageData } from "next/image";
+import getMasterPiece from "@/utils/getMasterPiece";
 import CustomLink from "@/app/_component/_common/CustomLink";
+import CurriculumCard from "@/app/_component/_curriculum/CurriculumCard";
+import CURRICULUM from "./JS_CURRICULUM_LIST.json";
+
+// images
+import transfiguration from "#/images/masterpieces/the_transfiguration.jpg";
+import girlWhoReading from "#/images/masterpieces/la_liseuse.jpg";
+import napoleon from "#/images/masterpieces/napoleon.jpg";
+import wanderer from "#/images/masterpieces/wanderer.jpg";
+import girtWithPearl from "#/images/masterpieces/girl_with_pearl.jpg";
 
 const masterPieceArr: StaticImageData[] = [
   transfiguration,
