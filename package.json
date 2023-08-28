@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@types/node": "20.4.0",
@@ -21,9 +22,19 @@
     "react-dom": "18.2.0",
     "typescript": "5.1.6"
   },
+  "lint-staged": {
+    "./src/**/*.{js,ts,jsx,tsx}": [
+      "eslint",
+      "prettier --write --cache ."
+    ]
+  },
   "devDependencies": {
     "@svgr/webpack": "^8.0.1",
     "@types/prismjs": "^1.26.0",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.2",
     "sass": "^1.63.6"
   }
 }
