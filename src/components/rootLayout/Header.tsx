@@ -48,7 +48,10 @@ export default function Header({ currentTheme }: { currentTheme: string }) {
         <NavContainer isCollapsed={isCollapsed}>
           <NavMenu />
           <UserAuthContainer />
-          <CustomButton propStyle={styles.theme_toggle} onClickHandler={changeTheme}>
+          <CustomButton
+            propStyle={styles.theme_toggle}
+            onClickHandler={changeTheme}
+          >
             <ThemeIcon />
           </CustomButton>
         </NavContainer>

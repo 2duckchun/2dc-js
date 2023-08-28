@@ -7,7 +7,11 @@ import type { NextRequest } from 'next/server';
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
   const pathArray = request.nextUrl.pathname.split('/').slice(2);
-  const isValidURL = validURLParser(pathArray, /^chapter[0-9]$/, /^chapter[0-9]$/);
+  const isValidURL = validURLParser(
+    pathArray,
+    /^chapter[0-9]$/,
+    /^chapter[0-9]$/,
+  );
 
   if (!isValidURL) {
     const url = request.nextUrl;

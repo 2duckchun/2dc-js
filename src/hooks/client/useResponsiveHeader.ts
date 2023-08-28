@@ -2,7 +2,9 @@ import { MutableRefObject, useEffect, useRef } from 'react';
 
 type HandlerProps = (flag: Event | boolean) => void;
 
-export default function useResponsiveHeader(headerCollapingHandler: HandlerProps) {
+export default function useResponsiveHeader(
+  headerCollapingHandler: HandlerProps,
+) {
   const prevScrollY = useRef(0);
   const headerRef: MutableRefObject<HTMLElement | null> = useRef(null);
 

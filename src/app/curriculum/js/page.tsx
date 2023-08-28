@@ -39,13 +39,22 @@ export default function JavaScriptPage() {
       </section>
       <section className={styles.curriculum_reference_container}>
         <h2>Reference</h2>
-        <CustomLink href={{ pathname: 'https://ko.javascript.info/' }} isBlank={true}>
+        <CustomLink
+          href={{ pathname: 'https://ko.javascript.info/' }}
+          isBlank={true}
+        >
           <p>모던 JavaScript 튜토리얼</p>
         </CustomLink>
-        <CustomLink href={{ pathname: 'https://poiemaweb.com/' }} isBlank={true}>
+        <CustomLink
+          href={{ pathname: 'https://poiemaweb.com/' }}
+          isBlank={true}
+        >
           <p>poiemaweb</p>
         </CustomLink>
-        <CustomLink href={{ pathname: 'https://www.zerocho.com/' }} isBlank={true}>
+        <CustomLink
+          href={{ pathname: 'https://www.zerocho.com/' }}
+          isBlank={true}
+        >
           <p>제로초님 블로그</p>
         </CustomLink>
         <CustomLink href={{ pathname: 'https://www.c0d3.com/' }} isBlank={true}>
