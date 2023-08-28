@@ -1,6 +1,6 @@
-@use "./color.scss" as *;
+@use './color.scss' as *;
 
-html[data-theme="light"] {
+html[data-theme='light'] {
   --primary: #{$primary-1};
   --text-color: #{$text-color-1};
   --bg-color: #{$bg-color-1};
@@ -13,7 +13,7 @@ html[data-theme="light"] {
   --section-bg: #{$section-color-1};
 }
 
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   --primary: #{$primary-2};
   --text-color: #{$text-color-2};
   --bg-color: #{$bg-color-2};

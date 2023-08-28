@@ -1,6 +1,7 @@
-import { ChapterInfo } from "@/types/common";
-import CustomLink from "../_common/CustomLink";
-import styles from "./ActNavigator.module.scss";
+import CustomLink from '@/components/_common/CustomLink';
+import { ChapterInfo } from '@/types/common';
+
+import styles from './ActNavigator.module.scss';
 
 export default function ActNavigator({
   curriculum,
@@ -13,7 +14,7 @@ export default function ActNavigator({
 }) {
   return (
     <section className={styles.act_navigator_session}>
-      {chapterInfo.actInfo.map((act) => (
+      {chapterInfo.actInfo.map(act => (
         <CustomLink
           key={act.name}
           href={{
@@ -22,7 +23,7 @@ export default function ActNavigator({
         >
           <button
             className={`${styles.link_color} ${
-              highlightActNum === act.act ? styles.link_hightlight : ""
+              highlightActNum === act.act ? styles.link_hightlight : ''
             }`}
           >
             {act.banner}

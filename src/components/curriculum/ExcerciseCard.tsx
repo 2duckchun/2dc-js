@@ -1,4 +1,4 @@
-import CodeBox from "./CodeBox";
+import CodeBox from './CodeBox';
 
 type ExerciseCardProps = {
   title: string;

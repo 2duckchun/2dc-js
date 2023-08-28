@@ -1,11 +1,10 @@
-import styles from "@/styles/Chapter.module.scss";
-import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
+import CustomImageWithCaption from '@/components/_common/CustomImageWithCaption';
+import ActNavigator from '@/components/curriculum/ActNavigator';
+import CodeBox from '@/components/curriculum/CodeBox';
+import { chaptersInfo } from '@/constants/js_curriculum/js_chapters_info';
+import styles from '@/styles/curriculum/Lecture.module.scss';
 
-// images
-import weakType from "#/images/lectures/js/chap0/weaktype.png";
+import weakType from '#/images/lectures/js/chap0/weaktype.png';
 
 const lessonCode = {
   assignment: `const $body = document.querySelector('body')`,
@@ -112,7 +111,7 @@ export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum="js"
+        curriculum='js'
         highlightActNum={2}
         chapterInfo={chaptersInfo.chapter0}
       ></ActNavigator>
@@ -126,7 +125,7 @@ export default function Lecture() {
       <h2>연산자란?</h2>
       <p>연산이란 특정한 작업을 수행해서 값을 나타내는 것을 의미합니다.</p>
       <p>
-        이런 뜻에서 자바스크립트의 연산자는{" "}
+        이런 뜻에서 자바스크립트의 연산자는{' '}
         <b>특정한 값을 통해 다른 값을 산출하는 명령어</b> 라고 할 수 있겠습니다.
       </p>
       <p>5 + 5를 자바스크립트를 통해 연산한다고 가정해보겠습니다.</p>
@@ -326,7 +325,7 @@ export default function Lecture() {
       <h2>비교 연산자</h2>
       <p>비교 연산자는 뭘까요?</p>
       <p>
-        <b>황소가 검은소보다 일을 잘하느냐?</b>라는 질문에 농민은{" "}
+        <b>황소가 검은소보다 일을 잘하느냐?</b>라는 질문에 농민은{' '}
         <b>어유 그런 말씀 마세유</b> 라는 말을 할 수 있지만
       </p>
       <p>
@@ -334,7 +333,7 @@ export default function Lecture() {
         해줄 것입니다.
       </p>
       <p>
-        이처럼 비교 연산자를 이용하면 두 값을 비교해서 비교값이 참인지 거짓인지{" "}
+        이처럼 비교 연산자를 이용하면 두 값을 비교해서 비교값이 참인지 거짓인지{' '}
         <b>논리값(boolean)으로 표시할 수 있습니다</b>.
       </p>
       <h3>대소 관계 비교</h3>
@@ -362,8 +361,8 @@ export default function Lecture() {
         imageSrc={weakType}
         width={355}
         height={461}
-        caption={"이해 안하셔도 됩니다."}
-        alt={"자바스크립트는 약타입 언어이다."}
+        caption={'이해 안하셔도 됩니다.'}
+        alt={'자바스크립트는 약타입 언어이다.'}
       />
       <p>이 과정에서 자기 멋대로 데이터를 이상하게 바꿔서 비교합니다.</p>
       <p>
@@ -392,7 +391,7 @@ export default function Lecture() {
         판단합니다. (따라서 true, false만 반환합니다.)
       </p>
       <p>
-        논리 연산자는 뭔가를 논증할때 사용하는 <b>또는(OR)</b>,{" "}
+        논리 연산자는 뭔가를 논증할때 사용하는 <b>또는(OR)</b>,{' '}
         <b>그리고(AND)</b>와 동일한데요.
       </p>
       <p>
@@ -404,7 +403,7 @@ export default function Lecture() {
         </b>
       </p>
       <p>
-        자바스크립트에서 OR은 <b>논리합(||)</b>이라고 하며, AND는{" "}
+        자바스크립트에서 OR은 <b>논리합(||)</b>이라고 하며, AND는{' '}
         <b>논리곱(&&)</b>이라고 합니다.
       </p>
       <p>코드를 통해 살펴보겠습니다.</p>

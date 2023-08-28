@@ -1,13 +1,14 @@
-import styles from "@/styles/Chapter.module.scss";
-import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
+import CustomImageWithCaption from '@/components/_common/CustomImageWithCaption';
+import ActNavigator from '@/components/curriculum/ActNavigator';
+import CodeBox from '@/components/curriculum/CodeBox';
+import ExerciseCard from '@/components/curriculum/ExcerciseCard';
+import { chaptersInfo } from '@/constants/js_curriculum/js_chapters_info';
+import styles from '@/styles/curriculum/Lecture.module.scss';
+
+import pngfunctionComponent from '#/images/lectures/js/chap2/function-component.png';
+import pngFunctionMachine from '#/images/lectures/js/chap2/function-machine.png';
 
 // images
-import pngFunctionMachine from "#/images/lectures/js/chap2/function-machine.png";
-import pngfunctionComponent from "#/images/lectures/js/chap2/function-component.png";
 
 const lessonCode = {
   fx: `function f(x) {
@@ -189,7 +190,7 @@ export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum="js"
+        curriculum='js'
         highlightActNum={1}
         chapterInfo={chaptersInfo.chapter2}
       ></ActNavigator>
@@ -216,8 +217,8 @@ export default function Lecture() {
         imageSrc={pngFunctionMachine}
         width={330}
         height={327}
-        alt={"함수 머신"}
-        caption={"함수 기계입니다. 익숙하신 그림일지도 모르겠습니다."}
+        alt={'함수 머신'}
+        caption={'함수 기계입니다. 익숙하신 그림일지도 모르겠습니다.'}
       />
       <p>위와 같은 그림을 많이 보셨을지도 모르겠습니다.</p>
       <p>
@@ -232,7 +233,7 @@ export default function Lecture() {
 
       <h2>자바스크립트에서 함수란?</h2>
       <p>
-        자바스크립트 함수의 정의는{" "}
+        자바스크립트 함수의 정의는{' '}
         <b>코드 실행 단위를 묶어 나중에 호출할 수 있게 하는 것</b>으로 내릴 수
         있습니다.
       </p>
@@ -311,8 +312,8 @@ export default function Lecture() {
         imageSrc={pngfunctionComponent}
         width={551}
         height={474}
-        alt={"함수의 구성요소"}
-        caption={"함수의 구성요소입니다."}
+        alt={'함수의 구성요소'}
+        caption={'함수의 구성요소입니다.'}
       />
       <ol>
         <li>함수이름 : 함수 식별자명</li>
@@ -372,7 +373,7 @@ export default function Lecture() {
       </p>
       <br></br>
       <p>
-        셋 다 함수를 만든다는 측면에서는 같지만, <b>함수 호이스팅</b>이나{" "}
+        셋 다 함수를 만든다는 측면에서는 같지만, <b>함수 호이스팅</b>이나{' '}
         <b>this</b>의 유무 등 내부적인 동작 원리는 약간씩 다릅니다.
       </p>
       <p>
@@ -385,7 +386,7 @@ export default function Lecture() {
       <h2>연습</h2>
       <ol>
         <ExerciseCard
-          title={"아래 문제대로 함수를 선언해보세요!"}
+          title={'아래 문제대로 함수를 선언해보세요!'}
           QuestionCode={lessonCode.exercise1}
           AnswerCode={lessonCode.exercise2}
         />
@@ -404,7 +405,8 @@ export default function Lecture() {
       <p>해리는 제대로 인사를 했는데, 론은 인사를 하지 못했습니다.</p>
       <p>
         해리는 인사하는 기능을 제대로 <b>호출</b>한 데 반해, 론은 인사하는 함수
-        자체를 <b>할당</b>했기 때문입니다.
+        자체를 <b>할당</b>
+        했기 때문입니다.
       </p>
       <br></br>
       <p>
@@ -468,20 +470,20 @@ export default function Lecture() {
         <ExerciseCard
           QuestionCode={lessonCode.exercise3_Question}
           AnswerCode={lessonCode.exercise3_answer}
-          title={"조건문과 return은 어떻게 동작하는 걸까요?"}
+          title={'조건문과 return은 어떻게 동작하는 걸까요?'}
         />
         <ExerciseCard
           QuestionCode={lessonCode.exercise4_Question}
           AnswerCode={lessonCode.exercise4_Answer}
           title={
-            "setTimeout은 첫번째 파라미터에는 함수를, 두번째 파라미터는 대기할 ms(밀리세컨드)를 인수로 받고, ms만큼 대기했다가 첫번째 파라미터로 받은 함수를 실행합니다. 함수의 반환값은 어떻게 나올지 생각해봅시다."
+            'setTimeout은 첫번째 파라미터에는 함수를, 두번째 파라미터는 대기할 ms(밀리세컨드)를 인수로 받고, ms만큼 대기했다가 첫번째 파라미터로 받은 함수를 실행합니다. 함수의 반환값은 어떻게 나올지 생각해봅시다.'
           }
         />
         <ExerciseCard
           QuestionCode={lessonCode.exersice5_Question}
           AnswerCode={lessonCode.exersice5_Answer}
           title={
-            "비동기체험2 함수 자체는 바로 값이 리턴되고, setTimeout 내 함수는 2초 뒤 실행될 것입니다."
+            '비동기체험2 함수 자체는 바로 값이 리턴되고, setTimeout 내 함수는 2초 뒤 실행될 것입니다.'
           }
         />
       </ol>

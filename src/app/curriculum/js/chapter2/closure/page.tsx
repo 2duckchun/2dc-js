@@ -1,17 +1,16 @@
-import styles from "@/styles/Chapter.module.scss";
-import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
+import CustomImageWithCaption from '@/components/_common/CustomImageWithCaption';
+import ActNavigator from '@/components/curriculum/ActNavigator';
+import CodeBox from '@/components/curriculum/CodeBox';
+import ExerciseCard from '@/components/curriculum/ExcerciseCard';
+import { chaptersInfo } from '@/constants/js_curriculum/js_chapters_info';
+import styles from '@/styles/curriculum/Lecture.module.scss';
 
-// images
-import globalContext from "#/images/lectures/js/chap2/global-context.png";
-import localContext1 from "#/images/lectures/js/chap2/local-context-1.png";
-import localContext2 from "#/images/lectures/js/chap2/local-context-2.png";
-import callStackOut1 from "#/images/lectures/js/chap2/callstack-out-1.png";
-import callStackOut2 from "#/images/lectures/js/chap2/callstack-out-2.png";
-import emptyCallStack from "#/images/lectures/js/chap2/callstack-empty.png";
+import emptyCallStack from '#/images/lectures/js/chap2/callstack-empty.png';
+import callStackOut1 from '#/images/lectures/js/chap2/callstack-out-1.png';
+import callStackOut2 from '#/images/lectures/js/chap2/callstack-out-2.png';
+import globalContext from '#/images/lectures/js/chap2/global-context.png';
+import localContext1 from '#/images/lectures/js/chap2/local-context-1.png';
+import localContext2 from '#/images/lectures/js/chap2/local-context-2.png';
 
 const lessonCode = {
   firstClassObject: `// 1. 변수에 할당 가능
@@ -291,7 +290,7 @@ export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum="js"
+        curriculum='js'
         highlightActNum={2}
         chapterInfo={chaptersInfo.chapter2}
       ></ActNavigator>
@@ -331,7 +330,7 @@ export default function Lecture() {
       </p>
       <br />
       <p>
-        실행 컨텍스트에서는 실행 컨텍스트를 이루는 구성 요소인{" "}
+        실행 컨텍스트에서는 실행 컨텍스트를 이루는 구성 요소인{' '}
         <b>환경 레코드</b>와 <b>렉시컬 환경</b>에 대해 다뤄볼 것입니다.
       </p>
       <p>
@@ -433,8 +432,8 @@ export default function Lecture() {
         imageSrc={globalContext}
         width={837}
         height={563}
-        alt="전역 컨텍스트"
-        caption="전역 컨텍스트의 생성 과정"
+        alt='전역 컨텍스트'
+        caption='전역 컨텍스트의 생성 과정'
       />
       <p>프로그램을 실행시키면 제일 먼저 전역 컨텍스트가 생성됩니다.</p>
       <p>
@@ -465,8 +464,8 @@ export default function Lecture() {
         imageSrc={localContext1}
         width={837}
         height={563}
-        alt="로컬 컨텍스트1"
-        caption="로컬 컨텍스트의 생성 과정"
+        alt='로컬 컨텍스트1'
+        caption='로컬 컨텍스트의 생성 과정'
       />
       <p>코드가 실행되는 과정에서 localFn1 함수가 실행됩니다.</p>
       <p>앞서 말씀드렸듯, 함수의 실행은 실행 컨텍스트의 생성을 야기합니다.</p>
@@ -495,8 +494,8 @@ export default function Lecture() {
         imageSrc={localContext2}
         width={837}
         height={563}
-        alt="로컬 컨텍스트2"
-        caption="로컬 컨텍스트의 생성 과정"
+        alt='로컬 컨텍스트2'
+        caption='로컬 컨텍스트의 생성 과정'
       />
       <p>localFn1의 함수 몸체 내부에는 localFn2 함수가 선언 되어있습니다.</p>
       <p>그리고 코드 진행 과정에서 localFn2이 호출됩니다.</p>
@@ -533,8 +532,8 @@ export default function Lecture() {
         imageSrc={callStackOut1}
         width={837}
         height={563}
-        alt="콜스택에서 실행 컨텍스트가 제거됩니다."
-        caption="코드 진행이 끝나면 콜스택에서 제거됩니다."
+        alt='콜스택에서 실행 컨텍스트가 제거됩니다.'
+        caption='코드 진행이 끝나면 콜스택에서 제거됩니다.'
       />
       <p>localFn2이 콜스택에서 사라졌습니다.</p>
       <p>
@@ -551,8 +550,8 @@ export default function Lecture() {
         imageSrc={callStackOut2}
         width={837}
         height={563}
-        alt="콜스택에서 실행 컨텍스트가 제거됩니다."
-        caption="코드 진행이 끝나면 콜스택에서 제거됩니다."
+        alt='콜스택에서 실행 컨텍스트가 제거됩니다.'
+        caption='코드 진행이 끝나면 콜스택에서 제거됩니다.'
       />
       <p>이제 전역 실행 컨텍스트만이 남았습니다.</p>
       <p>
@@ -567,8 +566,8 @@ export default function Lecture() {
         imageSrc={emptyCallStack}
         width={387}
         height={558}
-        alt="콜스택에서 실행 컨텍스트가 제거됩니다."
-        caption="전역 실행 컨텍스트 생명주기의 종료는 코드 진행이 끝났음을 의미합니다."
+        alt='콜스택에서 실행 컨텍스트가 제거됩니다.'
+        caption='전역 실행 컨텍스트 생명주기의 종료는 코드 진행이 끝났음을 의미합니다.'
       />
       <CodeBox code={lessonCode.contextAnswer} />
       <p>한번에 이해하기는 어려울 수 있습니다.</p>
@@ -625,7 +624,7 @@ export default function Lecture() {
       <h3>Exercise</h3>
       <ul>
         <ExerciseCard
-          title="지, 구, 오, 락, 실에는 무슨 숫자가 할당될까요?"
+          title='지, 구, 오, 락, 실에는 무슨 숫자가 할당될까요?'
           QuestionCode={lessonCode.closureQuestion1}
           AnswerCode={lessonCode.closureAnswer1}
         />
@@ -720,7 +719,7 @@ export default function Lecture() {
       <br />
       <h3>클린업 함수</h3>
       <p>
-        클로저의 메모리 점유를 막기 위해{" "}
+        클로저의 메모리 점유를 막기 위해{' '}
         <b>함수는 함수를 리턴할 수 있다는 법칙</b>을 이용해보겠습니다.
       </p>
       <p>

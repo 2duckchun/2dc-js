@@ -1,5 +1,6 @@
-import Image, { StaticImageData } from "next/image";
-import styles from "./CustomImageWithCaption.module.scss";
+import Image, { StaticImageData } from 'next/image';
+
+import styles from './CustomImageWithCaption.module.scss';
 
 type CustomImageWithCaptionProps = {
   imageSrc: StaticImageData;
@@ -31,7 +32,7 @@ export default function CustomImageWithCaption({
     >
       <div className={styles.image_box}>
         <Image
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           src={imageSrc}
           alt={alt}
         />

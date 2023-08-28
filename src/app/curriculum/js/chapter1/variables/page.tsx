@@ -1,14 +1,13 @@
-import styles from "@/styles/Chapter.module.scss";
-import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import CustomLink from "@/app/_component/_common/CustomLink";
+import CustomImageWithCaption from '@/components/_common/CustomImageWithCaption';
+import CustomLink from '@/components/_common/CustomLink';
+import ActNavigator from '@/components/curriculum/ActNavigator';
+import CodeBox from '@/components/curriculum/CodeBox';
+import { chaptersInfo } from '@/constants/js_curriculum/js_chapters_info';
+import styles from '@/styles/curriculum/Lecture.module.scss';
 
-// images
-import RAM from "#/images/lectures/js/chap1/ram.jpg";
-import VSC from "#/images/lectures/js/chap1/vsc.png";
-import nodeExecute from "#/images/lectures/js/chap1/node.png";
+import nodeExecute from '#/images/lectures/js/chap1/node.png';
+import RAM from '#/images/lectures/js/chap1/ram.jpg';
+import VSC from '#/images/lectures/js/chap1/vsc.png';
 
 const lessonCode = {
   onePlusOne: `1 + 2`,
@@ -59,7 +58,7 @@ export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum="js"
+        curriculum='js'
         highlightActNum={1}
         chapterInfo={chaptersInfo.chapter1}
       ></ActNavigator>
@@ -97,8 +96,8 @@ export default function Lecture() {
         imageSrc={RAM}
         width={640}
         height={427}
-        caption={"RAM: Random Access Memory"}
-        alt={"RAM 사진"}
+        caption={'RAM: Random Access Memory'}
+        alt={'RAM 사진'}
       />
       <p>메모리는 대표적인 반도체입니다.</p>
       <p>
@@ -165,11 +164,11 @@ export default function Lecture() {
         한다면
       </p>
       <p>
-        <code className={styles.code_tag}>let</code>은 변수를 선언하는{" "}
+        <code className={styles.code_tag}>let</code>은 변수를 선언하는{' '}
         <b>키워드</b>이고,
       </p>
       <p>
-        <code className={styles.code_tag}>let</code> 뒤에 오는 이름이{" "}
+        <code className={styles.code_tag}>let</code> 뒤에 오는 이름이{' '}
         <b>식별자</b>입니다.
       </p>
 
@@ -232,12 +231,12 @@ export default function Lecture() {
         잠시 강의를 멈추고, <b>코드 에디터</b>를 설치할 시간입니다.
       </p>
       <p>
-        <CustomLink href={{ pathname: "https://nodejs.org/en" }} isBlank={true}>
+        <CustomLink href={{ pathname: 'https://nodejs.org/en' }} isBlank={true}>
           <b className={styles.link}>Node.js</b>
         </CustomLink>
-        와{" "}
+        와{' '}
         <CustomLink
-          href={{ pathname: "https://code.visualstudio.com/" }}
+          href={{ pathname: 'https://code.visualstudio.com/' }}
           isBlank={true}
         >
           <b className={styles.link}>Visual Studio Code</b>
@@ -249,10 +248,10 @@ export default function Lecture() {
         width={573}
         height={361}
         caption={
-          "VSC와 node를 설치하시고 practice.js 파일을 만든 뒤 내부에 코드를 적어주세요."
+          'VSC와 node를 설치하시고 practice.js 파일을 만든 뒤 내부에 코드를 적어주세요.'
         }
         alt={
-          "VSC를 설치하고 practice.js 파일을 만든 뒤 내부에 var 키워드로 변수를 생성한 사진"
+          'VSC를 설치하고 practice.js 파일을 만든 뒤 내부에 var 키워드로 변수를 생성한 사진'
         }
       />
       <CustomImageWithCaption
@@ -260,9 +259,9 @@ export default function Lecture() {
         width={573}
         height={361}
         caption={
-          "터미널을 열고 node 파일명 을 타이핑하시고 엔터를 치시면 node 환경에서 js가 실행됩니다!"
+          '터미널을 열고 node 파일명 을 타이핑하시고 엔터를 치시면 node 환경에서 js가 실행됩니다!'
         }
-        alt={"practice.js를 node 화면에서 실행시킨 사진"}
+        alt={'practice.js를 node 화면에서 실행시킨 사진'}
       />
       <p>
         두 프로그램을 설치하시고, js 파일을 만들어 node 환경에서 실행시켜보세요!

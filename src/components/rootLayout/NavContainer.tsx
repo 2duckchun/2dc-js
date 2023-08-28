@@ -1,5 +1,8 @@
-import styles from "./NavContainer.module.scss";
-import { font_pretended } from "@/fonts/fonts";
+import React from 'react';
+
+import { font_pretended } from '@/fonts/fonts';
+
+import styles from './NavContainer.module.scss';
 
 export default function MainNav({
   children,
@@ -11,7 +14,7 @@ export default function MainNav({
   return (
     <nav
       className={`${styles.nav_collapse} ${font_pretended.className} ${
-        isCollapsed ? styles.active : ""
+        isCollapsed ? styles.active : ''
       }`}
     >
       {children}

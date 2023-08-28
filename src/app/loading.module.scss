@@ -1,3 +1,5 @@
+@import '@/styles/animations.scss';
+
 .loading {
   z-index: 1000;
   width: 100%;
@@ -22,13 +24,4 @@
   border-top-color: var(--primary);
   border-bottom-color: var(--primary);
   animation: spinner 1.5s ease infinite;
-}
-
-@keyframes spinner {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

@@ -1,13 +1,14 @@
-import CustomLink from "../_common/CustomLink";
-import styles from "./NavMenu.module.scss";
+import CustomLink from '@/components/_common/CustomLink';
+
+import styles from './NavMenu.module.scss';
 
 export default function NavMenu() {
   return (
     <ul className={styles.nav_menu}>
-      <CustomLink href={{ pathname: "/curriculum/js" }}>
+      <CustomLink href={{ pathname: '/curriculum/js' }}>
         <li>자바스크립트</li>
       </CustomLink>
-      <CustomLink href={{ pathname: "/curriculum/data-structure" }}>
+      <CustomLink href={{ pathname: '/curriculum/data-structure' }}>
         <li>자료구조</li>
       </CustomLink>
       <li>REPO</li>

@@ -1,12 +1,11 @@
-import styles from "@/styles/Chapter.module.scss";
-import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
+import CustomImageWithCaption from '@/components/_common/CustomImageWithCaption';
+import ActNavigator from '@/components/curriculum/ActNavigator';
+import CodeBox from '@/components/curriculum/CodeBox';
+import ExerciseCard from '@/components/curriculum/ExcerciseCard';
+import { chaptersInfo } from '@/constants/js_curriculum/js_chapters_info';
+import styles from '@/styles/curriculum/Lecture.module.scss';
 
-// images
-import recursiveCallStack from "#/images/lectures/js/chap2/recursive-callstack.png";
+import recursiveCallStack from '#/images/lectures/js/chap2/recursive-callstack.png';
 
 const lessonCode = {
   sum1toN: `// 1부터 n까지의 모든 숫자를 더하는 재귀함수입니다.
@@ -134,7 +133,7 @@ export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum="js"
+        curriculum='js'
         highlightActNum={3}
         chapterInfo={chaptersInfo.chapter2}
       ></ActNavigator>
@@ -172,8 +171,8 @@ export default function Lecture() {
         imageSrc={recursiveCallStack}
         width={811}
         height={564}
-        alt="sum1toN이라는 재귀함수를 콜스택의 관점에서 보여주는 사진"
-        caption="1부터 n까지 더하기 위해 n개만큼의 콜스택이 쌓입니다."
+        alt='sum1toN이라는 재귀함수를 콜스택의 관점에서 보여주는 사진'
+        caption='1부터 n까지 더하기 위해 n개만큼의 콜스택이 쌓입니다.'
       />
       <p>
         함수 내부에서 함수가 호출되면, 호출된 함수의 실행 컨텍스트가 생성되어
@@ -287,17 +286,17 @@ export default function Lecture() {
       <h2>Exercise</h2>
       <ol>
         <ExerciseCard
-          title="n 팩토리얼을 구하는 재귀함수를 만들어보세요! 팩토리얼은 n부터 1까지 모든 양의 정수를 곱한 값을 의미합니다."
+          title='n 팩토리얼을 구하는 재귀함수를 만들어보세요! 팩토리얼은 n부터 1까지 모든 양의 정수를 곱한 값을 의미합니다.'
           QuestionCode={lessonCode.factorialQuestion}
           AnswerCode={lessonCode.factorialAnswer}
         />
         <ExerciseCard
-          title="피보나치 수열의 n번째 수를 구하는 재귀함수를 만들어보세요! 피보나치 수열은 첫번째와 두번째 항이 각각 1로 시작하며, 세번째 항부터는 이전 두 항의 합으로 계산되는 수열입니다. 즉 세번째 항부터 n = (n - 1) + (n - 2) 입니다."
+          title='피보나치 수열의 n번째 수를 구하는 재귀함수를 만들어보세요! 피보나치 수열은 첫번째와 두번째 항이 각각 1로 시작하며, 세번째 항부터는 이전 두 항의 합으로 계산되는 수열입니다. 즉 세번째 항부터 n = (n - 1) + (n - 2) 입니다.'
           QuestionCode={lessonCode.fibonacciQuestion}
           AnswerCode={lessonCode.fibonacciAnswer}
         />
         <ExerciseCard
-          title="함수 내부에 있는 for 반복문을 helper 라는 이름을 가진 재귀함수로 바꿔보세요. 반복문은 재귀함수로 바꿀 수 있고, 재귀함수는 반복문으로 바꿀 수 있다는 것을 배우기 위함입니다."
+          title='함수 내부에 있는 for 반복문을 helper 라는 이름을 가진 재귀함수로 바꿔보세요. 반복문은 재귀함수로 바꿀 수 있고, 재귀함수는 반복문으로 바꿀 수 있다는 것을 배우기 위함입니다.'
           QuestionCode={lessonCode.loopToRecursiveQuestion}
           AnswerCode={lessonCode.loopToRecursiveAnswer}
         />

@@ -1,8 +1,10 @@
-"use client";
-import styles from "./page.module.scss";
-import { useState } from "react";
-import useMonitorElement from "../hooks/client/useMonitorElement";
-import WelcomeCard from "./_component/_home/WelcomeCard";
+'use client';
+import { useState } from 'react';
+
+import WelcomeCard from '@/components/home/WelcomeCard';
+import useMonitorElement from '@/hooks/client/useMonitorElement';
+
+import styles from './page.module.scss';
 
 export default function Home() {
   const [isShowCard, setIsShowCard] = useState(false);

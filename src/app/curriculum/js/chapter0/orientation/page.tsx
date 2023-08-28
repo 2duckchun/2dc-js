@@ -1,21 +1,20 @@
-import styles from "@/styles/Chapter.module.scss";
-import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import CustomLink from "@/app/_component/_common/CustomLink";
+import CustomImageWithCaption from '@/components/_common/CustomImageWithCaption';
+import CustomLink from '@/components/_common/CustomLink';
+import ActNavigator from '@/components/curriculum/ActNavigator';
+import CodeBox from '@/components/curriculum/CodeBox';
+import { chaptersInfo } from '@/constants/js_curriculum/js_chapters_info';
+import styles from '@/styles/curriculum/Lecture.module.scss';
 
-// images
-import mosaic from "#/images/lectures/js/chap0/mosaic.png";
-import AboutBlank from "#/images/lectures/js/chap0/about-blank.png";
-import DeveloperTool from "#/images/lectures/js/chap0/developer-tool.png";
-import DocumentObject from "#/images/lectures/js/chap0/document-object.png";
-import SelfIntroduceDocument from "#/images/lectures/js/chap0/self-introduce.png";
-import YourNickName from "#/images/lectures/js/chap0/your-nick-name.png";
-import Boom from "#/images/lectures/js/chap0/boom.png";
+import AboutBlank from '#/images/lectures/js/chap0/about-blank.png';
+import Boom from '#/images/lectures/js/chap0/boom.png';
+import DeveloperTool from '#/images/lectures/js/chap0/developer-tool.png';
+import DocumentObject from '#/images/lectures/js/chap0/document-object.png';
+import mosaic from '#/images/lectures/js/chap0/mosaic.png';
+import SelfIntroduceDocument from '#/images/lectures/js/chap0/self-introduce.png';
+import YourNickName from '#/images/lectures/js/chap0/your-nick-name.png';
 
 const lessonCode = {
-  consoleDir: "console.dir(document)",
+  consoleDir: 'console.dir(document)',
   addingNickname: `const body = document.querySelector("body")
 const myNickName = document.createElement('h1')
 myNickName.textContent = "yourNickName"
@@ -76,7 +75,7 @@ export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum="js"
+        curriculum='js'
         highlightActNum={1}
         chapterInfo={chaptersInfo.chapter0}
       ></ActNavigator>
@@ -127,7 +126,7 @@ export default function Lecture() {
         만들어내는 것은 굉장히 어려웠습니다.
       </p>
       <p>
-        그런 인고(?)의 시간이 쌓이다보니,{" "}
+        그런 인고(?)의 시간이 쌓이다보니,{' '}
         <b>왜 필요한지 알고 배우면 좋았겠다.</b> 라는 생각이 들게 되었습니다.
       </p>
       <p>
@@ -148,8 +147,8 @@ export default function Lecture() {
         imageSrc={mosaic}
         width={360}
         height={302}
-        alt={"모자이크 브라우저"}
-        caption="8~90년대 브라우저 화면입니다!"
+        alt={'모자이크 브라우저'}
+        caption='8~90년대 브라우저 화면입니다!'
       />
       <p>적을 알고 나를 알면 백전불태라는 말이 있습니다.</p>
       <p>
@@ -172,7 +171,7 @@ export default function Lecture() {
         유튜브의 알고리즘에 빠지지 마시고, 이 영상만 보시고 바로 돌아와주세요!
       </p>
       <CustomLink
-        href={{ pathname: "https://youtu.be/wcsVjmHrUQg" }}
+        href={{ pathname: 'https://youtu.be/wcsVjmHrUQg' }}
         isBlank={true}
       >
         <p>자바스크립트 배우기 전 꼭 봐야할 영상! [드림코딩 엘리]</p>
@@ -183,7 +182,7 @@ export default function Lecture() {
       <p>지금은 아무것도 생각하지 맙시다. 그냥 브라우저랑 놀아봅시다.</p>
       <p>우리가 자바스크립트로 뭘 할 수 있을지 배워보는 시간입니다.</p>
       <p>
-        엘리 영상에서도 보셨다시피, 자바스크립트의 근본은{" "}
+        엘리 영상에서도 보셨다시피, 자바스크립트의 근본은{' '}
         <b>웹(브라우저) 컨트롤</b> 언어 입니다.
       </p>
       <p>그러므로 자바스크립트로 브라우저를 컨트롤 해보도록 하겠습니다.</p>
@@ -192,7 +191,7 @@ export default function Lecture() {
       <p>(런타임 환경이란 프로그래밍 언어가 실행되는 환경이라는 의미입니다.)</p>
       <br />
       <p>
-        여기서 나오는 것들은 외우려고 하지 마시고,{" "}
+        여기서 나오는 것들은 외우려고 하지 마시고,{' '}
         <b>아! 이런것들을 활용하는군! </b>
         하며 넘어가주시길 부탁드립니다.
       </p>
@@ -214,8 +213,8 @@ export default function Lecture() {
         imageSrc={AboutBlank}
         width={360}
         height={120}
-        alt={"구글 about:blank"}
-        caption="주소창에 about:blank를 입력해주세요!"
+        alt={'구글 about:blank'}
+        caption='주소창에 about:blank를 입력해주세요!'
       />
       <p>구글 크롬 주소창에 about:blank를 입력해봅시다.</p>
       <p>
@@ -232,8 +231,8 @@ export default function Lecture() {
         imageSrc={DeveloperTool}
         width={360}
         height={196}
-        alt={"구글 크롬 개발자 도구"}
-        caption="about:blank는 오염되지 않은 깨끗한 웹 환경입니다."
+        alt={'구글 크롬 개발자 도구'}
+        caption='about:blank는 오염되지 않은 깨끗한 웹 환경입니다.'
       />
       <p>이런 화면이 나오셨다면 성공입니다.</p>
       <p>
@@ -264,7 +263,7 @@ export default function Lecture() {
       <p>아무튼 웹 문서를 document라고 하는 것 까지는 알겠습니다.</p>
       <br />
       <p>
-        그럼 브라우저에서 document는 어떻게 생겼는지 확인하기 위해{" "}
+        그럼 브라우저에서 document는 어떻게 생겼는지 확인하기 위해{' '}
         <b>콘솔 탭</b>을 눌러 아래 코드를 입력해봅시다.
       </p>
       <CodeBox code={lessonCode.consoleDir} />
@@ -273,8 +272,8 @@ export default function Lecture() {
         imageSrc={DocumentObject}
         width={360}
         height={571}
-        alt={"document 객체"}
-        caption="console.dir로 요소를 찝으면 객체 형태의 DOM API를 까볼 수 있습니다."
+        alt={'document 객체'}
+        caption='console.dir로 요소를 찝으면 객체 형태의 DOM API를 까볼 수 있습니다.'
       />
       <p>document의 데이터가 쭉 나열되어 있는 것을 보실 수 있습니다.</p>
       <p>
@@ -302,8 +301,8 @@ export default function Lecture() {
         imageSrc={SelfIntroduceDocument}
         width={360}
         height={571}
-        alt={"자기소개 화면"}
-        caption="크롬 콘솔만으로도 간단하게 화면을 구성할 수 있습니다! 물론 생산성은 제로입니다!"
+        alt={'자기소개 화면'}
+        caption='크롬 콘솔만으로도 간단하게 화면을 구성할 수 있습니다! 물론 생산성은 제로입니다!'
       />
       <h2>자기소개 만들기</h2>
       <p>자바스크립트를 통해 본격적으로 DOM을 컨트롤 해보겠습니다. 가시죠!</p>
@@ -346,8 +345,8 @@ export default function Lecture() {
         imageSrc={YourNickName}
         width={360}
         height={155}
-        alt={"h1 태그와 hr태그가 body에 추가된 사진"}
-        caption="h1태그와 hr태그가 body에 추가되었습니다."
+        alt={'h1 태그와 hr태그가 body에 추가된 사진'}
+        caption='h1태그와 hr태그가 body에 추가되었습니다.'
       />
       <br />
       <p>잘 오시고 계신가요?</p>
@@ -419,8 +418,8 @@ export default function Lecture() {
         imageSrc={SelfIntroduceDocument}
         width={360}
         height={571}
-        alt={"자기소개 화면"}
-        caption="만드느라 고생하셨습니다~!"
+        alt={'자기소개 화면'}
+        caption='만드느라 고생하셨습니다~!'
       />
       <h1>한걸음 더</h1>
       <h3>애니메이션 with DOM</h3>
@@ -453,8 +452,8 @@ export default function Lecture() {
         imageSrc={Boom}
         width={360}
         height={608}
-        alt={"화면에 keyframe 추가"}
-        caption="style 태그를 head 태그에 강제로 주입해서 애니메이션을 추가해보았습니다."
+        alt={'화면에 keyframe 추가'}
+        caption='style 태그를 head 태그에 강제로 주입해서 애니메이션을 추가해보았습니다.'
       />
       <p>위에 작성한 모든 코드들을 입력하면 맨 아래 버튼이 생성될 것입니다.</p>
       <p>그리고 버튼을 누르면 모든 것이 사라지고 이번 레슨이 종료됩니다!</p>

@@ -1,9 +1,11 @@
-"use client";
+'use client';
 
-import { CurriculumCartPropsType } from "@/types/common";
-import styles from "./CurriculumCard.module.scss";
-import Image from "next/image";
-import CustomLink from "../_common/CustomLink";
+import Image from 'next/image';
+
+import CustomLink from '@/components/_common/CustomLink';
+import { CurriculumCartPropsType } from '@/types/common';
+
+import styles from './CurriculumCard.module.scss';
 
 export default function CurriculumCard({
   imageFile,

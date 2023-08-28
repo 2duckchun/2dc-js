@@ -1,18 +1,17 @@
-import styles from "@/styles/Chapter.module.scss";
-import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
+import CustomImageWithCaption from '@/components/_common/CustomImageWithCaption';
+import ActNavigator from '@/components/curriculum/ActNavigator';
+import CodeBox from '@/components/curriculum/CodeBox';
+import ExerciseCard from '@/components/curriculum/ExcerciseCard';
+import { chaptersInfo } from '@/constants/js_curriculum/js_chapters_info';
+import styles from '@/styles/curriculum/Lecture.module.scss';
 
-// images
-import primitive1 from "#/images/lectures/js/chap3/primitive-1.png";
-import primitive2 from "#/images/lectures/js/chap3/primitive-2.png";
-import primitive3 from "#/images/lectures/js/chap3/primitive-3.png";
-import primitive4 from "#/images/lectures/js/chap3/primitive-4.png";
-import primitive5 from "#/images/lectures/js/chap3/primitive-5.png";
-import reference1 from "#/images/lectures/js/chap3/reference-1.png";
-import reference2 from "#/images/lectures/js/chap3/reference-2.png";
+import primitive1 from '#/images/lectures/js/chap3/primitive-1.png';
+import primitive2 from '#/images/lectures/js/chap3/primitive-2.png';
+import primitive3 from '#/images/lectures/js/chap3/primitive-3.png';
+import primitive4 from '#/images/lectures/js/chap3/primitive-4.png';
+import primitive5 from '#/images/lectures/js/chap3/primitive-5.png';
+import reference1 from '#/images/lectures/js/chap3/reference-1.png';
+import reference2 from '#/images/lectures/js/chap3/reference-2.png';
 
 const lessonCode = {
   primitiveDeclarationA: `let a = 25`,
@@ -149,7 +148,7 @@ export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum="js"
+        curriculum='js'
         highlightActNum={1}
         chapterInfo={chaptersInfo.chapter3}
       ></ActNavigator>
@@ -176,7 +175,7 @@ export default function Lecture() {
         자료구조 라고 명시합니다.
       </p>
       <p>
-        위의 말을 간단히 하면,{" "}
+        위의 말을 간단히 하면,{' '}
         <b>
           여러 데이터들에게 번호표(인덱스)를 하나씩 나눠준 뒤 일렬로 줄 세워
           묶어버린 것
@@ -204,7 +203,7 @@ export default function Lecture() {
       <p>이런 현상을 이해하기 위해서 원시 타입과 참조 타입을 알아야합니다.</p>
       <h3>원시 타입</h3>
       <p>
-        원시 타입은 <b>변수에 실제 값이 할당된다는 것</b>과,{" "}
+        원시 타입은 <b>변수에 실제 값이 할당된다는 것</b>과,{' '}
         <b>저장된 값은 변경되지 않는다(불변성을 지닌다)</b>는 특징을 가진 데이터
         타입들입니다.
       </p>
@@ -222,8 +221,8 @@ export default function Lecture() {
         imageSrc={primitive1}
         width={347}
         height={450}
-        alt="변수 a에 숫자 25가 할당"
-        caption="변수 a에 숫자형(원시타입) 데이터 25가 할당되었습니다."
+        alt='변수 a에 숫자 25가 할당'
+        caption='변수 a에 숫자형(원시타입) 데이터 25가 할당되었습니다.'
       />
       <p>
         숫자형 데이터 25는 메모리 특정 공간에 기록이 되고, 그 메모리 공간의
@@ -247,8 +246,8 @@ export default function Lecture() {
         imageSrc={primitive2}
         width={347}
         height={450}
-        alt="변수 B에 a가 할당"
-        caption="변수 b에 a가 할당되었고, b는 a의 값을 복제해옵니다."
+        alt='변수 B에 a가 할당'
+        caption='변수 b에 a가 할당되었고, b는 a의 값을 복제해옵니다.'
       />
       <br />
       <p>이제 변수 a에 다른 값을 재할당 해보겠습니다.</p>
@@ -271,8 +270,8 @@ export default function Lecture() {
         imageSrc={primitive3}
         width={347}
         height={450}
-        alt="변수 a에 30이 재할당"
-        caption="변수 a에 30을 재할당 했습니다. a는 30이 저장된 메모리 주소를 참조합니다."
+        alt='변수 a에 30이 재할당'
+        caption='변수 a에 30을 재할당 했습니다. a는 30이 저장된 메모리 주소를 참조합니다.'
       />
       <br />
       <p>이제 변수 a는 30이 담긴 메모리의 주소를 참조합니다.</p>
@@ -306,8 +305,8 @@ export default function Lecture() {
         imageSrc={primitive4}
         width={347}
         height={450}
-        alt="변수 b에 a와 b를 더함"
-        caption="a + b는 표현식입니다. 표현식은 곧 값을 나타내지요. 새로운 값은 메모리의 다른 부분에 저장됩니다."
+        alt='변수 b에 a와 b를 더함'
+        caption='a + b는 표현식입니다. 표현식은 곧 값을 나타내지요. 새로운 값은 메모리의 다른 부분에 저장됩니다.'
       />
       <p>25 + 30 이라는 표현식이 계산된 후, 메모리에 저장됩니다.</p>
       <p>그리고 변수 b는 새로운 값을 참조합니다.</p>
@@ -340,8 +339,8 @@ export default function Lecture() {
         imageSrc={primitive5}
         width={643}
         height={355}
-        alt="실행 컨텍스트에 등록된 변수의 메모리 참조"
-        caption="실행 컨텍스트에 등록된 변수의 메모리 참조"
+        alt='실행 컨텍스트에 등록된 변수의 메모리 참조'
+        caption='실행 컨텍스트에 등록된 변수의 메모리 참조'
       />
       <p>위 그림은 원시 타입과 참조 타입을 이해하는데 필요합니다.</p>
       <p>이제 참조 타입에 대해서 학습해보도록 하겠습니다!</p>
@@ -382,8 +381,8 @@ export default function Lecture() {
         imageSrc={reference1}
         width={840}
         height={400}
-        alt="참조타입이 메모리에 저장되는 그림"
-        caption="참조 타입은 힙(heap)이라는 메모리의 가변적인 부분을 활용합니다."
+        alt='참조타입이 메모리에 저장되는 그림'
+        caption='참조 타입은 힙(heap)이라는 메모리의 가변적인 부분을 활용합니다.'
       />
       <p>참조타입은 값이 메모리 스택에 그대로 할당 되었던 원시 타입과 달리,</p>
       <p>
@@ -408,8 +407,8 @@ export default function Lecture() {
         imageSrc={reference2}
         width={840}
         height={400}
-        alt="다른 식별자가 동일한 heap 주소를 참조하고 있는 그림"
-        caption="식별자 product와 cart는 동일한 heap 메모리 주소를 참조하게 됩니다."
+        alt='다른 식별자가 동일한 heap 주소를 참조하고 있는 그림'
+        caption='식별자 product와 cart는 동일한 heap 메모리 주소를 참조하게 됩니다.'
       />
       <p>약간은 감이 잡히셨을거라고 믿습니다.</p>
       <br />
@@ -479,7 +478,7 @@ export default function Lecture() {
       <p>우리의 과일바구니는 4개의 엘리먼트가 있었죠.</p>
       <p>즉, 과일바구니의 배열 길이는 4이고, 배열의 최대 인덱스는 3입니다.</p>
       <p>
-        배열에 인덱스로 접근해서 엘리먼트를 가져오는 문법은{" "}
+        배열에 인덱스로 접근해서 엘리먼트를 가져오는 문법은{' '}
         <b>배열[인덱스숫자]</b> 입니다.
       </p>
       <p>
@@ -493,7 +492,7 @@ export default function Lecture() {
         바랍니다.
       </p>
       <p>
-        다만 인덱스를 벗어나는 숫자가 오게 될 경우, 배열 내 값이 없다는 의미로{" "}
+        다만 인덱스를 벗어나는 숫자가 오게 될 경우, 배열 내 값이 없다는 의미로{' '}
         <b>undefined</b>가 출력됩니다.
       </p>
 
@@ -520,17 +519,17 @@ export default function Lecture() {
       <h2>Exercise</h2>
       <ol>
         <ExerciseCard
-          title="배열 내 모든 엘리먼트를 순서대로 console.log 해보세요!"
+          title='배열 내 모든 엘리먼트를 순서대로 console.log 해보세요!'
           QuestionCode={lessonCode.forArrayQuestion1}
           AnswerCode={lessonCode.forArrayAnswer1}
         />
         <ExerciseCard
-          title="배열 내 모든 엘리먼트를 역순으로 console.log 해보세요!"
+          title='배열 내 모든 엘리먼트를 역순으로 console.log 해보세요!'
           QuestionCode={lessonCode.forArrayQuestion2}
           AnswerCode={lessonCode.forArrayAnswer2}
         />
         <ExerciseCard
-          title="console.log 내부 조건식은 true일까요? false일까요?"
+          title='console.log 내부 조건식은 true일까요? false일까요?'
           QuestionCode={lessonCode.primitiveInReferenceQuestion}
           AnswerCode={lessonCode.primitiveInReferenceAnswer}
         />

@@ -1,19 +1,17 @@
-import styles from "@/styles/Chapter.module.scss";
-import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import recursiveCallStack from "#/chap2/recursiveCallStack.png";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CustomLink from "@/app/_component/_common/CustomLink";
-import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
+// import ExerciseCard from '@/app/_component/_curriculum/ExcerciseCard';
+// import CustomImageWithCaption from '@/components/_common/CustomImageWithCaption';
+import ActNavigator from '@/components/curriculum/ActNavigator';
+import { chaptersInfo } from '@/constants/js_curriculum/js_chapters_info';
+// import CodeBox from '@/containers/curriculum/CodeBox';
+import styles from '@/styles/curriculum/Lecture.module.scss';
 
-const lessonCode = {};
+// const lessonCode = {};
 
 export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum="js"
+        curriculum='js'
         highlightActNum={3}
         chapterInfo={chaptersInfo.chapter3}
       ></ActNavigator>

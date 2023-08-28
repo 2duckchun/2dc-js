@@ -1,4 +1,6 @@
-import styles from "./CustomInputWithButton.module.scss";
+import React from 'react';
+
+import styles from './CustomInputWithButton.module.scss';
 
 type PropsType = {
   id: string;

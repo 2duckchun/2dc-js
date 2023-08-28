@@ -1,4 +1,4 @@
-import style from "./NavToggleButton.module.scss";
+import style from './NavToggleButton.module.scss';
 
 export default function NavToggleButton({ navToggleHandler }: any) {
   return (

@@ -1,8 +1,8 @@
-import styles from "@/styles/Chapter.module.scss";
-import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
+import ActNavigator from '@/components/curriculum/ActNavigator';
+import CodeBox from '@/components/curriculum/CodeBox';
+import ExerciseCard from '@/components/curriculum/ExcerciseCard';
+import { chaptersInfo } from '@/constants/js_curriculum/js_chapters_info';
+import styles from '@/styles/curriculum/Lecture.module.scss';
 
 const lessonCode = {
   block: `{
@@ -171,7 +171,7 @@ export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum="js"
+        curriculum='js'
         highlightActNum={2}
         chapterInfo={chaptersInfo.chapter1}
       ></ActNavigator>
@@ -190,7 +190,7 @@ export default function Lecture() {
       <p>제어문은 굉장히 중요한 개념이므로 반드시 익히고 넘어가셔야 합니다!</p>
       <h2>제어문의 기초 토대</h2>
       <p>
-        저는 처음 자바스크립트를 배울 때,{" "}
+        저는 처음 자바스크립트를 배울 때,{' '}
         <b>&ldquo;이건 if문이고 이건 for문이다. 이렇게 사용한다.&ldquo;</b> 와
         같이 주입식으로 공부를 했던 것 같습니다.
       </p>
@@ -208,7 +208,7 @@ export default function Lecture() {
 
       <CodeBox code={lessonCode.block} />
       <p>
-        블록은 한 줄 이상의 코드를 <b>중괄호 {"{}"}</b> 로 묶은 것을 의미합니다.
+        블록은 한 줄 이상의 코드를 <b>중괄호 {'{}'}</b> 로 묶은 것을 의미합니다.
       </p>
       <p>
         코드 블록은 코드를 묶는 것 외에
@@ -274,7 +274,7 @@ export default function Lecture() {
       </p>
       <CodeBox code={lessonCode.dataType} />
       <p>
-        특정 데이터가 <b>조건절</b>에 할당되면{" "}
+        특정 데이터가 <b>조건절</b>에 할당되면{' '}
         <b>
           자바스크립트 엔진은 조건절에 할당된 값이 truthy인지 falsy인지 자동으로
           평가
@@ -292,19 +292,19 @@ export default function Lecture() {
       <p>사실 falsy 부분 외에는 모두 truthy로 해석해도 무리가 없습니다.</p>
       <p>아래 표를 참고해주세요!</p>
       <table
-        width="100%"
+        width='100%'
         style={{
-          textAlign: "center",
-          borderCollapse: "separate",
-          borderSpacing: "20px",
-          border: "1px solid black",
+          textAlign: 'center',
+          borderCollapse: 'separate',
+          borderSpacing: '20px',
+          border: '1px solid black',
         }}
       >
         <thead>
           <tr>
-            <th scope="col">데이터 타입</th>
-            <th scope="col">Falsy</th>
-            <th scope="col">Truthy</th>
+            <th scope='col'>데이터 타입</th>
+            <th scope='col'>Falsy</th>
+            <th scope='col'>Truthy</th>
           </tr>
         </thead>
         <tbody>
@@ -452,7 +452,7 @@ export default function Lecture() {
       <p>코드를 통해 배워보겠습니다.</p>
       <CodeBox code={lessonCode.forContinue} />
       <p>
-        위 코드에서는 i가 짝수일 때 continue를 통해 그 반복문 코드진행을{" "}
+        위 코드에서는 i가 짝수일 때 continue를 통해 그 반복문 코드진행을{' '}
         <b>통과</b>합니다.
       </p>
       <p>따라서 console.log는 홀수에서만 찍히게 됩니다.</p>
@@ -467,17 +467,17 @@ export default function Lecture() {
       <h2>Exercise</h2>
       <ol>
         <ExerciseCard
-          title="if 문이 동작할까요??!"
+          title='if 문이 동작할까요??!'
           QuestionCode={lessonCode.nullExerciseQuestion}
           AnswerCode={lessonCode.nullExerciseAnswer}
         />
         <ExerciseCard
-          title="다소 특이하게 생긴 for문의 로직을 추적해봅시다. 어떤 것들이 출력될까요?"
+          title='다소 특이하게 생긴 for문의 로직을 추적해봅시다. 어떤 것들이 출력될까요?'
           QuestionCode={lessonCode.forExerciseQuestion}
           AnswerCode={lessonCode.forExerciseAnswer}
         />
         <ExerciseCard
-          title="while문을 이용해서 숫자의 각 자릿수를 더하는 알고리즘을 만들어 봅시다!"
+          title='while문을 이용해서 숫자의 각 자릿수를 더하는 알고리즘을 만들어 봅시다!'
           QuestionCode={lessonCode.whileExerciceQuestion}
           AnswerCode={lessonCode.whileExerciceAnswer}
         />

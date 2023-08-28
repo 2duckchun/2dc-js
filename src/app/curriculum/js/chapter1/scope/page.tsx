@@ -1,12 +1,12 @@
-import styles from "@/styles/Chapter.module.scss";
-import { chaptersInfo } from "../../JS_CHAPTER_INFO";
-import ActNavigator from "@/app/_component/_curriculum/ActNavigator";
-import CustomImageWithCaption from "@/app/_component/_common/CustomImageWithCaption";
-import CodeBox from "@/app/_component/_curriculum/CodeBox";
-import ExerciseCard from "@/app/_component/_curriculum/ExcerciseCard";
+import CustomImageWithCaption from '@/components/_common/CustomImageWithCaption';
+import ActNavigator from '@/components/curriculum/ActNavigator';
+import CodeBox from '@/components/curriculum/CodeBox';
+import ExerciseCard from '@/components/curriculum/ExcerciseCard';
+import { chaptersInfo } from '@/constants/js_curriculum/js_chapters_info';
+import styles from '@/styles/curriculum/Lecture.module.scss';
 
 // images
-import scopeChaining from "#/images/lectures/js/chap1/scopechain.png";
+import scopeChaining from '#/images/lectures/js/chap1/scopechain.png';
 
 const lessonCode = {
   blockScope: `let a = 10
@@ -126,7 +126,7 @@ export default function Lecture() {
   return (
     <div className={styles.act_container}>
       <ActNavigator
-        curriculum="js"
+        curriculum='js'
         highlightActNum={3}
         chapterInfo={chaptersInfo.chapter1}
       ></ActNavigator>
@@ -145,7 +145,7 @@ export default function Lecture() {
       <p>일단은 스코프의 개념을 확실히 알아가도록 합시다.</p>
       <h2>스코프란 무엇인가?</h2>
       <p>
-        스코프를 직역하면 범위입니다. 자바스크립트에서 스코프는{" "}
+        스코프를 직역하면 범위입니다. 자바스크립트에서 스코프는{' '}
         <b>변수를 참조할 수 있는 유효 범위</b>를 말합니다.
       </p>
       <p>
@@ -226,9 +226,9 @@ export default function Lecture() {
         imageSrc={scopeChaining}
         width={360}
         height={300}
-        alt={"스코프 체이닝"}
+        alt={'스코프 체이닝'}
         caption={
-          "하위 스코프가 상위 스코프를 참조하는 모습이 마치 체인처럼 연결된 것 같아서 스코프 체이닝이라고 합니다."
+          '하위 스코프가 상위 스코프를 참조하는 모습이 마치 체인처럼 연결된 것 같아서 스코프 체이닝이라고 합니다.'
         }
       />
       <p>이는 스코프 체이닝 덕분에 가능한 일입니다.</p>
@@ -339,7 +339,7 @@ export default function Lecture() {
       <ol>
         <ExerciseCard
           title={
-            "별 찍기를 해봅시다! scope의 개념과 이중 for문이 필요합니다! 총 층수는 5층이에요!"
+            '별 찍기를 해봅시다! scope의 개념과 이중 for문이 필요합니다! 총 층수는 5층이에요!'
           }
           QuestionCode={lessonCode.forStarExerciseQuestion}
           AnswerCode={lessonCode.forStarExerciseAnswer}

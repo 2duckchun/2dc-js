@@ -1,16 +1,17 @@
-import styles from "@/styles/CurriculumPage.module.scss";
-import { StaticImageData } from "next/image";
-import getMasterPiece from "@/utils/getMasterPiece";
-import CustomLink from "@/app/_component/_common/CustomLink";
-import CurriculumCard from "@/app/_component/_curriculum/CurriculumCard";
-import CURRICULUM from "./JS_CURRICULUM_LIST.json";
+import { StaticImageData } from 'next/image';
 
-// images
-import transfiguration from "#/images/masterpieces/the_transfiguration.jpg";
-import girlWhoReading from "#/images/masterpieces/la_liseuse.jpg";
-import napoleon from "#/images/masterpieces/napoleon.jpg";
-import wanderer from "#/images/masterpieces/wanderer.jpg";
-import girtWithPearl from "#/images/masterpieces/girl_with_pearl.jpg";
+import CustomLink from '@/components/_common/CustomLink';
+import CurriculumCard from '@/components/curriculum/CurriculumCard';
+import { jsCurriculumInfo } from '@/constants/js_curriculum/js_curriculum_list';
+import getMasterPiece from '@/utils/getMasterPiece';
+
+import styles from './page.module.scss';
+
+import girtWithPearl from '#/images/masterpieces/girl_with_pearl.jpg';
+import girlWhoReading from '#/images/masterpieces/la_liseuse.jpg';
+import napoleon from '#/images/masterpieces/napoleon.jpg';
+import transfiguration from '#/images/masterpieces/the_transfiguration.jpg';
+import wanderer from '#/images/masterpieces/wanderer.jpg';
 
 const masterPieceArr: StaticImageData[] = [
   transfiguration,
@@ -24,7 +25,7 @@ export default function JavaScriptPage() {
   return (
     <div className={styles.curriculum_container}>
       <section className={styles.curriculum_card_container}>
-        {CURRICULUM.map((cardInfo) => (
+        {jsCurriculumInfo.map(cardInfo => (
           <CurriculumCard
             key={cardInfo.chapter}
             imageFile={getMasterPiece(cardInfo.art_index, masterPieceArr)}
@@ -32,36 +33,36 @@ export default function JavaScriptPage() {
             subject={cardInfo.subject}
             explain={cardInfo.explain}
             firstLesson={cardInfo.first_lesson}
-            curriculum={"js"}
+            curriculum={'js'}
           />
         ))}
       </section>
       <section className={styles.curriculum_reference_container}>
         <h2>Reference</h2>
         <CustomLink
-          href={{ pathname: "https://ko.javascript.info/" }}
+          href={{ pathname: 'https://ko.javascript.info/' }}
           isBlank={true}
         >
           <p>모던 JavaScript 튜토리얼</p>
         </CustomLink>
         <CustomLink
-          href={{ pathname: "https://poiemaweb.com/" }}
+          href={{ pathname: 'https://poiemaweb.com/' }}
           isBlank={true}
         >
           <p>poiemaweb</p>
         </CustomLink>
         <CustomLink
-          href={{ pathname: "https://www.zerocho.com/" }}
+          href={{ pathname: 'https://www.zerocho.com/' }}
           isBlank={true}
         >
           <p>제로초님 블로그</p>
         </CustomLink>
-        <CustomLink href={{ pathname: "https://www.c0d3.com/" }} isBlank={true}>
+        <CustomLink href={{ pathname: 'https://www.c0d3.com/' }} isBlank={true}>
           <p>C0D3</p>
         </CustomLink>
         <CustomLink
           href={{
-            pathname: "https://developer.mozilla.org/ko/",
+            pathname: 'https://developer.mozilla.org/ko/',
           }}
           isBlank={true}
         >
@@ -69,7 +70,7 @@ export default function JavaScriptPage() {
         </CustomLink>
         <CustomLink
           href={{
-            pathname: "https://www.udemy.com/",
+            pathname: 'https://www.udemy.com/',
           }}
           isBlank={true}
         >

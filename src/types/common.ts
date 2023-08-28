@@ -1,4 +1,6 @@
-import { StaticImageData } from "next/image";
+import React from 'react';
+
+import { StaticImageData } from 'next/image';
 
 export type CustomLinkProps = {
   href: {

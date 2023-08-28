@@ -1,3 +1,5 @@
+@import '@/styles/animations.scss';
+
 .welcome_card_container.no_show {
   display: none;
 }
@@ -10,7 +12,7 @@
   justify-content: space-between;
   min-height: 400px;
   background-color: var(--card-bg);
-  animation: 0.5s ease-in-out loadEffect1;
+  animation: 0.5s ease-in-out main-card-load;
 }
 
 .next_card_image {
@@ -58,14 +60,5 @@
     .welcome_card:nth-child(2n) {
       flex-direction: row-reverse;
     }
-  }
-}
-
-@keyframes loadEffect1 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
