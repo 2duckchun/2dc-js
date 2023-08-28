@@ -1,3 +1,4 @@
+import React from 'react';
 import 'normalize.css';
 import '@/styles/globals.scss';
 import '@/styles/animations.scss';

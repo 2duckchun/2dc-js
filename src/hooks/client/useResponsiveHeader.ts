@@ -8,7 +8,7 @@ export default function useResponsiveHeader(headerCollapingHandler: HandlerProps
 
   useEffect(() => {
     const stickyHeader = () => {
-      let currentScrollY = window.scrollY;
+      const currentScrollY = window.scrollY;
       if (!headerRef.current) return;
 
       if (prevScrollY.current > currentScrollY) {
@@ -22,7 +22,7 @@ export default function useResponsiveHeader(headerCollapingHandler: HandlerProps
     window.addEventListener('scroll', stickyHeader);
 
     return () => window.removeEventListener('scroll', stickyHeader);
-  }, []);
+  }, [headerCollapingHandler]);
 
   return [headerRef];
 }
