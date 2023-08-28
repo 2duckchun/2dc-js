@@ -1,7 +1,7 @@
 export default function validURLParser(
   pathArray: string[],
   jsCurriculumRegex: RegExp,
-  dsCurriculumRegex: RegExp
+  dsCurriculumRegex: RegExp,
 ) {
   let isValidURL = true;
 
@@ -9,9 +9,9 @@ export default function validURLParser(
     const curriculumName = pathArray[0];
     const curriculumPath = pathArray[1];
 
-    if (curriculumName === "js") {
+    if (curriculumName === 'js') {
       isValidURL = jsCurriculumRegex.test(curriculumPath);
-    } else if (curriculumName === "data-structure") {
+    } else if (curriculumName === 'data-structure') {
       isValidURL = dsCurriculumRegex.test(curriculumPath);
     }
   }

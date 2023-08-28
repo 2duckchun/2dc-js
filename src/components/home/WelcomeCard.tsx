@@ -1,25 +1,17 @@
-import Image from "next/image";
-import styles from "./WelcomeCard.module.scss";
+import Image from 'next/image';
 
-// images
-import block from "#/images/home/block.jpg";
-import bubble from "#/images/home/bubble.jpg";
-import questionMark from "#/images/home/question-mark.jpg";
+import styles from './WelcomeCard.module.scss';
+
+import block from '#/images/home/block.jpg';
+import bubble from '#/images/home/bubble.jpg';
+import questionMark from '#/images/home/question-mark.jpg';
 
 export default function WelcomeCard({ isShowCard }: { isShowCard: boolean }) {
   return (
-    <div
-      className={`${styles.welcome_card_container} ${
-        isShowCard ? "" : styles.no_show
-      }`}
-    >
+    <div className={`${styles.welcome_card_container} ${isShowCard ? '' : styles.no_show}`}>
       <div className={styles.welcome_card}>
         <div className={styles.welcome_card_image}>
-          <Image
-            src={block}
-            className={styles.next_card_image}
-            alt="기초 블록"
-          />
+          <Image src={block} className={styles.next_card_image} alt='기초 블록' />
         </div>
 
         <div>
@@ -31,11 +23,7 @@ export default function WelcomeCard({ isShowCard }: { isShowCard: boolean }) {
       </div>
       <div className={styles.welcome_card}>
         <div className={styles.welcome_card_image}>
-          <Image
-            className={styles.next_card_image}
-            src={bubble}
-            alt="버블버블"
-          />
+          <Image className={styles.next_card_image} src={bubble} alt='버블버블' />
         </div>
         <div>
           <p>
@@ -46,12 +34,8 @@ export default function WelcomeCard({ isShowCard }: { isShowCard: boolean }) {
       </div>
       <div className={styles.welcome_card}>
         <div className={styles.welcome_card_image}>
-          {" "}
-          <Image
-            className={styles.next_card_image}
-            src={questionMark}
-            alt="물음표"
-          />
+          {' '}
+          <Image className={styles.next_card_image} src={questionMark} alt='물음표' />
         </div>
         <div>
           <p>모르는 부분을 점차 채워나갑니다.</p>

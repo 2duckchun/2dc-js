@@ -1,5 +1,6 @@
-import { CustomLinkProps } from "@/types/common";
-import Link from "next/link";
+import Link from 'next/link';
+
+import { CustomLinkProps } from '@/types/common';
 
 export default function CustomLink({
   href,
@@ -10,9 +11,9 @@ export default function CustomLink({
   return (
     <Link
       href={href}
-      style={{ textDecoration: "none", width: "fit-content" }}
+      style={{ textDecoration: 'none', width: 'fit-content' }}
       prefetch={prefetch}
-      target={isBlank ? "_blank" : "_self"}
+      target={isBlank ? '_blank' : '_self'}
     >
       {children}
     </Link>

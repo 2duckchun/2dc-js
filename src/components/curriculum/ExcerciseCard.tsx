@@ -1,4 +1,4 @@
-import CodeBox from "./CodeBox";
+import CodeBox from './CodeBox';
 
 type ExerciseCardProps = {
   title: string;
@@ -6,11 +6,7 @@ type ExerciseCardProps = {
   AnswerCode: string;
 };
 
-export default function ExerciseCard({
-  title,
-  QuestionCode,
-  AnswerCode,
-}: ExerciseCardProps) {
+export default function ExerciseCard({ title, QuestionCode, AnswerCode }: ExerciseCardProps) {
   return (
     <li>
       <h4>{title}</h4>

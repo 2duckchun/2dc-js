@@ -1,4 +1,4 @@
-import styles from "./CustomInput.module.scss";
+import styles from './CustomInput.module.scss';
 
 type PropsType = {
   id: string;

@@ -1,11 +1,13 @@
-"use client";
-import { useEffect } from "react";
-import Prism from "prismjs";
-import "prismjs/themes/prism-tomorrow.css";
+'use client';
+
+import { useEffect } from 'react';
+
+import 'prismjs/themes/prism-tomorrow.css';
+import Prism from 'prismjs';
 
 export default function CodeBox({
   code,
-  language = "javascript",
+  language = 'javascript',
 }: {
   code: string;
   language?: string;
@@ -14,7 +16,7 @@ export default function CodeBox({
     Prism.highlightAll();
   }, []);
   return (
-    <div className="code">
+    <div className='code'>
       <pre className={`language-${language}`} tabIndex={1}>
         <code className={`language-${language}`}>{code}</code>
       </pre>

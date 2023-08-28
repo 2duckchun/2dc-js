@@ -1,8 +1,8 @@
-import { MutableRefObject, useEffect, useRef } from "react";
+import { MutableRefObject, useEffect, useRef } from 'react';
 
-export default function useResponsiveHeader(
-  headerCollapingHandler: (flag: Event | boolean) => void
-) {
+type HandlerProps = (flag: Event | boolean) => void;
+
+export default function useResponsiveHeader(headerCollapingHandler: HandlerProps) {
   const prevScrollY = useRef(0);
   const headerRef: MutableRefObject<HTMLElement | null> = useRef(null);
 
@@ -12,16 +12,16 @@ export default function useResponsiveHeader(
       if (!headerRef.current) return;
 
       if (prevScrollY.current > currentScrollY) {
-        headerRef.current.style.top = "0";
+        headerRef.current.style.top = '0';
       } else {
-        headerRef.current.style.top = "-60px";
+        headerRef.current.style.top = '-60px';
         headerCollapingHandler(false);
       }
       prevScrollY.current = currentScrollY;
     };
-    window.addEventListener("scroll", stickyHeader);
+    window.addEventListener('scroll', stickyHeader);
 
-    return () => window.removeEventListener("scroll", stickyHeader);
+    return () => window.removeEventListener('scroll', stickyHeader);
   }, []);
 
   return [headerRef];
