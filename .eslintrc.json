@@ -12,10 +12,12 @@
     "import/no-unresolved": "error",
     "no-multiple-empty-lines": "error",
     "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+    "no-useless-escape": "off",
     "eqeqeq": "error",
     "dot-notation": "error",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": ["warn"],
     "@typescript-eslint/no-empty-function": "off",
     "import/order": [
       "error",
@@ -39,7 +41,13 @@
           { "pattern": "@/app/**", "group": "internal" },
           { "pattern": "#/images/**", "group": "object" }
         ],
-        "pathGroupsExcludedImportTypes": ["react", "react-dom", "next", "@/app/**", "#/images/**"],
+        "pathGroupsExcludedImportTypes": [
+          "react",
+          "react-dom",
+          "next",
+          "@/app/**",
+          "#/images/**"
+        ],
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": true

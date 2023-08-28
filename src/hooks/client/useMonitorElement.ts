@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-let options = {
+const options = {
   root: null,
   rootMargin: '0px',
   threshold: 0.5,

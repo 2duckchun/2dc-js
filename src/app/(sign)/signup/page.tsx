@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import CustomButton from '@/components/_common/CustomButton';
 import CustomInput from '@/components/_common/CustomInput';
@@ -84,7 +84,10 @@ export default function SignUp() {
           value={userInput.email}
           onChangeHandler={handleInput}
         />
-        <CustomButton propStyle={styles.signup_create_button} onClickHandler={testHandler}>
+        <CustomButton
+          propStyle={styles.signup_create_button}
+          onClickHandler={testHandler}
+        >
           계정 생성
         </CustomButton>
         <p className={styles.p_link_signin}>

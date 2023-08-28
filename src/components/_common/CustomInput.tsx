@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styles from './CustomInput.module.scss';
 
 type PropsType = {

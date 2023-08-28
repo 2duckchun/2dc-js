@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { font_pretended } from '@/fonts/fonts';
 
 import styles from './NavContainer.module.scss';
