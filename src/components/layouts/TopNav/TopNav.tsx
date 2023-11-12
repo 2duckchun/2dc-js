@@ -1,6 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export default function TopNav() {
   const [navShadow, setNavShadow] = useState<boolean>(false);
@@ -22,20 +25,30 @@ export default function TopNav() {
 
   return (
     <div
-      className={`h-height backdrop-saturate-500 sticky top-0 backdrop-blur-xl backdrop-filter transition-shadow duration-300 ${
-        navShadow ? 'shadow-md' : 'shadow-none'
-      }`}
+      className={cn(
+        'h-header sticky top-0 backdrop-blur-xl transition-shadow duration-300',
+        navShadow ? 'shadow-md' : 'shadow-sm',
+      )}
     >
-      <nav className='flex h-full'>
-        {/* 로고 */}
-        <div className='basis-3/12'>로고</div>
-        {/* 네비게이션 */}
-        <ul className='flex basis-7/12'>
-          <li>curriculum</li>
-          <li>repo</li>
+      <nav className='flex h-full items-center'>
+        <div className='flex basis-4/12 justify-center'>
+          <span className='text-3xl font-bold'>2DC</span>
+        </div>
+        <ul className='flex basis-8/12 justify-evenly'>
+          <Button variant={'outline'} className={cn('rounded-3xl')} size={'sm'}>
+            <li>CURRICULUM</li>
+          </Button>
+          <Button variant={'outline'} className={cn('rounded-3xl')} size={'sm'}>
+            <li>POST</li>
+          </Button>
+          <Button variant={'outline'} className={cn('rounded-3xl')} size={'sm'}>
+            <li>Repo</li>
+          </Button>
         </ul>
-        {/* 로그인 기능 확장 */}
-        <div className='basis-3/12'>플레이스홀더</div>
+        <div className='flex basis-2/12 justify-evenly'>
+          <Button variant={'outline'}>Sign In</Button>
+          <Button>Sign Up</Button>
+        </div>
       </nav>
     </div>
   );

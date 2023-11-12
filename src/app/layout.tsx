@@ -3,8 +3,6 @@ import type { Metadata } from 'next';
 
 import { Inter } from 'next/font/google';
 
-import { TopNav } from '@/components/layouts/TopNav';
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -19,10 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
-      <body className={inter.className}>
-        {/* <TopNav /> */}
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

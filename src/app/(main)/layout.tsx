@@ -4,7 +4,10 @@ export default function layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <TopNav />
-      {children}
+      <div>
+        <div className='fixed h-full w-[250px]  shadow-2xl '>사이드바</div>
+        {children}
+      </div>
     </>
   );
 }

@@ -33,6 +33,8 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --header-height: 50px;
   }
 
   .dark {
@@ -72,5 +74,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .h-header {
+    @apply h-[var(--header-height)];
   }
 }
