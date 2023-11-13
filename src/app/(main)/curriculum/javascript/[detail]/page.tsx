@@ -1,0 +1,8 @@
+import { FunctionComponent } from 'react';
+interface pageProps {}
+
+const page: FunctionComponent<pageProps> = ({}) => {
+  return <main>page</main>;
+};
+
+export default page;
