@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
+import { HamburgerMenu } from '@/components/icons/HamburgerMenu';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -30,11 +31,12 @@ export default function TopNav() {
         navShadow ? 'shadow-md' : 'shadow-sm',
       )}
     >
-      <nav className='flex h-full items-center'>
+      <nav className='md: relative flex h-full items-center justify-between'>
         <div className='flex basis-4/12 justify-center'>
+          <HamburgerMenu className='absolute left-3 top-3 md:hidden' />
           <span className='text-3xl font-bold'>2DC</span>
         </div>
-        <ul className='flex basis-8/12 justify-evenly'>
+        <ul className='hidden md:flex md:basis-8/12 md:justify-evenly'>
           <Button variant={'outline'} className={cn('rounded-3xl')} size={'sm'}>
             <li>CURRICULUM</li>
           </Button>
@@ -45,9 +47,11 @@ export default function TopNav() {
             <li>Repo</li>
           </Button>
         </ul>
-        <div className='flex basis-2/12 justify-evenly'>
-          <Button variant={'outline'}>Sign In</Button>
-          <Button>Sign Up</Button>
+        <div className='flex basis-2/12 justify-evenly gap-3'>
+          <Button className={cn('rounded-xl')} variant={'outline'}>
+            Sign In
+          </Button>
+          <Button className={cn('rounded-xl')}>Sign Up</Button>
         </div>
       </nav>
     </div>
