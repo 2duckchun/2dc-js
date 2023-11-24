@@ -11,7 +11,7 @@ interface JavascriptLayoutProps extends PropsWithChildren {}
 const JavascriptLayout: FunctionComponent<JavascriptLayoutProps> = ({
   children,
 }) => {
-  return <div>하하하</div>;
+  return <div>하하하{children}</div>;
 };
 
 export default JavascriptLayout;
