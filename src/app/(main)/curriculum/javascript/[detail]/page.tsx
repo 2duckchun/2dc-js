@@ -16,7 +16,7 @@ const getMarkdownData = async (content: string) => {
 
 const getItem = async (id: string) => {
   const file = await fs.readFile(
-    path.join('src', 'content', 'javascript', `${id}.md`),
+    path.join('content', 'javascript', `${id}.md`),
     'utf-8',
   );
   return await getMarkdownData(file);

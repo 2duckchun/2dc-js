@@ -2,8 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
+import Link from 'next/link';
+
 import { HamburgerMenu } from '@/components/icons/HamburgerMenu';
 import { Button } from '@/components/ui/button';
+import { TopNavInfoArray } from '@/constant/MenuArray';
 import { cn } from '@/lib/utils';
 
 export default function TopNav() {
@@ -31,21 +34,25 @@ export default function TopNav() {
         navShadow ? 'shadow-md' : 'shadow-sm',
       )}
     >
-      <nav className='md: relative flex h-full items-center justify-between'>
+      <nav className='flex h-full items-center justify-between md:relative'>
         <div className='flex basis-4/12 justify-center'>
           <HamburgerMenu className='absolute left-3 top-3 md:hidden' />
           <span className='text-3xl font-bold'>2DC</span>
         </div>
         <ul className='hidden md:flex md:basis-8/12 md:justify-evenly'>
-          <Button variant={'outline'} className={cn('rounded-3xl')} size={'sm'}>
-            <li>CURRICULUM</li>
-          </Button>
-          <Button variant={'outline'} className={cn('rounded-3xl')} size={'sm'}>
-            <li>POST</li>
-          </Button>
-          <Button variant={'outline'} className={cn('rounded-3xl')} size={'sm'}>
-            <li>Repo</li>
-          </Button>
+          {TopNavInfoArray.map((item, index) => {
+            return (
+              <Link href={item.path} key={index}>
+                <Button
+                  variant={'outline'}
+                  className={cn('rounded-3xl')}
+                  size={'sm'}
+                >
+                  <li>{item.title}</li>
+                </Button>
+              </Link>
+            );
+          })}
         </ul>
         <div className='flex basis-2/12 justify-evenly gap-3'>
           <Button className={cn('rounded-xl')} variant={'outline'}>

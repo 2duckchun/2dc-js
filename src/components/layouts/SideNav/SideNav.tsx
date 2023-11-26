@@ -19,7 +19,7 @@ const SideNav: FunctionComponent<SideNavProps> = ({}) => {
       </div>
       <div
         className={cn(
-          'top-50 fixed left-0 isolate z-50 my-5 h-auto w-full bg-white shadow-md transition-all duration-300 md:hidden',
+          'top-50 fixed left-0 isolate z-50 mb-5 h-auto w-full bg-white shadow-md transition-all duration-300 md:hidden',
           isOpen ? '' : 'hidden',
         )}
       >

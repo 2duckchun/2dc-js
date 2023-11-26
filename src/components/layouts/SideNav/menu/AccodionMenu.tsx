@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { MainSideNavInfoArray } from '@/constant/MenuArray';
 import { cn } from '@/lib/utils';
 interface AccodionMenuProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -16,6 +17,33 @@ const AccodionMenu: FunctionComponent<AccodionMenuProps> = ({
   return (
     <div className={cn(className)} {...props}>
       <Accordion type='single' collapsible className='w-full'>
+        {MainSideNavInfoArray.map((data, index) => {
+          if (data.type === 'multi') {
+            return (
+              <AccordionItem key={data.title} value={data.title}>
+                <AccordionTrigger className='px-4'>
+                  {data.title}
+                </AccordionTrigger>
+                {data.subNav!.map((subData, index) => {
+                  return (
+                    <AccordionContent className='pl-5' key={subData.title}>
+                      {subData.title}
+                    </AccordionContent>
+                  );
+                })}
+              </AccordionItem>
+            );
+          }
+          return (
+            <div
+              key={data.title}
+              className='flex flex-1 items-center justify-between py-4 pl-5 font-medium transition-all hover:underline'
+            >
+              {data.title}
+            </div>
+          );
+        })}
+        {/* <Accordion type='single' collapsible className='w-full'>
         <AccordionItem value='item-1'>
           <AccordionTrigger className='px-4'>Curriculum</AccordionTrigger>
           <AccordionContent className='pl-5'>JavaScript</AccordionContent>
@@ -37,7 +65,7 @@ const AccodionMenu: FunctionComponent<AccodionMenuProps> = ({
         </AccordionItem>
         <div className='flex flex-1 items-center justify-between py-4 pl-5 font-medium transition-all hover:underline'>
           About Me
-        </div>
+        </div> */}
       </Accordion>
     </div>
   );

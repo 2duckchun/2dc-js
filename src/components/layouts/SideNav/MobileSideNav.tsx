@@ -2,7 +2,10 @@
 
 import { FunctionComponent, HTMLAttributes } from 'react';
 
+import Link from 'next/link';
+
 import { Button } from '@/components/ui/button';
+import { TopNavInfoArray } from '@/constant/MenuArray';
 import { useSidebarContext } from '@/hooks/useSideBarContext';
 import { cn } from '@/lib/utils';
 
@@ -17,16 +20,20 @@ const MobileSideNav: FunctionComponent<MobileSideNavProps> = ({
 }) => {
   return (
     <div className={cn(className, 'z-50')} {...props}>
-      <ul className='flex h-full items-center justify-evenly md:hidden md:basis-8/12'>
-        <Button variant={'outline'} className={cn('rounded-3xl')} size={'sm'}>
-          <li>CURRICULUM</li>
-        </Button>
-        <Button variant={'outline'} className={cn('rounded-3xl')} size={'sm'}>
-          <li>POST</li>
-        </Button>
-        <Button variant={'outline'} className={cn('rounded-3xl')} size={'sm'}>
-          <li>Repo</li>
-        </Button>
+      <ul className='flex h-full items-center justify-evenly bg-slate-100 py-4 md:hidden md:basis-8/12'>
+        {TopNavInfoArray.map((item, index) => {
+          return (
+            <Link href={item.path} key={index}>
+              <Button
+                variant={'outline'}
+                className={cn('rounded-3xl')}
+                size={'sm'}
+              >
+                <li>{item.title}</li>
+              </Button>
+            </Link>
+          );
+        })}
       </ul>
       <AccodionMenu />
     </div>
