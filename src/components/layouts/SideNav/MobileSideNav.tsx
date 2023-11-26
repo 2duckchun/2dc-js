@@ -5,17 +5,19 @@ import { FunctionComponent, HTMLAttributes } from 'react';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
-import { TopNavInfoArray } from '@/constant/MenuArray';
-import { useSidebarContext } from '@/hooks/useSideBarContext';
+import { SideNavInfo, TopNavInfoArray } from '@/constant/MenuArray';
 import { cn } from '@/lib/utils';
 
 import { AccodionMenu } from './menu/AccodionMenu';
-interface MobileSideNavProps extends HTMLAttributes<HTMLDivElement> {}
+interface MobileSideNavProps extends HTMLAttributes<HTMLDivElement> {
+  navArray: SideNavInfo[];
+}
 
 // URL마다 아코디언 메뉴로 전달하는 네브 메뉴가 달라짐.
 
 const MobileSideNav: FunctionComponent<MobileSideNavProps> = ({
   className,
+  navArray,
   ...props
 }) => {
   return (
@@ -35,7 +37,7 @@ const MobileSideNav: FunctionComponent<MobileSideNavProps> = ({
           );
         })}
       </ul>
-      <AccodionMenu />
+      <AccodionMenu sideNavInfoArray={navArray} />
     </div>
   );
 };

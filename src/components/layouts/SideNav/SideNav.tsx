@@ -2,6 +2,12 @@
 
 import { FunctionComponent } from 'react';
 
+import { usePathname } from 'next/navigation';
+
+import {
+  JavaScriptCurriculumNavInfoArray,
+  MainSideNavInfoArray,
+} from '@/constant/MenuArray';
 import { useSidebarContext } from '@/hooks/useSideBarContext';
 import { cn } from '@/lib/utils';
 
@@ -11,11 +17,18 @@ interface SideNavProps {}
 
 const SideNav: FunctionComponent<SideNavProps> = ({}) => {
   const { isOpen } = useSidebarContext();
+  const pathname = usePathname();
+
+  let sideNavArray = MainSideNavInfoArray;
+
+  if (pathname.split('/')[2] === 'javascript') {
+    sideNavArray = JavaScriptCurriculumNavInfoArray;
+  }
 
   return (
     <nav>
       <div className='hidden md:block md:w-[250px]'>
-        <DeskTopSideNav />
+        <DeskTopSideNav navArray={sideNavArray} />
       </div>
       <div
         className={cn(
@@ -23,7 +36,7 @@ const SideNav: FunctionComponent<SideNavProps> = ({}) => {
           isOpen ? '' : 'hidden',
         )}
       >
-        <MobileSideNav className={'h-full'} />
+        <MobileSideNav navArray={sideNavArray} className={'h-full'} />
       </div>
     </nav>
   );
