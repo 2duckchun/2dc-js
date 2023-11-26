@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 
 import { Inter } from 'next/font/google';
 
+import { SideNav } from '@/components/layouts/SideNav';
+import { TopNav } from '@/components/layouts/TopNav';
+import { SidebarContextProvider } from '@/hooks/useSideBarContext';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -16,8 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>{children}</body>
+    <html lang='ko'>
+      <body className={inter.className}>
+        <SidebarContextProvider>
+          <TopNav />
+          <div className='flex-col md:flex'>
+            <SideNav />
+            <main className='md:ml-[250px]'>{children}</main>
+          </div>
+        </SidebarContextProvider>
+      </body>
     </html>
   );
 }
