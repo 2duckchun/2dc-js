@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import { HamburgerMenu } from '@/components/icons/HamburgerMenu';
 import { Button } from '@/components/ui/button';
+import { AppPath } from '@/constant/AppPath';
 import { TopNavInfoArray } from '@/constant/MenuArray';
 import { cn } from '@/lib/utils';
 
@@ -37,7 +38,9 @@ export default function TopNav() {
       <nav className='flex h-full items-center justify-between md:relative'>
         <div className='flex basis-4/12 justify-center'>
           <HamburgerMenu className='absolute left-3 top-3 md:hidden' />
-          <span className='text-3xl font-bold'>2DC</span>
+          <Link href={AppPath.home()}>
+            <span className='text-3xl font-bold'>2DC</span>
+          </Link>
         </div>
         <ul className='hidden md:flex md:basis-8/12 md:justify-evenly'>
           {TopNavInfoArray.map((item, index) => {

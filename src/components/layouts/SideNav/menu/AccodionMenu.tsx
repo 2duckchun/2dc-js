@@ -1,5 +1,7 @@
 import { FunctionComponent, HTMLAttributes } from 'react';
 
+import Link from 'next/link';
+
 import {
   Accordion,
   AccordionContent,
@@ -20,18 +22,20 @@ const AccodionMenu: FunctionComponent<AccodionMenuProps> = ({
   return (
     <div className={cn(className)} {...props}>
       <Accordion type='single' collapsible className='w-full'>
-        {sideNavInfoArray.map((data, index) => {
+        {sideNavInfoArray.map(data => {
           if (data.type === 'multi') {
             return (
               <AccordionItem key={data.title} value={data.title}>
                 <AccordionTrigger className='px-4'>
                   {data.title}
                 </AccordionTrigger>
-                {data.subNav!.map((subData, index) => {
+                {data.subNav!.map(subData => {
                   return (
-                    <AccordionContent className='pl-5' key={subData.title}>
-                      {subData.title}
-                    </AccordionContent>
+                    <Link key={subData.title} href={subData.path}>
+                      <AccordionContent className='pl-5'>
+                        {subData.title}
+                      </AccordionContent>
+                    </Link>
                   );
                 })}
               </AccordionItem>

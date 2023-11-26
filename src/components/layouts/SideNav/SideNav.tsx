@@ -5,6 +5,7 @@ import { FunctionComponent } from 'react';
 import { usePathname } from 'next/navigation';
 
 import {
+  DataStructureCurriculumNavInfoArray,
   JavaScriptCurriculumNavInfoArray,
   MainSideNavInfoArray,
 } from '@/constant/MenuArray';
@@ -44,6 +45,8 @@ const getSideNavArray = (segment: string) => {
   switch (segment) {
     case 'javascript':
       return JavaScriptCurriculumNavInfoArray;
+    case 'data-structure':
+      return DataStructureCurriculumNavInfoArray;
     default:
       return MainSideNavInfoArray;
   }

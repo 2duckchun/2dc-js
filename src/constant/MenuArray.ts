@@ -42,8 +42,8 @@ export const MainSideNavInfoArray: SideNavInfo[] = [
         path: AppPath.curriculumTo('javascript'),
       },
       {
-        title: 'network',
-        path: AppPath.curriculumTo('network'),
+        title: 'data structure',
+        path: AppPath.curriculumTo('data-structure'),
       },
     ],
   },
@@ -75,19 +75,19 @@ export const JavaScriptCurriculumNavInfoArray: SideNavInfo[] = [
     subNav: [
       {
         title: '변수',
-        path: AppPath.curriculumTo('javascript'),
+        path: AppPath.curriculumTo('javascript', 'variable'),
       },
       {
         title: '연산자',
-        path: AppPath.curriculumTo('network'),
+        path: AppPath.curriculumTo('javascript', 'operator'),
       },
       {
         title: '함수',
-        path: AppPath.curriculumTo('network'),
+        path: AppPath.curriculumTo('javascript', 'function'),
       },
       {
         title: '객체',
-        path: AppPath.curriculumTo('network'),
+        path: AppPath.curriculumTo('javascript', 'object'),
       },
     ],
   },
@@ -97,23 +97,68 @@ export const JavaScriptCurriculumNavInfoArray: SideNavInfo[] = [
     subNav: [
       {
         title: '변수와 호이스팅',
-        path: AppPath.curriculumTo('javascript'),
+        path: AppPath.curriculumTo('javascript', 'advanced-variable'),
       },
       {
         title: '실행 컨텍스트',
-        path: AppPath.curriculumTo('network'),
+        path: AppPath.curriculumTo('javascript', 'execution-context'),
       },
       {
         title: '고차함수',
-        path: AppPath.curriculumTo('network'),
+        path: AppPath.curriculumTo('javascript', 'higher-order-function'),
       },
       {
         title: '프로토타입',
-        path: AppPath.curriculumTo('network'),
+        path: AppPath.curriculumTo('javascript', 'prototype'),
       },
       {
         title: '클래스',
-        path: AppPath.curriculumTo('network'),
+        path: AppPath.curriculumTo('javascript', 'class'),
+      },
+    ],
+  },
+];
+
+export const DataStructureCurriculumNavInfoArray: SideNavInfo[] = [
+  {
+    type: 'multi',
+    title: '링크드 리스트',
+    subNav: [
+      {
+        title: '싱글 링크드 리스트',
+        path: AppPath.curriculumTo('data-structure', 'sll'),
+      },
+      {
+        title: '더블 링크드 리스트',
+        path: AppPath.curriculumTo('data-structure', 'dll'),
+      },
+    ],
+  },
+  {
+    type: 'multi',
+    title: '스택, 큐',
+    subNav: [
+      {
+        title: '스택',
+        path: AppPath.curriculumTo('data-structure', 'stack'),
+      },
+      {
+        title: '큐',
+        path: AppPath.curriculumTo('data-structure', 'queue'),
+      },
+    ],
+  },
+  {
+    type: 'multi',
+    title: '힙, 우선순위 큐',
+    subNav: [
+      {
+        title: '힙',
+        path: AppPath.curriculumTo('data-structure', 'heap'),
+      },
+      {
+        title: '우선순위 큐',
+        path: AppPath.curriculumTo('data-structure', 'priority-queue'),
       },
     ],
   },
