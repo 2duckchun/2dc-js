@@ -19,13 +19,7 @@ const SideNav: FunctionComponent<SideNavProps> = ({}) => {
   const { isOpen } = useSidebarContext();
   const pathname = usePathname();
 
-  const newSideNavArray = getSideNavArray(pathname.split('/')[1]);
-
-  let sideNavArray = MainSideNavInfoArray;
-
-  if (pathname.split('/')[2] === 'javascript') {
-    sideNavArray = JavaScriptCurriculumNavInfoArray;
-  }
+  const sideNavArray = getSideNavArray(pathname.split('/')[2]);
 
   return (
     <nav>
@@ -46,8 +40,8 @@ const SideNav: FunctionComponent<SideNavProps> = ({}) => {
 
 export default SideNav;
 
-const getSideNavArray = (firstSegment: string) => {
-  switch (firstSegment) {
+const getSideNavArray = (segment: string) => {
+  switch (segment) {
     case 'javascript':
       return JavaScriptCurriculumNavInfoArray;
     default:
