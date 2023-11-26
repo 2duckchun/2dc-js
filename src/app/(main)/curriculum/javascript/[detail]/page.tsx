@@ -1,43 +1,30 @@
-import fs from 'fs/promises';
-import path from 'path';
-
 import { FunctionComponent } from 'react';
 
-import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
-interface pageProps {}
+import { MarkDownService } from '@/modules/md/markdown-service';
 
-const getMarkdownData = async (content: string) => {
-  const matterResult = matter(content);
+interface pageProps {
+  params: {
+    detail: string;
+  };
+}
 
-  return matterResult;
+const getMarkdownData = async (pathname: string, filename: string) => {
+  const MDService = new MarkDownService(pathname);
+  return await MDService.getMarkDownData(filename);
 };
 
-const getItem = async (id: string) => {
-  const file = await fs.readFile(
-    path.join('content', 'javascript', `${id}.md`),
-    'utf-8',
-  );
-  return await getMarkdownData(file);
-};
-
-const page: FunctionComponent<pageProps> = async ({}) => {
-  // const pathlog = path.join('src', 'content', 'javascript');
-  // const files = await fs.readdir(pathlog);
-  // console.log(files);
-  const data = await getItem('123');
-  console.log(data);
+const page: FunctionComponent<pageProps> = async ({ params: { detail } }) => {
+  const data = await getMarkdownData('javascript', detail);
   return (
-    <main>
-      <div className='markdown'>
-        pagedddd
-        {/* TODO: MDXRemote의 component들을 만들고 객체화해서 통합한 후 MDXRemote에 전달. */}
+    <main className='p-10'>
+      <div className='markdown max-w-none'>
         <MDXRemote
           components={{
             HighLight: props => <div className='bg-red-400' {...props} />,
           }}
-          source={data.content}
+          source={data.markdown}
         />
       </div>
     </main>

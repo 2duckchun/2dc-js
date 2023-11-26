@@ -1,10 +1,6 @@
 import { FunctionComponent, HTMLAttributes } from 'react';
 
-import {
-  MainSideNavInfoArray,
-  JavaScriptCurriculumNavInfoArray,
-  SideNavInfo,
-} from '@/constant/MenuArray';
+import { SideNavInfo } from '@/constant/MenuArray';
 import { cn } from '@/lib/utils';
 
 import { AccodionMenu } from './menu/AccodionMenu';
