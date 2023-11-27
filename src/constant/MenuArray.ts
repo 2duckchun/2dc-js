@@ -70,12 +70,17 @@ export const MainSideNavInfoArray: SideNavInfo[] = [
 
 export const JavaScriptCurriculumNavInfoArray: SideNavInfo[] = [
   {
+    type: 'single',
+    title: '소개글',
+    path: AppPath.curriculumTo('javascript', 'intro'),
+  },
+  {
     type: 'multi',
     title: '입문!',
     subNav: [
       {
         title: '변수',
-        path: AppPath.curriculumTo('javascript', 'variable'),
+        path: AppPath.curriculumTo('javascript', 'variables'),
       },
       {
         title: '연산자',
