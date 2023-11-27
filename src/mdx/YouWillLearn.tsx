@@ -12,7 +12,7 @@ const YouWillLearn: FunctionComponent<YouWillLearnProps> = ({
   ...props
 }) => {
   return (
-    <div className={cn('bg-gray-100 p-5', className)} {...props}>
+    <div className={cn('rounded-lg bg-gray-100 p-5', className)} {...props}>
       <h2 className='my-2'>{title ? title : '학습 목표'}</h2>
       {children}
     </div>

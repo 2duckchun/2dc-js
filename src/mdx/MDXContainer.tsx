@@ -2,6 +2,8 @@ import { FunctionComponent, HTMLAttributes } from 'react';
 
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
 
 import { cn } from '@/lib/utils';
 import { MDXComponent } from '@/mdx/MDXComponent';
@@ -30,7 +32,7 @@ export { MDXContainer };
 
 const options: any = {
   mdxOptions: {
-    remarkPlugins: [],
-    rehypePlugins: [rehypeHighlight],
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeHighlight, rehypeKatex],
   },
 };
