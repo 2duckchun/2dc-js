@@ -6,7 +6,7 @@ import matter from 'gray-matter';
 export class MarkDownService {
   private directoryPath: string;
   constructor(directoryPath: string) {
-    this.directoryPath = path.join('content', directoryPath);
+    this.directoryPath = path.join(process.env.VERCEL_URL!, 'content', directoryPath);
   }
 
   async getMarkDownData(id: string) {
