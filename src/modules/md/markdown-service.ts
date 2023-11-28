@@ -6,12 +6,12 @@ import matter from 'gray-matter';
 export class MarkDownService {
   private directoryPath: string;
   constructor(directoryPath: string) {
-    this.directoryPath = path.join(process.env.VERCEL_URL!, 'content', directoryPath);
+    this.directoryPath = path.join('content', directoryPath);
   }
 
   async getMarkDownData(id: string) {
     const MDFiles = await fs.readFile(
-      path.join(this.directoryPath, `${id}.md`),
+      path.join(process.cwd(), this.directoryPath, `${id}.md`),
       'utf-8',
     );
     return this.parseMarkDownData(MDFiles);
