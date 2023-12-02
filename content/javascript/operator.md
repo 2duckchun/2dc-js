@@ -12,7 +12,8 @@ title: operator
 - 표현식에 대해 알게 된다.
 </YouWillLearn>
 
-<InlineToc />
+
+<TocData />
 
 연산자에 대해 배우기 전에 잠깐 컴퓨터 구조에 관해 이야기를 하고 넘어갈까요?
 
