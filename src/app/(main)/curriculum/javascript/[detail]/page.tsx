@@ -35,14 +35,16 @@ function parseParagraphs(text: string) {
   const parsedArray: Toc[] = [];
 
   paragraphs.forEach(paragraph => {
-    if (paragraph.startsWith('##') || paragraph.startsWith('###')) {
-      let hashEndIndex = paragraph.lastIndexOf('#');
-      let linkStartIndex = paragraph.indexOf('{');
-      let title = paragraph.slice(hashEndIndex + 1, linkStartIndex).trim();
+    if (paragraph.startsWith('<h2 id=') || paragraph.startsWith('<h3 id=')) {
+      let hashEndIndex = paragraph.lastIndexOf(`"`);
+      let lastTagStart = paragraph.lastIndexOf('<');
+      let stringWithId = paragraph.slice(0, hashEndIndex + 1);
+      let title = paragraph.slice(hashEndIndex + 2, lastTagStart).trim();
+      let tag = stringWithId.includes('h2') ? '##' : '###';
       parsedArray.push({
-        tag: paragraph.slice(0, hashEndIndex + 1),
+        tag,
         title,
-        link: paragraph.slice(linkStartIndex + 3, -3),
+        link: stringWithId.slice(8, -1),
       });
     }
   });
@@ -74,7 +76,6 @@ const tocParser = (recursiveTree: Toc[]): any => {
         result +
         `<li className="ml-5"><a href="#${recursiveTree[i].children?.[j]?.link}" className="no-underline hover:text-blue-400">${recursiveTree[i].children?.[j].title}</a></li>`;
     }
-
     result = result + '</ul>';
   }
 
