@@ -5,6 +5,7 @@ import { Toc } from '@/mdx/types';
 import '@/styles/vs2015.css';
 import { MarkDownService } from '@/modules/md/markdown-service';
 import { makeTocTree } from '@/utils/makeTocTree';
+import { parseTocTreeToString } from '@/utils/parseTocTreeToString';
 interface pageProps {
   params: {
     detail: string;
@@ -14,7 +15,7 @@ interface pageProps {
 const getMarkdownData = async (pathname: string, filename: string) => {
   const MDService = new MarkDownService(pathname);
   const mdData = await MDService.getMarkDownData(filename);
-  const toc = tocParser(makeTocTree(mdData.markdown));
+  const toc = parseTocTreeToString(makeTocTree(mdData.markdown));
   const markdownWithToc = mdData.markdown.replace('<TocData />', `${toc}`);
   return { ...mdData, markdown: markdownWithToc };
 };
@@ -30,20 +31,3 @@ const page: FunctionComponent<pageProps> = async ({ params: { detail } }) => {
 };
 
 export default page;
-
-const tocParser = (recursiveTree: Toc[]): any => {
-  let result = '';
-  for (let i = 0; i < recursiveTree.length; i++) {
-    result =
-      result +
-      `<ul><li><a href="#${recursiveTree[i].link}" className="no-underline hover:text-blue-400">${recursiveTree[i].title}</a></li>`;
-    for (let j = 0; j < recursiveTree[i].children?.length!; j++) {
-      result =
-        result +
-        `<li className="ml-5"><a href="#${recursiveTree[i].children?.[j]?.link}" className="no-underline hover:text-blue-400">${recursiveTree[i].children?.[j].title}</a></li>`;
-    }
-    result = result + '</ul>';
-  }
-
-  return result;
-};
