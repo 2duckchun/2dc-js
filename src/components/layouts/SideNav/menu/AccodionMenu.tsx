@@ -45,7 +45,7 @@ const AccodionMenu: FunctionComponent<AccodionMenuProps> = ({
             <Link key={data.title} href={data.path}>
               <div
                 key={data.title}
-                className='flex flex-1 items-center justify-between py-4 pl-5 font-medium transition-all hover:underline'
+                className='flex flex-1 items-center justify-between border-b py-4 pl-4 font-medium transition-all hover:underline'
               >
                 {data.title}
               </div>

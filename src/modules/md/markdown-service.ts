@@ -11,7 +11,7 @@ export class MarkDownService {
 
   async getMarkDownData(id: string) {
     const MDFiles = await fs.readFile(
-      path.join(this.directoryPath, `${id}.md`),
+      path.join(process.cwd(), this.directoryPath, `${id}.md`),
       'utf-8',
     );
     return this.parseMarkDownData(MDFiles);
@@ -19,7 +19,7 @@ export class MarkDownService {
 
   private async parseMarkDownData(content: string) {
     const matterResult = matter(content);
-
+    
     return {
       id: matterResult.data.id,
       title: matterResult.data.title,
