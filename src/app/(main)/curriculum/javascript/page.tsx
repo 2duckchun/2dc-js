@@ -13,6 +13,7 @@ const getMarkdownData = async (pathname: string, filename: string) => {
 
 const page: FunctionComponent<pageProps> = async () => {
   const data = await getMarkdownData('javascript', 'intro');
+
   return (
     <main className='max-w-[1280px] p-10'>
       <MDXContainer markdown={data.markdown} />

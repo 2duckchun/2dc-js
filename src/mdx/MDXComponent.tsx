@@ -16,4 +16,7 @@ export const MDXComponent = {
     return <ExpendableCard {...props} type='quiz' />;
   },
   Wrapper,
+  InlineToc: (props: { children: React.ReactNode }) => {
+    return <div>{props.children}</div>;
+  },
 };
