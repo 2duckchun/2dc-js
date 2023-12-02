@@ -38,6 +38,12 @@ module.exports = {
             'h1,h2,h3,h4,h5,h6': {
               'scroll-margin-top': spacing[32],
             },
+            h2: {
+              'font-size': '1.5rem',
+            },
+            h3: {
+              'font-size': '1.25rem',
+            },
           },
         },
       }),
