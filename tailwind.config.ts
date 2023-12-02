@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import { spacing } from 'tailwindcss/defaultTheme';
+
 module.exports = {
   darkMode: ['class'],
   content: [
@@ -30,6 +32,15 @@ module.exports = {
       },
     },
     extend: {
+      typography: (theme: any) => ({
+        DEFAULT: {
+          css: {
+            'h1,h2,h3,h4,h5,h6': {
+              'scroll-margin-top': spacing[32],
+            },
+          },
+        },
+      }),
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
