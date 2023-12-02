@@ -16,7 +16,12 @@ export const MDXComponent = {
     return <ExpendableCard {...props} type='quiz' />;
   },
   Wrapper,
-  // InlineToc: (props: { children: React.ReactNode }) => {
-  //   return <div>{props.children}</div>;
-  // },
+  InlineToc: (props: { children: React.ReactNode }) => {
+    return (
+      <div className='my-10 rounded-xl border-2 p-5'>
+        <h2 className='mt-2'>Table Of Content</h2>
+        {props.children}
+      </div>
+    );
+  },
 };

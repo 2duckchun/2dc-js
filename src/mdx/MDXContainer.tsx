@@ -5,19 +5,16 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 
-import { Toc } from '@/hooks/useMDXTocContext';
 import { cn } from '@/lib/utils';
 import { MDXComponent } from '@/mdx/MDXComponent';
 
 interface MDXContainerProps extends HTMLAttributes<HTMLDivElement> {
   markdown: string;
-  toc: Toc[];
 }
 
 const MDXContainer: FunctionComponent<MDXContainerProps> = ({
   className,
   markdown,
-  toc,
   ...props
 }) => {
   return (
