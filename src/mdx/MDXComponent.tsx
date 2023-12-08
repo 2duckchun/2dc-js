@@ -1,6 +1,7 @@
 import { ExpendableCard } from './ExpendableCard';
 import { Important } from './Important';
 import { Intro } from './Intro';
+import { PaddingBox } from './PaddingBox';
 import { PrevNext } from './PrevNext';
 import { Recap } from './Recap';
 import { Wrapper } from './Wrapper';
@@ -23,5 +24,8 @@ export const MDXComponent = {
         {props.children}
       </div>
     );
+  },
+  BoxWithTitle: (props: { children: React.ReactNode; title: string }) => {
+    return <PaddingBox {...props} />;
   },
 };
