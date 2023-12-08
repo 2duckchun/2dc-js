@@ -87,12 +87,28 @@ export const JavaScriptCurriculumNavInfoArray: SideNavInfo[] = [
         path: AppPath.curriculumTo('javascript', 'operator'),
       },
       {
-        title: '함수',
-        path: AppPath.curriculumTo('javascript', 'function'),
+        title: '데이터 타입',
+        path: AppPath.curriculumTo('javascript', 'data-type'),
+      },
+      {
+        title: '조건문',
+        path: AppPath.curriculumTo('javascript', 'conditional-statement'),
+      },
+      {
+        title: '반복문',
+        path: AppPath.curriculumTo('javascript', 'loop'),
+      },
+      {
+        title: '배열',
+        path: AppPath.curriculumTo('javascript', 'array'),
       },
       {
         title: '객체',
         path: AppPath.curriculumTo('javascript', 'object'),
+      },
+      {
+        title: '함수',
+        path: AppPath.curriculumTo('javascript', 'function'),
       },
     ],
   },
