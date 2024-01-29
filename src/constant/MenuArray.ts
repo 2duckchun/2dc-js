@@ -19,15 +19,15 @@ export type SideNavInfo = MultiSideNavInfo | SingleSideNavInfo;
 
 export const TopNavInfoArray = [
   {
-    title: 'curriculum',
+    title: 'JS 커리큘럼',
     path: AppPath.curriculum(),
   },
   {
-    title: 'post',
+    title: '포스트',
     path: AppPath.post(),
   },
   {
-    title: 'repo',
+    title: 'REPO',
     path: AppPath.myRepo(),
   },
 ];
@@ -35,28 +35,24 @@ export const TopNavInfoArray = [
 export const MainSideNavInfoArray: SideNavInfo[] = [
   {
     type: 'multi',
-    title: 'CURRICULUM',
+    title: '커리큘럼',
     subNav: [
       {
-        title: 'javascript',
+        title: '자바스크립트',
         path: AppPath.curriculumTo('javascript'),
-      },
-      {
-        title: 'data structure',
-        path: AppPath.curriculumTo('data-structure'),
       },
     ],
   },
   {
     type: 'multi',
-    title: 'POST',
+    title: '포스트',
     subNav: [
       {
-        title: 'diary',
+        title: '개발일지',
         path: AppPath.postTo('diary'),
       },
       {
-        title: 'dev',
+        title: '일기',
         path: AppPath.curriculumTo('dev'),
       },
     ],
@@ -70,9 +66,18 @@ export const MainSideNavInfoArray: SideNavInfo[] = [
 
 export const JavaScriptCurriculumNavInfoArray: SideNavInfo[] = [
   {
-    type: 'single',
-    title: '소개글',
-    path: AppPath.curriculumTo('javascript', 'intro'),
+    type: 'multi',
+    title: '시작하기전에...',
+    subNav: [
+      {
+        title: '안녕하세요!',
+        path: AppPath.curriculumTo('javascript', 'intro'),
+      },
+      {
+        title: 'CS 단 1g',
+        path: AppPath.curriculumTo('javascript', 'basic-cs'),
+      },
+    ],
   },
   {
     type: 'multi',
@@ -87,12 +92,28 @@ export const JavaScriptCurriculumNavInfoArray: SideNavInfo[] = [
         path: AppPath.curriculumTo('javascript', 'operator'),
       },
       {
-        title: '함수',
-        path: AppPath.curriculumTo('javascript', 'function'),
+        title: '데이터 타입',
+        path: AppPath.curriculumTo('javascript', 'data-type'),
+      },
+      {
+        title: '조건문',
+        path: AppPath.curriculumTo('javascript', 'conditional-statement'),
+      },
+      {
+        title: '반복문',
+        path: AppPath.curriculumTo('javascript', 'loop'),
+      },
+      {
+        title: '배열',
+        path: AppPath.curriculumTo('javascript', 'array'),
       },
       {
         title: '객체',
         path: AppPath.curriculumTo('javascript', 'object'),
+      },
+      {
+        title: '함수',
+        path: AppPath.curriculumTo('javascript', 'function'),
       },
     ],
   },

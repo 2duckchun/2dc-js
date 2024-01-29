@@ -27,7 +27,7 @@ const ExpendableCard: FunctionComponent<ExpendableCardProps> = ({
   return (
     <section
       className={cn(
-        'rounded-lg border-2 border-lime-500 bg-lime-200 bg-opacity-20 p-4',
+        'my-3 rounded-lg border-2 border-lime-500 bg-lime-200 bg-opacity-20 p-4',
         className,
       )}
     >

@@ -34,5 +34,6 @@ const options: any = {
   mdxOptions: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeHighlight, rehypeKatex],
+    useDynamicImport: true,
   },
 };

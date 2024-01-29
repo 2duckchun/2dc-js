@@ -32,6 +32,9 @@ module.exports = {
       },
     },
     extend: {
+      dropShadow: {
+        'main-intro': 'text-shadow: 5px 5px #2D63A7',
+      },
       typography: (theme: any) => ({
         DEFAULT: {
           css: {
