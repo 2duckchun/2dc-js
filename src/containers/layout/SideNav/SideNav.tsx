@@ -5,7 +5,6 @@ import { FunctionComponent } from 'react';
 import { usePathname } from 'next/navigation';
 
 import {
-  DataStructureCurriculumNavInfoArray,
   JavaScriptCurriculumNavInfoArray,
   MainSideNavInfoArray,
 } from '@/constant/MenuArray';
@@ -14,17 +13,20 @@ import { cn } from '@/lib/utils';
 
 import { DeskTopSideNav } from './DeskTopSideNav';
 import { MobileSideNav } from './MobileSideNav';
-interface SideNavProps {}
+interface SideNavProps {
+  pathname: string;
+}
 
-const SideNav: FunctionComponent<SideNavProps> = ({}) => {
+const SideNav: FunctionComponent<SideNavProps> = ({ pathname }) => {
   const { isOpen } = useSidebarContext();
-  const pathname = usePathname();
-
-  const sideNavArray = getSideNavArray(pathname.split('/')[2]);
-
+  const sideNavArray = getSideNavArray(pathname.split('/')[1]);
   return (
     <nav>
-      <div className='hidden md:block md:w-[250px]'>
+      <div
+        className={cn(
+          pathname === '/' ? 'hidden' : 'hidden md:block md:w-[250px]',
+        )}
+      >
         <DeskTopSideNav navArray={sideNavArray} />
       </div>
       <div
@@ -43,10 +45,8 @@ export default SideNav;
 
 const getSideNavArray = (segment: string) => {
   switch (segment) {
-    case 'javascript':
+    case 'curriculum':
       return JavaScriptCurriculumNavInfoArray;
-    case 'data-structure':
-      return DataStructureCurriculumNavInfoArray;
     default:
       return MainSideNavInfoArray;
   }

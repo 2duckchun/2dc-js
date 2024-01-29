@@ -8,12 +8,10 @@ import { Button } from '@/components/ui/button';
 import { SideNavInfo, TopNavInfoArray } from '@/constant/MenuArray';
 import { cn } from '@/lib/utils';
 
-import { AccodionMenu } from './menu/AccodionMenu';
+import { AccodionMenu } from './AccodionMenu';
 interface MobileSideNavProps extends HTMLAttributes<HTMLDivElement> {
   navArray: SideNavInfo[];
 }
-
-// URL마다 아코디언 메뉴로 전달하는 네브 메뉴가 달라짐.
 
 const MobileSideNav: FunctionComponent<MobileSideNavProps> = ({
   className,

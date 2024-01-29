@@ -3,7 +3,7 @@ import { FunctionComponent, HTMLAttributes } from 'react';
 import { SideNavInfo } from '@/constant/MenuArray';
 import { cn } from '@/lib/utils';
 
-import { AccodionMenu } from './menu/AccodionMenu';
+import { AccodionMenu } from './AccodionMenu';
 
 interface DeskTopSideNavProps extends HTMLAttributes<HTMLDivElement> {
   navArray: SideNavInfo[];
