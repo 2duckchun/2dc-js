@@ -28,4 +28,7 @@ export const MDXComponent = {
   BoxWithTitle: (props: { children: React.ReactNode; title: string }) => {
     return <PaddingBox {...props} />;
   },
+  TocData: (props: { children: React.ReactNode }) => {
+    return <></>;
+  },
 };
