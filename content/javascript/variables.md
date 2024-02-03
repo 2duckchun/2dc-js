@@ -94,4 +94,4 @@ let과 const는 다르다라는 것만 인지해두시기 바랍니다!
 - 식별자에 접근하면 메모리에 저장된 값을 사용할 수 있다. 
 </Recap>
 
-<PrevNext nextLink="/curriculum/javascript/operator" nextTitle="연산자" />
+<PrevNext prev="" next="연산자" />

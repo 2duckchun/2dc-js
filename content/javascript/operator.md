@@ -302,3 +302,5 @@ typeof function() {} // 'function'
 나중에 연산자에 대한 심화적인 공부가 필요하실때는 mdn 문서를 참조하시면 좋을 것 같습니다. 구글링도 좋고요. 일단 기본만 갖추시고 필요한 것들은 그때그때 찾아 쓰시는게 편하고 빠른 길입니다.
 
 [MDN 연산자 공식 문서(한글)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_operators#%EC%A1%B0%EA%B1%B4_%EC%82%BC%ED%95%AD_%EC%97%B0%EC%82%B0%EC%9E%90)
+
+<PrevNext prev="변수" next="데이터 타입" />
