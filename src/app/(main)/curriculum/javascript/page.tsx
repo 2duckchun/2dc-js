@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 
-import { MDXContainer } from '@/mdx/MDXContainer';
+import { MDXContainer } from '@/components/mdx/MDXContainer';
 import { MarkDownService } from '@/modules/md/markdown-service';
 
 import '@/styles/vs2015.css';

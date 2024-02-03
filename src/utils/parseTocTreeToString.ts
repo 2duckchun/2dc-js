@@ -1,4 +1,4 @@
-import { Toc } from '@/mdx/types';
+import { Toc } from '@/types/mdx';
 
 export const parseTocTreeToString = (tocTree: Toc[]): any => {
   let result = '';

@@ -73,10 +73,6 @@ export const JavaScriptCurriculumNavInfoArray: SideNavInfo[] = [
         title: '안녕하세요!',
         path: AppPath.curriculumTo('javascript', 'intro'),
       },
-      {
-        title: 'CS 단 1g',
-        path: AppPath.curriculumTo('javascript', 'basic-cs'),
-      },
     ],
   },
   {

@@ -1,4 +1,4 @@
-import { Toc } from '@/mdx/types';
+import { Toc } from '@/types/mdx';
 
 export function makeTocTree(text: string) {
   const paragraphs = text.split('\r\n');

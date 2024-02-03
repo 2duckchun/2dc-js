@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react';
 
-import { MDXContainer } from '@/mdx/MDXContainer';
-import { Toc } from '@/mdx/types';
+import { MDXContainer } from '@/components/mdx/MDXContainer';
 import '@/styles/vs2015.css';
 import { MarkDownService } from '@/modules/md/markdown-service';
 import { makeTocTree } from '@/utils/makeTocTree';

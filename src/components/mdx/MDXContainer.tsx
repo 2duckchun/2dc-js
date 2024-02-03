@@ -5,8 +5,8 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 
+import { MDXComponent } from '@/components/mdx/MDXComponent';
 import { cn } from '@/lib/utils';
-import { MDXComponent } from '@/mdx/MDXComponent';
 
 interface MDXContainerProps extends HTMLAttributes<HTMLDivElement> {
   markdown: string;
