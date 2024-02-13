@@ -1,9 +1,9 @@
-import './globals.css';
+import '../styles/globals.css';
 import type { Metadata } from 'next';
 
 import { Inter } from 'next/font/google';
 
-import { SidebarContextProvider } from '@/hooks/useSideBarContext';
+import { SidebarContextProvider } from '@/providers/layouts/useSideBarContext';
 
 const inter = Inter({ subsets: ['latin'] });
 

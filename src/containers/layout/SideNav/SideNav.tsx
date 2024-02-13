@@ -8,8 +8,8 @@ import {
   JavaScriptCurriculumNavInfoArray,
   MainSideNavInfoArray,
 } from '@/constant/MenuArray';
-import { useSidebarContext } from '@/hooks/useSideBarContext';
 import { cn } from '@/lib/utils';
+import { useSidebarContext } from '@/providers/layouts/useSideBarContext';
 
 import { DeskTopSideNav } from './DeskTopSideNav';
 import { MobileSideNav } from './MobileSideNav';

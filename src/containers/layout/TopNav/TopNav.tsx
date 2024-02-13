@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { HamburgerMenu } from '@/components/icons/HamburgerMenu';
 import { Button } from '@/components/ui/button';
@@ -12,7 +13,7 @@ import { cn } from '@/lib/utils';
 
 export default function TopNav() {
   const [navShadow, setNavShadow] = useState<boolean>(false);
-
+  const router = useRouter();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
@@ -58,10 +59,17 @@ export default function TopNav() {
           })}
         </ul>
         <div className='flex basis-2/12 justify-evenly gap-3'>
-          <Button className={cn('rounded-xl')} variant={'outline'}>
+          <Button
+            className={cn('rounded-xl')}
+            variant={'outline'}
+            onClick={() => {
+              router.push(
+                `https://github.com/login/oauth/authorize?client_id=ea50e2bae4a16942de47`,
+              );
+            }}
+          >
             Sign In
           </Button>
-          <Button className={cn('rounded-xl')}>Sign Up</Button>
         </div>
       </nav>
     </div>

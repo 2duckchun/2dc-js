@@ -1,7 +1,7 @@
 'use client';
 
-import { useSidebarContext } from '@/hooks/useSideBarContext';
 import { cn } from '@/lib/utils';
+import { useSidebarContext } from '@/providers/layouts/useSideBarContext';
 
 export const HamburgerMenu = ({ className }: { className?: string }) => {
   const { isOpen, setIsOpen } = useSidebarContext();
