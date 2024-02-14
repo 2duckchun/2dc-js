@@ -4,16 +4,20 @@ import { useEffect, useState } from 'react';
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useLocalStorage } from 'usehooks-ts';
 
 import { HamburgerMenu } from '@/components/icons/HamburgerMenu';
 import { Button } from '@/components/ui/button';
 import { AppPath } from '@/constant/AppPath';
 import { TopNavInfoArray } from '@/constant/MenuArray';
+import { CALLBACK_URL } from '@/constant/utils';
 import { cn } from '@/lib/utils';
 
 export default function TopNav() {
   const [navShadow, setNavShadow] = useState<boolean>(false);
   const router = useRouter();
+  const [callback, setCallback] = useLocalStorage(CALLBACK_URL, '');
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
@@ -63,6 +67,7 @@ export default function TopNav() {
             className={cn('rounded-xl')}
             variant={'outline'}
             onClick={() => {
+              setCallback(`${window.location.href}`);
               router.push(
                 `https://github.com/login/oauth/authorize?client_id=ea50e2bae4a16942de47`,
               );
