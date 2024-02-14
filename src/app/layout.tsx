@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 
 import { Inter } from 'next/font/google';
 
+import ReactQueryProvider from '@/providers/layouts/ReactQueryProvider';
 import { SidebarContextProvider } from '@/providers/layouts/useSideBarContext';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,9 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
-      <body className={inter.className}>
-        <SidebarContextProvider>{children}</SidebarContextProvider>
-      </body>
+      <ReactQueryProvider>
+        <body className={inter.className}>
+          <SidebarContextProvider>{children}</SidebarContextProvider>
+        </body>
+      </ReactQueryProvider>
     </html>
   );
 }
