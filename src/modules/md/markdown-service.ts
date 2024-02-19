@@ -5,7 +5,12 @@ import matter from 'gray-matter';
 
 export class MarkDownService {
   private directoryPath: string;
-  constructor(directoryPath: string) {
+  constructor(directoryPath: string | string[]) {
+    if (Array.isArray(directoryPath)) {
+      this.directoryPath = path.join('content', ...directoryPath);
+      return;
+    }
+    
     this.directoryPath = path.join('content', directoryPath);
   }
 
