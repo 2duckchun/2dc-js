@@ -7,6 +7,10 @@ export const AppPath = {
   },
 
   post: () => '/post',
+  knos: () => '/knos',
+  knosNoteTo: (subject: string, lecture: string) =>
+    `/knos/${subject}/${lecture}`,
+
   postTo: (id: string) => `/post/${id}`,
   myRepo: () => 'https://github.com/2duckchun',
   aboutMe: () => 'aboutme',

@@ -2,10 +2,9 @@
 
 import { FunctionComponent } from 'react';
 
-import { usePathname } from 'next/navigation';
-
 import {
   JavaScriptCurriculumNavInfoArray,
+  KNOS_SIDE_INFO_ARRAY,
   MainSideNavInfoArray,
 } from '@/constant/MenuArray';
 import { cn } from '@/lib/utils';
@@ -47,6 +46,8 @@ const getSideNavArray = (segment: string) => {
   switch (segment) {
     case 'curriculum':
       return JavaScriptCurriculumNavInfoArray;
+    case 'knos':
+      return KNOS_SIDE_INFO_ARRAY;
     default:
       return MainSideNavInfoArray;
   }

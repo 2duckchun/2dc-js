@@ -27,6 +27,10 @@ export const TopNavInfoArray = [
     path: AppPath.post(),
   },
   {
+    title: 'KNOS',
+    path: AppPath.knos(),
+  },
+  {
     title: 'REPO',
     path: AppPath.myRepo(),
   },
@@ -61,6 +65,19 @@ export const MainSideNavInfoArray: SideNavInfo[] = [
     type: 'single',
     title: 'ABOUT ME',
     path: AppPath.aboutMe(),
+  },
+];
+
+export const KNOS_SIDE_INFO_ARRAY: SideNavInfo[] = [
+  {
+    type: 'multi',
+    title: '운영체제',
+    subNav: [
+      {
+        title: '운영체제 소개',
+        path: AppPath.knosNoteTo('os', 'introduce'),
+      },
+    ],
   },
 ];
 
