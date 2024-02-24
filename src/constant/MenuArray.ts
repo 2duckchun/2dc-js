@@ -74,8 +74,8 @@ export const KNOS_SIDE_INFO_ARRAY: SideNavInfo[] = [
     title: '운영체제',
     subNav: [
       {
-        title: '운영체제 소개',
-        path: AppPath.knosNoteTo('os', 'introduce'),
+        title: '1. 운영체제 개요',
+        path: AppPath.knosNoteTo('os', 'overview'),
       },
     ],
   },
